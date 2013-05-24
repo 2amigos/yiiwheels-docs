@@ -33,8 +33,7 @@ return array(
 			'class'  => 'CLogRouter',
 			'routes' => array(
 				array(
-					'class'        => 'CDbLogRoute',
-					'connectionID' => 'db',
+					'class'        => 'CFileLogRoute',
 					'levels'       => 'error, warning',
 				),
 			),
