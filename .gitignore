@@ -27,7 +27,9 @@ index
 
 # yiinitializr env.lock
 /app/lib/Yiinitializr/config/env.lock
+/app/config/env.php
+/app/data/testdrive.db
 
 # composer
-/app/vendor
+/app/lib/vendor
 composer.lock
