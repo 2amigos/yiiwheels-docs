@@ -2,7 +2,7 @@
 
 	<!-- Main hero unit for a primary marketing message or call to action -->
 	<div class="hero-unit" style="text-align: center">
-		<h1>Yiistrap Docs</h1>
+		<h1>Yiiwheels Docs</h1>
 
 		<p>Soon...</p>
 
