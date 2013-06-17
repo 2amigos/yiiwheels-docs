@@ -11,4 +11,7 @@
  */
 require('./../app/lib/vendor/autoload.php');
 
+$global = __DIR__ . '/../app/helpers/global.php';
+require_once($global);
+
 Yiinitializr\Helpers\Initializer::create('./../app', 'main', array('common', 'env', 'local'))->run();

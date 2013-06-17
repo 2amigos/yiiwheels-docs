@@ -1,64 +1,92 @@
-<?php
-/**
- *
- * main.php layout file
- *
- * @author Antonio Ramirez <amigo.cobos@gmail.com>
- * @link http://www.ramirezcobos.com/
- * @link http://www.2amigos.us/
- * @copyright 2013 2amigOS! Consultation Group LLC
- * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
- */
-?>
+<?php /* @var $this Controller */ ?>
+<?php Yii::app()->bootstrap->register(); ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<style>
-		body {
-			padding-top: 60px;
-			padding-bottom: 40px;
-		}
-	</style>
-
-	<link rel="stylesheet" href="css/main.css">
-
-	<script src="js/libs/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="language" content="en"/>
+    <meta name="keywords" content="yii framework, yii application, yii application development, php framework, yii bootstrap, yii framework tutorial, yii php framework, yii bootstrap, yiistrap"/>
+	<?php css('css/styles.css'); ?>
+	<?php css('js/google-code-prettify/prettify.css'); ?>
+    <?php js('js/google-code-prettify/prettify.js'); ?>
+    <?php js('js/google-code-prettify/prettify.js'); ?>
+    <?php js('js/holder.js'); ?>
+	<?php js('js/app.js', CClientScript::POS_END); ?>
+    <title><?php echo e($this->pageTitle); ?></title>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="<?php echo baseUrl('favicon.ico'); ?>">
+    <style id="holderjs-style" type="text/css">
+        .holderjs-fluid {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            font-family: sans-serif;
+            margin: 0
+        }
+    </style>
 </head>
-<body>
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-	your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
-	improve your experience.</p>
-<![endif]-->
+<body class="layout-main" data-spy="scroll" data-target=".bs-docs-sidebar">
+<!-- Navbar -->
+<?php $this->widget('bootstrap.widgets.TbNavbar', array(
+	'brandLabel' => img('images/logo-navbar.png') . ' ' . e(Yii::app()->name) . ' <small>BETA</small>',
+	'brandUrl' => baseUrl('site/index'),
+	//'collapse' => true,
+	'items' => array(
+		array(
+			'class' => 'bootstrap.widgets.TbNav',
+			'items' => array(
+				array('label' => 'Home', 'url' => array('site/index')),
+				array('label' => 'Get started', 'url' => array('site/started')),
+				array('label' => 'Components', 'url' => array('site/components')),
+				array('label' => 'Json grid', 'url' => array('site/jsongrid')),
+				array('label' => 'Extended Grid', 'url' => array('site/extendedgrid')),
+				array('label' => 'JQuery UI', 'url' => array('site/jquery')),
+				array('label' => 'Javascript', 'url' => array('site/javascript')),
+				array('label' => 'Widgets', 'url' => array('site/widgets')),
+			),
+		),
+	),
+));
+?>
+<!-- Content -->
 <?php echo $content; ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="js/libs/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script><script>
-	var _gaq = [
-		['_setAccount', 'UA-XXXXX-X'],
-		['_trackPageview']
-	];
-	(function (d, t) {
-		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-		g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g, s)
-	}(document, 'script'));
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="text-center">
+            <p class="credits">
+                Developed by <a href="http://www.ramirezcobos.com/" target="_blank">Antonio Ramirez</a> and <a href="http://www.cniska.net" target="_blank">Christoffer Niska</a>, Graphics by <a href="http://www.kevinvanderven.com" target="_blank">Kevin van der Ven</a>.
+            </p>
+            <p class="license">
+                Code licensed under <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+            </p>
+			<p class="sponsors" style="margin-top: 60px;">
+                <div style="text-align:center;margin-bottom:5px">
+                    <small class="muted">Proudly hosted by</small><br>
+                    <a href="http://2amigos.us"><img src="<?php echo baseUrl('images/2amigos-logo.png'); ?>"/></a>
+                </div>
+				<!--<a href="http://www.jetbrains.com/phpstorm/" style="position:relative;display:inline-block;width:127px;height:37px;border:0;margin:0;padding:0;text-decoration:none;text-indent:0;"><span style="margin: 0;padding: 0;position: absolute;top: 0;left: 36px;font-size: 10px;cursor:pointer;  background-image:none;border:0;color: #fff; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Developed with</span><img src="http://www.jetbrains.com/phpstorm/documentation/phpstorm_banners/phpstorm1/phpstorm125x37_violet.gif" alt="Developed with PhpStorm" border="0"/></a>-->
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.2amigos.us/";
+        _paq.push(["setTrackerUrl", u+"piwik.php"]);
+        _paq.push(["setSiteId", "3"]);
+        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+        g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+    })();
 </script>
+<!-- End Piwik Code -->
 </body>
 </html>
