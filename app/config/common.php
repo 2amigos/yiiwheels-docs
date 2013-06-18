@@ -13,7 +13,6 @@ return array(
 	'basePath' => realPath(__DIR__ . '/..'),
 	'preload' => array('log'),
 	'aliases' => array(
-		'vendor' => 'application.vendor'
 	),
 	'import' => array(
 		'application.controllers.*',

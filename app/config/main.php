@@ -15,12 +15,18 @@ use Yiinitializr\Helpers\ArrayX;
 
 // web application configuration
 return ArrayX::merge(array(
-	'name' => '{APPLICATION NAME}',
+	'name' => 'Yiiwheels',
 
 	// path aliases
 	'aliases' => array(
-		'bootstrap' => dirname(__FILE__) . '/../lib/vendor/2amigos/yiistrap',
-		'yiiwheels' => dirname(__FILE__) . '/../lib/vendor/2amigos/yiiwheels',
+		'vendor' => realpath(__DIR__  . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'vendor'),
+		'bootstrap' => 'vendor.2amigos.yiistrap',
+		'yiiwheels' => 'vendor.2amigos.yiiwheels',
+	),
+
+	// import
+	'import' => array(
+                'bootstrap.helpers.TbHtml',
 	),
 
 	// application behaviors
