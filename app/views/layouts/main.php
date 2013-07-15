@@ -7,9 +7,8 @@
     <meta name="language" content="en"/>
     <meta name="keywords" content="yii framework, yii application, yii application development, php framework, yii bootstrap, yii framework tutorial, yii php framework, yii bootstrap, yiistrap"/>
 	<?php css('css/styles.css'); ?>
-	<?php css('js/google-code-prettify/prettify.css'); ?>
-    <?php js('js/google-code-prettify/prettify.js'); ?>
-    <?php js('js/google-code-prettify/prettify.js'); ?>
+	<?php css('css/prettify.css'); ?>
+    <?php js('js/prettify.js'); ?>
     <?php js('js/holder.js'); ?>
 	<?php js('js/app.js', CClientScript::POS_END); ?>
     <title><?php echo e($this->pageTitle); ?></title>

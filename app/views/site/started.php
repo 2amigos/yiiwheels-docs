@@ -170,8 +170,6 @@ return array(
                 <ul>
                     <li>Modal</li>
                     <li>MultiSelect</li>
-                    <li>DateRangePicker</li>
-                    <li>RangeSlider</li>
                     <li>Redactor</li>
                     <li>Select2</li>
                     <li>SparkLines</li>
