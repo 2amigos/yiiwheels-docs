@@ -218,13 +218,44 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
                 <small>WhDatePicker.php</small>
             </h1>
         </div>
-        <p>Todo</p>
+        <p>DatePicker is a widget that allows us, mere Yii developers, to make use of the great
+            bootstrap datepicker plugin developed by <a href="http://www.eyecon.ro/bootstrap-datepicker">eyecon</a></p>
+
+        <p>
+            Its use is pretty straightforward:
+        </p>
 
         <div class="bs-docs-example">
-
+            <div class="input-append">
+                <?php $this->widget(
+                    'yiiwheels.widgets.datepicker.WhDatePicker',
+                    array(
+                        'name'          => 'datepickertest',
+                        'htmlOptions'   => array(
+                            'placeholder' => 'Select date'
+                        ),
+                        'pluginOptions' => array(
+                            'format' => 'mm/dd/yyyy'
+                        )
+                    )
+                );
+                ?>
+                <span class="add-on"><icon class="icon-calendar"></icon></span>
+            </div>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;div class=&quot;input-append&quot;&gt;
+&lt;?php $this-&gt;widget('yiiwheels.widgets.datepicker.WhDatePicker', array(
+        'name' =&gt; 'datepickertest',
+        'pluginOptions' =&gt; array(
+            'format' =&gt; 'mm/dd/yyyy'
+        )
+    ));
+?&gt;
+    &lt;span class=&quot;add-on&quot;&gt;&lt;icon class=&quot;icon-calendar&quot;&gt;&lt;/icon&gt;&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
     </section>
 
     <!-- DateRangePicker
@@ -236,13 +267,39 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
                 <small>WhDateRangePicker.php</small>
             </h1>
         </div>
-        <p>Todo</p>
+        <p>For more information about the plugin and its options, please visit <a
+                href="https://github.com/dangrossman/bootstrap-daterangepicker" target="_blank">dan grossman bootstrap
+                daterangepicker</a></p>
 
         <div class="bs-docs-example">
-
+            <div class="input-append">
+                <?php $this->widget(
+                    'yiiwheels.widgets.daterangepicker.WhDateRangePicker',
+                    array(
+                        'name' => 'daterangepickertest',
+                        'htmlOptions' => array(
+                            'placeholder' => 'Select date'
+                        )
+                    )
+                );
+                ?>
+                <span class="add-on"><icon class="icon-calendar"></icon></span>
+            </div>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;div class=&quot;input-append&quot;&gt;
+&lt;?php $this-&gt;widget(
+    'yiiwheels.widgets.daterangepicker.WhDateRangePicker',
+    array(
+        'name' =&gt; 'daterangepickertest',
+        'htmlOptions' =&gt; array(
+            'placeholder' =&gt; 'Select date'
+        )
+    )
+);
+?&gt;
+        </pre>
     </section>
 
     <!-- Datepicker
@@ -677,8 +734,8 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
         <hr class="bs-docs-separator">
 
         <h1>ToggleColumn
-                <small>WhToggleColumn.php</small>
-            </h1>
+            <small>WhToggleColumn.php</small>
+        </h1>
 
         <p>Todo</p>
 
@@ -695,7 +752,9 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
     <section id="typeahead">
 
         <div class="page-header">
-            <h1>TypeAhead <small>WhTypeAhead.php</small></h1>
+            <h1>TypeAhead
+                <small>WhTypeAhead.php</small>
+            </h1>
         </div>
 
         <p>Todo</p>
