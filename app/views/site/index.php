@@ -8,14 +8,14 @@ $this->pageTitle = param('pageTitle');
 
         <p>Extension Library for Yiistrap</p>
 
-        <!--<p><a href="https://github.com/Crisu83/yiistrap/archive/master.zip" class="btn btn-inverse btn-large"
+        <p><a href="https://github.com/2amigos/yiiwheels/archive/master.zip" class="btn btn-inverse btn-large"
               onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 1.0.0']);">Download
-                Yiiwheels</a></p>-->
+                Yiiwheels</a></p>
         <ul class="masthead-links">
             <li><a href="https://github.com/2amigos/yiiwheels"
                    onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub
                     project</a></li>
-            <!--<li>Version 1.0.0 BETA</li>-->
+            <li>Version 1.0.0</li>
         </ul>
     </div>
 </div>
@@ -33,17 +33,6 @@ $this->pageTitle = param('pageTitle');
 			<li>
                 <a href="https://twitter.com/MhTabin" class="twitter-follow-button" data-align="right" data-width="196px" data-show-count="true">Follow @matt</a>
             </li>
-			<li class="add-this">
-				<!-- AddThis Button BEGIN -->
-				<div class="addthis_toolbox addthis_default_style">
-					<a class="addthis_button_twitter"></a>
-					<a class="addthis_button_facebook"></a>
-					<a class="addthis_button_google"></a>
-					<a class="addthis_button_compact"></a>
-					<a class="addthis_counter addthis_bubble_style"></a>
-				</div>
-				<!-- AddThis Button END -->
-			</li>
         </ul>
     </div>
 </div>
@@ -57,8 +46,23 @@ $this->pageTitle = param('pageTitle');
             fjs.parentNode.insertBefore(js, fjs);
         }
     }(document, "script", "twitter-wjs");</script>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f362fc83fc39768"></script>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+<script type="text/javascript">
+    addthis.layers({
+        'theme' : 'transparent',
+        'share' : {
+            'position' : 'left',
+            'numPreferredServices' : 5
+        },
+        'whatsnext' : {},
+        'recommended' : {
+            'title': 'Recommended for you:'
+        }
+    });
+</script>
+<!-- AddThis Smart Layers END -->
 <div class="container">
 
     <div class="marketing">
