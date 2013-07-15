@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File widgets/detail/WhDetailView.php | YiiWheels</title>
+
+	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
+	<script type="text/javascript" src="elementlist.js?927607910"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">YiiWheels</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="package-YiiWheels.widgets.detail.html" title="Summary of YiiWheels\widgets\detail"><span>Package</span></a>
+						</li>
+						<li>
+							<a href="class-WhDetailView.html" title="Summary of WhDetailView"><span>Class</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" class="search-query" placeholder="Search" />
+		</form>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
+						<ul>
+				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
+						</li>
+				<li><a href="package-yiiwheels.helpers.html">helpers</a>
+						</li>
+				<li class="active"><a href="package-YiiWheels.widgets.html">widgets<span></span></a>
+						<ul>
+				<li><a href="package-YiiWheels.widgets.ace.html">ace</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.box.html">box</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.datepicker.html">datepicker</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.daterangepicker.html">daterangepicker</a>
+						</li>
+				<li class="active"><a href="package-YiiWheels.widgets.detail.html">detail</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.google.html">google</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.maskmoney.html">maskmoney</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.modal.html">modal</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.multiselect.html">multiselect</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.rangeslider.html">rangeslider</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.redactor.html">redactor</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.select2.html">select2</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.sparklines.html">sparklines</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.timeago.html">timeago</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.timepicker.html">timepicker</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.toggle.html">toggle</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.typeahead.html">typeahead</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-WhDetailView.html">WhDetailView</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<pre id="source"><code><span id="1" class="l"><a class="l" href="#1"> 1 </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2 </a><span class="php-comment">/**
+</span></span><span id="3" class="l"><a class="l" href="#3"> 3 </a><span class="php-comment"> * WhDetailView widget class
+</span></span><span id="4" class="l"><a class="l" href="#4"> 4 </a><span class="php-comment"> *
+</span></span><span id="5" class="l"><a class="l" href="#5"> 5 </a><span class="php-comment"> * @author Antonio Ramirez &lt;amigo.cobos@gmail.com&gt;
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6 </a><span class="php-comment"> * @copyright Copyright &amp;copy; 2amigos.us 2013-
+</span></span><span id="7" class="l"><a class="l" href="#7"> 7 </a><span class="php-comment"> * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8 </a><span class="php-comment"> * @package YiiWheels.widgets.detail
+</span></span><span id="9" class="l"><a class="l" href="#9"> 9 </a><span class="php-comment"> * @uses YiiWheels.helpers.WhHtml
+</span></span><span id="10" class="l"><a class="l" href="#10">10 </a><span class="php-comment"> */</span>
+</span><span id="11" class="l"><a class="l" href="#11">11 </a>
+</span><span id="12" class="l"><a class="l" href="#12">12 </a>Yii::import(<span class="php-quote">'bootstrap.helpers.TbHtml'</span>);
+</span><span id="13" class="l"><a class="l" href="#13">13 </a>Yii::import(<span class="php-quote">'zii.widgets.CDetailView'</span>);
+</span><span id="14" class="l"><a class="l" href="#14">14 </a>
+</span><span id="15" class="l"><a class="l" href="#15">15 </a><span class="php-keyword1">class</span> <a id="WhDetailView" href="#WhDetailView">WhDetailView</a> <span class="php-keyword1">extends</span> CDetailView
+</span><span id="16" class="l"><a class="l" href="#16">16 </a>{
+</span><span id="17" class="l"><a class="l" href="#17">17 </a>
+</span><span id="18" class="l"><a class="l" href="#18">18 </a>    <span class="php-comment">/**
+</span></span><span id="19" class="l"><a class="l" href="#19">19 </a><span class="php-comment">     * @var string|array the table type.
+</span></span><span id="20" class="l"><a class="l" href="#20">20 </a><span class="php-comment">     * Valid values are TbHtml::GRID_STRIPED, TbHtml::GRID_BORDERED and/or TbHtml::GRID_CONDENSED.
+</span></span><span id="21" class="l"><a class="l" href="#21">21 </a><span class="php-comment">     */</span>
+</span><span id="22" class="l"><a class="l" href="#22">22 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$type" href="#$type">$type</a></span> = <span class="php-keyword1">array</span>(TbHtml::GRID_TYPE_STRIPED, TbHtml::GRID_TYPE_CONDENSED);
+</span><span id="23" class="l"><a class="l" href="#23">23 </a>
+</span><span id="24" class="l"><a class="l" href="#24">24 </a>    <span class="php-comment">/**
+</span></span><span id="25" class="l"><a class="l" href="#25">25 </a><span class="php-comment">     * @var string the URL of the CSS file used by this detail view.
+</span></span><span id="26" class="l"><a class="l" href="#26">26 </a><span class="php-comment">     * Defaults to false, meaning that no CSS will be included.
+</span></span><span id="27" class="l"><a class="l" href="#27">27 </a><span class="php-comment">     */</span>
+</span><span id="28" class="l"><a class="l" href="#28">28 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$cssFile" href="#$cssFile">$cssFile</a></span> = <span class="php-keyword1">false</span>;
+</span><span id="29" class="l"><a class="l" href="#29">29 </a>
+</span><span id="30" class="l"><a class="l" href="#30">30 </a>    <span class="php-comment">/**
+</span></span><span id="31" class="l"><a class="l" href="#31">31 </a><span class="php-comment">     * Initializes the widget.
+</span></span><span id="32" class="l"><a class="l" href="#32">32 </a><span class="php-comment">     */</span>
+</span><span id="33" class="l"><a class="l" href="#33">33 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
+</span><span id="34" class="l"><a class="l" href="#34">34 </a>    {
+</span><span id="35" class="l"><a class="l" href="#35">35 </a>        parent::init();
+</span><span id="36" class="l"><a class="l" href="#36">36 </a>
+</span><span id="37" class="l"><a class="l" href="#37">37 </a>        <span class="php-var">$classes</span> = <span class="php-keyword1">array</span>(<span class="php-quote">'table'</span>);
+</span><span id="38" class="l"><a class="l" href="#38">38 </a>
+</span><span id="39" class="l"><a class="l" href="#39">39 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;type) &amp;&amp; !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;type)) {
+</span><span id="40" class="l"><a class="l" href="#40">40 </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$this</span>-&gt;type)) {
+</span><span id="41" class="l"><a class="l" href="#41">41 </a>                <span class="php-var">$this</span>-&gt;type = <span class="php-keyword2">explode</span>(<span class="php-quote">' '</span>, <span class="php-var">$this</span>-&gt;type);
+</span><span id="42" class="l"><a class="l" href="#42">42 </a>            }
+</span><span id="43" class="l"><a class="l" href="#43">43 </a>
+</span><span id="44" class="l"><a class="l" href="#44">44 </a>            <span class="php-var">$validTypes</span> = <span class="php-keyword1">array</span>(
+</span><span id="45" class="l"><a class="l" href="#45">45 </a>                TbHtml::GRID_TYPE_BORDERED,
+</span><span id="46" class="l"><a class="l" href="#46">46 </a>                TbHtml::GRID_TYPE_CONDENSED,
+</span><span id="47" class="l"><a class="l" href="#47">47 </a>                TbHtml::GRID_TYPE_STRIPED,
+</span><span id="48" class="l"><a class="l" href="#48">48 </a>                TbHtml::GRID_TYPE_HOVER
+</span><span id="49" class="l"><a class="l" href="#49">49 </a>            );
+</span><span id="50" class="l"><a class="l" href="#50">50 </a>
+</span><span id="51" class="l"><a class="l" href="#51">51 </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;type <span class="php-keyword1">as</span> <span class="php-var">$type</span>) {
+</span><span id="52" class="l"><a class="l" href="#52">52 </a>                <span class="php-keyword1">if</span> (<span class="php-keyword2">in_array</span>(<span class="php-var">$type</span>, <span class="php-var">$validTypes</span>)) {
+</span><span id="53" class="l"><a class="l" href="#53">53 </a>                    <span class="php-var">$classes</span>[] = <span class="php-quote">'table-'</span> . <span class="php-var">$type</span>;
+</span><span id="54" class="l"><a class="l" href="#54">54 </a>                }
+</span><span id="55" class="l"><a class="l" href="#55">55 </a>            }
+</span><span id="56" class="l"><a class="l" href="#56">56 </a>        }
+</span><span id="57" class="l"><a class="l" href="#57">57 </a>
+</span><span id="58" class="l"><a class="l" href="#58">58 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = TbHtml::addClassName(<span class="php-keyword2">implode</span>(<span class="php-quote">' '</span>, <span class="php-var">$classes</span>), <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="59" class="l"><a class="l" href="#59">59 </a>    }
+</span><span id="60" class="l"><a class="l" href="#60">60 </a>}
+</span><span id="61" class="l"><a class="l" href="#61">61 </a></span></code></pre>
+	</div>
+
+	<div id="footer">
+		YiiWheels API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

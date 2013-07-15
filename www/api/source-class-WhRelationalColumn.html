@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File widgets/grid/WhRelationalColumn.php | YiiWheels</title>
+
+	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
+	<script type="text/javascript" src="elementlist.js?927607910"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">YiiWheels</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="package-YiiWheels.widgets.fileupload.html" title="Summary of YiiWheels\widgets\fileupload"><span>Package</span></a>
+						</li>
+						<li>
+							<a href="class-WhRelationalColumn.html" title="Summary of WhRelationalColumn"><span>Class</span></a>
+						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" class="search-query" placeholder="Search" />
+		</form>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
+						<ul>
+				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
+						</li>
+				<li><a href="package-yiiwheels.helpers.html">helpers</a>
+						</li>
+				<li class="active"><a href="package-YiiWheels.widgets.html">widgets<span></span></a>
+						<ul>
+				<li><a href="package-YiiWheels.widgets.ace.html">ace</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.box.html">box</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.datepicker.html">datepicker</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.daterangepicker.html">daterangepicker</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
+						</li>
+				<li class="active"><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.google.html">google</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.maskmoney.html">maskmoney</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.modal.html">modal</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.multiselect.html">multiselect</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.rangeslider.html">rangeslider</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.redactor.html">redactor</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.select2.html">select2</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.sparklines.html">sparklines</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.timeago.html">timeago</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.timepicker.html">timepicker</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.toggle.html">toggle</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.typeahead.html">typeahead</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-WhBasicFileUpload.html">WhBasicFileUpload</a></li>
+				<li><a href="class-WhFileUpload.html">WhFileUpload</a></li>
+				<li class="active"><a href="class-WhRelationalColumn.html">WhRelationalColumn</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<pre id="source"><code><span id="1" class="l"><a class="l" href="#1">  1 </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2">  2 </a><span class="php-comment">/**
+</span></span><span id="3" class="l"><a class="l" href="#3">  3 </a><span class="php-comment"> * WhRelationalColumn class
+</span></span><span id="4" class="l"><a class="l" href="#4">  4 </a><span class="php-comment"> *
+</span></span><span id="5" class="l"><a class="l" href="#5">  5 </a><span class="php-comment"> * Displays a clickable column that will make an ajax request and display its resulting data
+</span></span><span id="6" class="l"><a class="l" href="#6">  6 </a><span class="php-comment"> * into a new row.
+</span></span><span id="7" class="l"><a class="l" href="#7">  7 </a><span class="php-comment"> *
+</span></span><span id="8" class="l"><a class="l" href="#8">  8 </a><span class="php-comment"> * @author Antonio Ramirez &lt;amigo.cobos@gmail.com&gt;
+</span></span><span id="9" class="l"><a class="l" href="#9">  9 </a><span class="php-comment"> * @copyright Copyright &amp;copy; 2amigos.us 2013-
+</span></span><span id="10" class="l"><a class="l" href="#10"> 10 </a><span class="php-comment"> * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+</span></span><span id="11" class="l"><a class="l" href="#11"> 11 </a><span class="php-comment"> * @package YiiWheels.widgets.fileupload
+</span></span><span id="12" class="l"><a class="l" href="#12"> 12 </a><span class="php-comment"> * @uses Yiistrap.widgets.TbDataColumn
+</span></span><span id="13" class="l"><a class="l" href="#13"> 13 </a><span class="php-comment"> */</span>
+</span><span id="14" class="l"><a class="l" href="#14"> 14 </a>Yii::import(<span class="php-quote">'bootstrap.widgets.TbDataColumn'</span>);
+</span><span id="15" class="l"><a class="l" href="#15"> 15 </a>
+</span><span id="16" class="l"><a class="l" href="#16"> 16 </a><span class="php-keyword1">class</span> <a id="WhRelationalColumn" href="#WhRelationalColumn">WhRelationalColumn</a> <span class="php-keyword1">extends</span> TbDataColumn
+</span><span id="17" class="l"><a class="l" href="#17"> 17 </a>{
+</span><span id="18" class="l"><a class="l" href="#18"> 18 </a>    <span class="php-comment">/**
+</span></span><span id="19" class="l"><a class="l" href="#19"> 19 </a><span class="php-comment">     * @var string $url the route to call via AJAX to get the data from
+</span></span><span id="20" class="l"><a class="l" href="#20"> 20 </a><span class="php-comment">     */</span>
+</span><span id="21" class="l"><a class="l" href="#21"> 21 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$url" href="#$url">$url</a></span>;
+</span><span id="22" class="l"><a class="l" href="#22"> 22 </a>
+</span><span id="23" class="l"><a class="l" href="#23"> 23 </a>    <span class="php-comment">/**
+</span></span><span id="24" class="l"><a class="l" href="#24"> 24 </a><span class="php-comment">     * @var string $cssClass the class name that will wrap up the cell content.
+</span></span><span id="25" class="l"><a class="l" href="#25"> 25 </a><span class="php-comment">     * Important Note: this class will be used as the trigger for the AJAX call, so make sure is unique for the
+</span></span><span id="26" class="l"><a class="l" href="#26"> 26 </a><span class="php-comment">     * column.
+</span></span><span id="27" class="l"><a class="l" href="#27"> 27 </a><span class="php-comment">     */</span>
+</span><span id="28" class="l"><a class="l" href="#28"> 28 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$cssClass" href="#$cssClass">$cssClass</a></span> = <span class="php-quote">'wh-relational-column'</span>;
+</span><span id="29" class="l"><a class="l" href="#29"> 29 </a>
+</span><span id="30" class="l"><a class="l" href="#30"> 30 </a>    <span class="php-comment">/**
+</span></span><span id="31" class="l"><a class="l" href="#31"> 31 </a><span class="php-comment">     * @var bool $cacheData if set to true, there won't be more than one AJAX request. If set to false, the widget will
+</span></span><span id="32" class="l"><a class="l" href="#32"> 32 </a><span class="php-comment">     * continuously make AJAX requests. This is useful if the data could vary. If the data doesn't change then is better
+</span></span><span id="33" class="l"><a class="l" href="#33"> 33 </a><span class="php-comment">     * to set it to true. Defaults to true.
+</span></span><span id="34" class="l"><a class="l" href="#34"> 34 </a><span class="php-comment">     */</span>
+</span><span id="35" class="l"><a class="l" href="#35"> 35 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$cacheData" href="#$cacheData">$cacheData</a></span> = <span class="php-keyword1">true</span>;
+</span><span id="36" class="l"><a class="l" href="#36"> 36 </a>
+</span><span id="37" class="l"><a class="l" href="#37"> 37 </a>    <span class="php-comment">/**
+</span></span><span id="38" class="l"><a class="l" href="#38"> 38 </a><span class="php-comment">     * @var string a javascript function that will be invoked if an AJAX call occurs.
+</span></span><span id="39" class="l"><a class="l" href="#39"> 39 </a><span class="php-comment">     *
+</span></span><span id="40" class="l"><a class="l" href="#40"> 40 </a><span class="php-comment">     * The function signature is &lt;code&gt;function(tr, rowid, data)&lt;/code&gt;
+</span></span><span id="41" class="l"><a class="l" href="#41"> 41 </a><span class="php-comment">     * &lt;ul&gt;
+</span></span><span id="42" class="l"><a class="l" href="#42"> 42 </a><span class="php-comment">     * &lt;li&gt;&lt;code&gt;tr&lt;/code&gt; is the newly created TR HTML object that will display the returned server data.&lt;/li&gt;
+</span></span><span id="43" class="l"><a class="l" href="#43"> 43 </a><span class="php-comment">     * &lt;li&gt;&lt;code&gt;rowid&lt;/code&gt; the model id of the row.&lt;/li&gt;
+</span></span><span id="44" class="l"><a class="l" href="#44"> 44 </a><span class="php-comment">     * &lt;li&gt;&lt;code&gt;data&lt;/code&gt; is the data returned by the server that is already displayed on the row.&lt;/li&gt;
+</span></span><span id="45" class="l"><a class="l" href="#45"> 45 </a><span class="php-comment">     * &lt;/ul&gt;
+</span></span><span id="46" class="l"><a class="l" href="#46"> 46 </a><span class="php-comment">     * Note: This handler is not called for JSONP requests.
+</span></span><span id="47" class="l"><a class="l" href="#47"> 47 </a><span class="php-comment">     *
+</span></span><span id="48" class="l"><a class="l" href="#48"> 48 </a><span class="php-comment">     * Example (add in a call to TbRelationalColumn):
+</span></span><span id="49" class="l"><a class="l" href="#49"> 49 </a><span class="php-comment">     * &lt;pre&gt;
+</span></span><span id="50" class="l"><a class="l" href="#50"> 50 </a><span class="php-comment">     *  ...
+</span></span><span id="51" class="l"><a class="l" href="#51"> 51 </a><span class="php-comment">     *  'afterAjaxUpdate'=&gt;'js:function(tr,rowid, data){ console.log(rowid); }',
+</span></span><span id="52" class="l"><a class="l" href="#52"> 52 </a><span class="php-comment">     *  ...
+</span></span><span id="53" class="l"><a class="l" href="#53"> 53 </a><span class="php-comment">     * &lt;/pre&gt;
+</span></span><span id="54" class="l"><a class="l" href="#54"> 54 </a><span class="php-comment">     */</span>
+</span><span id="55" class="l"><a class="l" href="#55"> 55 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$afterAjaxUpdate" href="#$afterAjaxUpdate">$afterAjaxUpdate</a></span>;
+</span><span id="56" class="l"><a class="l" href="#56"> 56 </a>
+</span><span id="57" class="l"><a class="l" href="#57"> 57 </a>    <span class="php-comment">/**
+</span></span><span id="58" class="l"><a class="l" href="#58"> 58 </a><span class="php-comment">     * @var string $ajaxErrorMessage the message that is displayed on the newly created row in case there is an AJAX
+</span></span><span id="59" class="l"><a class="l" href="#59"> 59 </a><span class="php-comment">     * error.
+</span></span><span id="60" class="l"><a class="l" href="#60"> 60 </a><span class="php-comment">     */</span>
+</span><span id="61" class="l"><a class="l" href="#61"> 61 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$ajaxErrorMessage" href="#$ajaxErrorMessage">$ajaxErrorMessage</a></span> = <span class="php-quote">'Error'</span>;
+</span><span id="62" class="l"><a class="l" href="#62"> 62 </a>
+</span><span id="63" class="l"><a class="l" href="#63"> 63 </a>    <span class="php-comment">/**
+</span></span><span id="64" class="l"><a class="l" href="#64"> 64 </a><span class="php-comment">     * widget initialization
+</span></span><span id="65" class="l"><a class="l" href="#65"> 65 </a><span class="php-comment">     */</span>
+</span><span id="66" class="l"><a class="l" href="#66"> 66 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
+</span><span id="67" class="l"><a class="l" href="#67"> 67 </a>    {
+</span><span id="68" class="l"><a class="l" href="#68"> 68 </a>        parent::init();
+</span><span id="69" class="l"><a class="l" href="#69"> 69 </a>
+</span><span id="70" class="l"><a class="l" href="#70"> 70 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;url))
+</span><span id="71" class="l"><a class="l" href="#71"> 71 </a>            <span class="php-var">$this</span>-&gt;url = Yii::app()-&gt;getRequest()-&gt;requestUri;
+</span><span id="72" class="l"><a class="l" href="#72"> 72 </a>
+</span><span id="73" class="l"><a class="l" href="#73"> 73 </a>        <span class="php-var">$this</span>-&gt;registerClientScript();
+</span><span id="74" class="l"><a class="l" href="#74"> 74 </a>    }
+</span><span id="75" class="l"><a class="l" href="#75"> 75 </a>
+</span><span id="76" class="l"><a class="l" href="#76"> 76 </a>    <span class="php-comment">/**
+</span></span><span id="77" class="l"><a class="l" href="#77"> 77 </a><span class="php-comment">     * Overrides CDataColumn renderDataCell in order to wrap up its content with the object that will be used as a
+</span></span><span id="78" class="l"><a class="l" href="#78"> 78 </a><span class="php-comment">     * trigger.
+</span></span><span id="79" class="l"><a class="l" href="#79"> 79 </a><span class="php-comment">     * Important: Making use of links as a content for this of column is an error.
+</span></span><span id="80" class="l"><a class="l" href="#80"> 80 </a><span class="php-comment">     * @param int $row
+</span></span><span id="81" class="l"><a class="l" href="#81"> 81 </a><span class="php-comment">     */</span>
+</span><span id="82" class="l"><a class="l" href="#82"> 82 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderDataCell" href="#_renderDataCell">renderDataCell</a>(<span class="php-var">$row</span>)
+</span><span id="83" class="l"><a class="l" href="#83"> 83 </a>    {
+</span><span id="84" class="l"><a class="l" href="#84"> 84 </a>        <span class="php-var">$data</span>    = <span class="php-var">$this</span>-&gt;grid-&gt;dataProvider-&gt;data[<span class="php-var">$row</span>];
+</span><span id="85" class="l"><a class="l" href="#85"> 85 </a>        <span class="php-var">$options</span> = <span class="php-var">$this</span>-&gt;htmlOptions;
+</span><span id="86" class="l"><a class="l" href="#86"> 86 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;cssClassExpression !== <span class="php-keyword1">null</span>) {
+</span><span id="87" class="l"><a class="l" href="#87"> 87 </a>            <span class="php-var">$class</span> = <span class="php-var">$this</span>-&gt;evaluateExpression(<span class="php-var">$this</span>-&gt;cssClassExpression, <span class="php-keyword1">array</span>(<span class="php-quote">'row'</span> =&gt; <span class="php-var">$row</span>, <span class="php-quote">'data'</span> =&gt; <span class="php-var">$data</span>));
+</span><span id="88" class="l"><a class="l" href="#88"> 88 </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$options</span>[<span class="php-quote">'class'</span>]))
+</span><span id="89" class="l"><a class="l" href="#89"> 89 </a>                <span class="php-var">$options</span>[<span class="php-quote">'class'</span>] .= <span class="php-quote">' '</span> . <span class="php-var">$class</span>;
+</span><span id="90" class="l"><a class="l" href="#90"> 90 </a>            <span class="php-keyword1">else</span>
+</span><span id="91" class="l"><a class="l" href="#91"> 91 </a>                <span class="php-var">$options</span>[<span class="php-quote">'class'</span>] = <span class="php-var">$class</span>;
+</span><span id="92" class="l"><a class="l" href="#92"> 92 </a>        }
+</span><span id="93" class="l"><a class="l" href="#93"> 93 </a>        <span class="php-keyword1">echo</span> CHtml::openTag(<span class="php-quote">'td'</span>, <span class="php-var">$options</span>);
+</span><span id="94" class="l"><a class="l" href="#94"> 94 </a>        <span class="php-keyword1">echo</span> CHtml::openTag(<span class="php-quote">'span'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-var">$this</span>-&gt;cssClass, <span class="php-quote">'data-rowid'</span> =&gt; <span class="php-var">$this</span>-&gt;getPrimaryKey(<span class="php-var">$data</span>)));
+</span><span id="95" class="l"><a class="l" href="#95"> 95 </a>        <span class="php-var">$this</span>-&gt;renderDataCellContent(<span class="php-var">$row</span>, <span class="php-var">$data</span>);
+</span><span id="96" class="l"><a class="l" href="#96"> 96 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;/span&gt;'</span>;
+</span><span id="97" class="l"><a class="l" href="#97"> 97 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;/td&gt;'</span>;
+</span><span id="98" class="l"><a class="l" href="#98"> 98 </a>    }
+</span><span id="99" class="l"><a class="l" href="#99"> 99 </a>
+</span><span id="100" class="l"><a class="l" href="#100">100 </a>    <span class="php-comment">/**
+</span></span><span id="101" class="l"><a class="l" href="#101">101 </a><span class="php-comment">     * Helper function to return the primary key of the $data
+</span></span><span id="102" class="l"><a class="l" href="#102">102 </a><span class="php-comment">     *  * IMPORTANT: composite keys on CActiveDataProviders will return the keys joined by comma
+</span></span><span id="103" class="l"><a class="l" href="#103">103 </a><span class="php-comment">     * @param CActiveRecord $data
+</span></span><span id="104" class="l"><a class="l" href="#104">104 </a><span class="php-comment">     * @return null|string
+</span></span><span id="105" class="l"><a class="l" href="#105">105 </a><span class="php-comment">     */</span>
+</span><span id="106" class="l"><a class="l" href="#106">106 </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getPrimaryKey" href="#_getPrimaryKey">getPrimaryKey</a>(<span class="php-var">$data</span>)
+</span><span id="107" class="l"><a class="l" href="#107">107 </a>    {
+</span><span id="108" class="l"><a class="l" href="#108">108 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;grid-&gt;dataProvider <span class="php-keyword1">instanceof</span> CActiveDataProvider) {
+</span><span id="109" class="l"><a class="l" href="#109">109 </a>            <span class="php-var">$key</span> = <span class="php-var">$this</span>-&gt;grid-&gt;dataProvider-&gt;keyAttribute === <span class="php-keyword1">null</span> ? <span class="php-var">$data</span>-&gt;getPrimaryKey(
+</span><span id="110" class="l"><a class="l" href="#110">110 </a>            ) : <span class="php-var">$data</span>-&gt;{<span class="php-var">$this</span>-&gt;keyAttribute};
+</span><span id="111" class="l"><a class="l" href="#111">111 </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">is_array</span>(<span class="php-var">$key</span>) ? <span class="php-keyword2">implode</span>(<span class="php-quote">','</span>, <span class="php-var">$key</span>) : <span class="php-var">$key</span>;
+</span><span id="112" class="l"><a class="l" href="#112">112 </a>        }
+</span><span id="113" class="l"><a class="l" href="#113">113 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;grid-&gt;dataProvider <span class="php-keyword1">instanceof</span> CArrayDataProvider || <span class="php-var">$this</span>-&gt;grid-&gt;dataProvider <span class="php-keyword1">instanceof</span> CSqlDataProvider)
+</span><span id="114" class="l"><a class="l" href="#114">114 </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">is_object</span>(
+</span><span id="115" class="l"><a class="l" href="#115">115 </a>                <span class="php-var">$data</span>
+</span><span id="116" class="l"><a class="l" href="#116">116 </a>            ) ? <span class="php-var">$data</span>-&gt;{<span class="php-var">$this</span>-&gt;grid-&gt;dataProvider-&gt;keyField} : <span class="php-var">$data</span>[<span class="php-var">$this</span>-&gt;grid-&gt;dataProvider-&gt;keyField];
+</span><span id="117" class="l"><a class="l" href="#117">117 </a>
+</span><span id="118" class="l"><a class="l" href="#118">118 </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">null</span>;
+</span><span id="119" class="l"><a class="l" href="#119">119 </a>    }
+</span><span id="120" class="l"><a class="l" href="#120">120 </a>
+</span><span id="121" class="l"><a class="l" href="#121">121 </a>    <span class="php-comment">/**
+</span></span><span id="122" class="l"><a class="l" href="#122">122 </a><span class="php-comment">     * Register script that will handle its behavior
+</span></span><span id="123" class="l"><a class="l" href="#123">123 </a><span class="php-comment">     */</span>
+</span><span id="124" class="l"><a class="l" href="#124">124 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
+</span><span id="125" class="l"><a class="l" href="#125">125 </a>    {
+</span><span id="126" class="l"><a class="l" href="#126">126 </a>        Yii::app()-&gt;bootstrap-&gt;registerAssetCss(<span class="php-quote">'bootstrap-relational.css'</span>);
+</span><span id="127" class="l"><a class="l" href="#127">127 </a>        <span class="php-comment">/** @var $cs CClientScript */</span>
+</span><span id="128" class="l"><a class="l" href="#128">128 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span><span id="129" class="l"><a class="l" href="#129">129 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;afterAjaxUpdate !== <span class="php-keyword1">null</span>) {
+</span><span id="130" class="l"><a class="l" href="#130">130 </a>            <span class="php-keyword1">if</span> ((!<span class="php-var">$this</span>-&gt;afterAjaxUpdate <span class="php-keyword1">instanceof</span> CJavaScriptExpression) &amp;&amp; <span class="php-keyword2">strpos</span>(
+</span><span id="131" class="l"><a class="l" href="#131">131 </a>                    <span class="php-var">$this</span>-&gt;afterAjaxUpdate,
+</span><span id="132" class="l"><a class="l" href="#132">132 </a>                    <span class="php-quote">'js:'</span>
+</span><span id="133" class="l"><a class="l" href="#133">133 </a>                ) !== <span class="php-num">0</span>
+</span><span id="134" class="l"><a class="l" href="#134">134 </a>            )
+</span><span id="135" class="l"><a class="l" href="#135">135 </a>                <span class="php-var">$this</span>-&gt;afterAjaxUpdate = <span class="php-keyword1">new</span> CJavaScriptExpression(<span class="php-var">$this</span>-&gt;afterAjaxUpdate);
+</span><span id="136" class="l"><a class="l" href="#136">136 </a>        } <span class="php-keyword1">else</span>
+</span><span id="137" class="l"><a class="l" href="#137">137 </a>            <span class="php-var">$this</span>-&gt;afterAjaxUpdate = <span class="php-quote">'js:$.noop'</span>;
+</span><span id="138" class="l"><a class="l" href="#138">138 </a>
+</span><span id="139" class="l"><a class="l" href="#139">139 </a>        <span class="php-var">$this</span>-&gt;ajaxErrorMessage = CHtml::encode(<span class="php-var">$this</span>-&gt;ajaxErrorMessage);
+</span><span id="140" class="l"><a class="l" href="#140">140 </a>        <span class="php-var">$afterAjaxUpdate</span>        = CJavaScript::encode(<span class="php-var">$this</span>-&gt;afterAjaxUpdate);
+</span><span id="141" class="l"><a class="l" href="#141">141 </a>        <span class="php-var">$span</span>                   = <span class="php-keyword2">count</span>(<span class="php-var">$this</span>-&gt;grid-&gt;columns);
+</span><span id="142" class="l"><a class="l" href="#142">142 </a>        <span class="php-var">$loadingPic</span>             = CHtml::image(Yii::app()-&gt;yiiwheels-&gt;getAssetsUrl() . <span class="php-quote">'/img/loading.gif'</span>);
+</span><span id="143" class="l"><a class="l" href="#143">143 </a>        <span class="php-var">$cache</span>                  = <span class="php-var">$this</span>-&gt;cacheData ? <span class="php-quote">'true'</span> : <span class="php-quote">'false'</span>;
+</span><span id="144" class="l"><a class="l" href="#144">144 </a>        <span class="php-var">$data</span>                   = !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;submitData) &amp;&amp; <span class="php-keyword2">is_array</span>(
+</span><span id="145" class="l"><a class="l" href="#145">145 </a>            <span class="php-var">$this</span>-&gt;submitData
+</span><span id="146" class="l"><a class="l" href="#146">146 </a>        ) ? <span class="php-var">$this</span>-&gt;submitData : <span class="php-quote">'js:{}'</span>;
+</span><span id="147" class="l"><a class="l" href="#147">147 </a>        <span class="php-var">$data</span>                   = CJavascript::encode(<span class="php-var">$data</span>);
+</span><span id="148" class="l"><a class="l" href="#148">148 </a>
+</span><span id="149" class="l"><a class="l" href="#149">149 </a>        <span class="php-var">$js</span> = <span class="php-quote">&lt;&lt;&lt;EOD
+</span></span><span id="150" class="l"><a class="l" href="#150">150 </a><span class="php-var">$</span><span class="php-quote">(document).on('click','.</span><span class="php-var">{$this-&gt;cssClass}</span><span class="php-quote">', function(){
+</span></span><span id="151" class="l"><a class="l" href="#151">151 </a><span class="php-quote">    var span = </span><span class="php-var">$span</span><span class="php-quote">;
+</span></span><span id="152" class="l"><a class="l" href="#152">152 </a><span class="php-quote">    var that = </span><span class="php-var">$</span><span class="php-quote">(this);
+</span></span><span id="153" class="l"><a class="l" href="#153">153 </a><span class="php-quote">    var status = that.data('status');
+</span></span><span id="154" class="l"><a class="l" href="#154">154 </a><span class="php-quote">    var rowid = that.data('rowid');
+</span></span><span id="155" class="l"><a class="l" href="#155">155 </a><span class="php-quote">    var tr = </span><span class="php-var">$</span><span class="php-quote">('#relatedinfo'+rowid);
+</span></span><span id="156" class="l"><a class="l" href="#156">156 </a><span class="php-quote">    var parent = that.parents('tr').eq(0);
+</span></span><span id="157" class="l"><a class="l" href="#157">157 </a><span class="php-quote">    var afterAjaxUpdate = </span><span class="php-var">{$afterAjaxUpdate}</span><span class="php-quote">;
+</span></span><span id="158" class="l"><a class="l" href="#158">158 </a><span class="php-quote">
+</span></span><span id="159" class="l"><a class="l" href="#159">159 </a><span class="php-quote">    if (status &amp;&amp; status=='on'){return}
+</span></span><span id="160" class="l"><a class="l" href="#160">160 </a><span class="php-quote">    that.data('status','on');
+</span></span><span id="161" class="l"><a class="l" href="#161">161 </a><span class="php-quote">
+</span></span><span id="162" class="l"><a class="l" href="#162">162 </a><span class="php-quote">    if (tr.length &amp;&amp; !tr.is(':visible') &amp;&amp; </span><span class="php-var">{$cache}</span><span class="php-quote">)
+</span></span><span id="163" class="l"><a class="l" href="#163">163 </a><span class="php-quote">    {
+</span></span><span id="164" class="l"><a class="l" href="#164">164 </a><span class="php-quote">        tr.slideDown();
+</span></span><span id="165" class="l"><a class="l" href="#165">165 </a><span class="php-quote">        that.data('status','off');
+</span></span><span id="166" class="l"><a class="l" href="#166">166 </a><span class="php-quote">        return;
+</span></span><span id="167" class="l"><a class="l" href="#167">167 </a><span class="php-quote">    }else if (tr.length &amp;&amp; tr.is(':visible'))
+</span></span><span id="168" class="l"><a class="l" href="#168">168 </a><span class="php-quote">    {
+</span></span><span id="169" class="l"><a class="l" href="#169">169 </a><span class="php-quote">        tr.slideUp();
+</span></span><span id="170" class="l"><a class="l" href="#170">170 </a><span class="php-quote">        that.data('status','off');
+</span></span><span id="171" class="l"><a class="l" href="#171">171 </a><span class="php-quote">        return;
+</span></span><span id="172" class="l"><a class="l" href="#172">172 </a><span class="php-quote">    }
+</span></span><span id="173" class="l"><a class="l" href="#173">173 </a><span class="php-quote">    if (tr.length)
+</span></span><span id="174" class="l"><a class="l" href="#174">174 </a><span class="php-quote">    {
+</span></span><span id="175" class="l"><a class="l" href="#175">175 </a><span class="php-quote">        tr.find('td').html('</span><span class="php-var">{$loadingPic}</span><span class="php-quote">');
+</span></span><span id="176" class="l"><a class="l" href="#176">176 </a><span class="php-quote">        if (!tr.is(':visible')){
+</span></span><span id="177" class="l"><a class="l" href="#177">177 </a><span class="php-quote">            tr.slideDown();
+</span></span><span id="178" class="l"><a class="l" href="#178">178 </a><span class="php-quote">        }
+</span></span><span id="179" class="l"><a class="l" href="#179">179 </a><span class="php-quote">    }
+</span></span><span id="180" class="l"><a class="l" href="#180">180 </a><span class="php-quote">    else
+</span></span><span id="181" class="l"><a class="l" href="#181">181 </a><span class="php-quote">    {
+</span></span><span id="182" class="l"><a class="l" href="#182">182 </a><span class="php-quote">        var td = </span><span class="php-var">$</span><span class="php-quote">('&lt;td/&gt;').html('</span><span class="php-var">{$loadingPic}</span><span class="php-quote">').attr({'colspan':</span><span class="php-var">$span</span><span class="php-quote">});
+</span></span><span id="183" class="l"><a class="l" href="#183">183 </a><span class="php-quote">        tr = </span><span class="php-var">$</span><span class="php-quote">('&lt;tr/&gt;').prop({'id':'relatedinfo'+rowid}).append(td);
+</span></span><span id="184" class="l"><a class="l" href="#184">184 </a><span class="php-quote">        /* we need to maintain zebra styles :) */
+</span></span><span id="185" class="l"><a class="l" href="#185">185 </a><span class="php-quote">        var fake = </span><span class="php-var">$</span><span class="php-quote">('&lt;tr class=&quot;hide&quot;/&gt;').append(</span><span class="php-var">$</span><span class="php-quote">('&lt;td/&gt;').attr({'colspan':</span><span class="php-var">$span</span><span class="php-quote">}));
+</span></span><span id="186" class="l"><a class="l" href="#186">186 </a><span class="php-quote">        parent.after(tr);
+</span></span><span id="187" class="l"><a class="l" href="#187">187 </a><span class="php-quote">        tr.after(fake);
+</span></span><span id="188" class="l"><a class="l" href="#188">188 </a><span class="php-quote">    }
+</span></span><span id="189" class="l"><a class="l" href="#189">189 </a><span class="php-quote">    var data = </span><span class="php-var">$</span><span class="php-quote">.extend(</span><span class="php-var">{$data}</span><span class="php-quote">, {id:rowid});
+</span></span><span id="190" class="l"><a class="l" href="#190">190 </a><span class="php-quote">    </span><span class="php-var">$</span><span class="php-quote">.ajax({
+</span></span><span id="191" class="l"><a class="l" href="#191">191 </a><span class="php-quote">        url: '</span><span class="php-var">{$this-&gt;url}</span><span class="php-quote">',
+</span></span><span id="192" class="l"><a class="l" href="#192">192 </a><span class="php-quote">        data: data,
+</span></span><span id="193" class="l"><a class="l" href="#193">193 </a><span class="php-quote">        success: function(data){
+</span></span><span id="194" class="l"><a class="l" href="#194">194 </a><span class="php-quote">            tr.find('td').html(data);
+</span></span><span id="195" class="l"><a class="l" href="#195">195 </a><span class="php-quote">            that.data('status','off');
+</span></span><span id="196" class="l"><a class="l" href="#196">196 </a><span class="php-quote">            if (</span><span class="php-var">$</span><span class="php-quote">.isFunction(afterAjaxUpdate))
+</span></span><span id="197" class="l"><a class="l" href="#197">197 </a><span class="php-quote">            {
+</span></span><span id="198" class="l"><a class="l" href="#198">198 </a><span class="php-quote">                afterAjaxUpdate(tr,rowid,data);
+</span></span><span id="199" class="l"><a class="l" href="#199">199 </a><span class="php-quote">            }
+</span></span><span id="200" class="l"><a class="l" href="#200">200 </a><span class="php-quote">        },
+</span></span><span id="201" class="l"><a class="l" href="#201">201 </a><span class="php-quote">        error: function()
+</span></span><span id="202" class="l"><a class="l" href="#202">202 </a><span class="php-quote">        {
+</span></span><span id="203" class="l"><a class="l" href="#203">203 </a><span class="php-quote">            tr.find('td').html('</span><span class="php-var">{$this-&gt;ajaxErrorMessage}</span><span class="php-quote">');
+</span></span><span id="204" class="l"><a class="l" href="#204">204 </a><span class="php-quote">            that.data('status','off');
+</span></span><span id="205" class="l"><a class="l" href="#205">205 </a><span class="php-quote">        }
+</span></span><span id="206" class="l"><a class="l" href="#206">206 </a><span class="php-quote">    });
+</span></span><span id="207" class="l"><a class="l" href="#207">207 </a><span class="php-quote">});
+</span></span><span id="208" class="l"><a class="l" href="#208">208 </a><span class="php-quote">EOD;
+</span></span><span id="209" class="l"><a class="l" href="#209">209 </a>        <span class="php-var">$cs</span>-&gt;registerScript(__CLASS__ . <span class="php-quote">'#'</span> . <span class="php-var">$this</span>-&gt;id, <span class="php-var">$js</span>);
+</span><span id="210" class="l"><a class="l" href="#210">210 </a>    }
+</span><span id="211" class="l"><a class="l" href="#211">211 </a>}
+</span><span id="212" class="l"><a class="l" href="#212">212 </a></span></code></pre>
+	</div>
+
+	<div id="footer">
+		YiiWheels API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</body>
+</html>

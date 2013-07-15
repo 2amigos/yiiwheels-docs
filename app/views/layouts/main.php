@@ -40,12 +40,8 @@
 			'items' => array(
 				array('label' => 'Home', 'url' => array('site/index')),
 				array('label' => 'Get started', 'url' => array('site/started')),
-//				array('label' => 'Components', 'url' => array('site/components')),
-//				array('label' => 'Json grid', 'url' => array('site/jsongrid')),
-//				array('label' => 'Extended Grid', 'url' => array('site/extendedgrid')),
-//				array('label' => 'JQuery UI', 'url' => array('site/jquery')),
-//				array('label' => 'Javascript', 'url' => array('site/javascript')),
 				array('label' => 'Widgets', 'url' => array('site/widgets')),
+                array('label' => 'Documentation', 'url' => array('/api')),
 			),
 		),
 	),
