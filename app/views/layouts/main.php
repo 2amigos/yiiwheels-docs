@@ -41,7 +41,7 @@
 				array('label' => 'Home', 'url' => array('site/index')),
 				array('label' => 'Get started', 'url' => array('site/started')),
 				array('label' => 'Widgets', 'url' => array('site/widgets')),
-                array('label' => 'Documentation', 'url' => array('/api')),
+                array('label' => 'API', 'url' => array('/api')),
 			),
 		),
 	),
