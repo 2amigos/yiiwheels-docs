@@ -4,7 +4,7 @@ $this->pageTitle = param('pageTitle');
 ?>
 <div class="jumbotron masthead">
     <div class="container">
-        <h1>Wheels</h1>
+        <h1>Yii Wheels</h1>
 
         <p>Extension Library for Yiistrap</p>
 
