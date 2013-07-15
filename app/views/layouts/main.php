@@ -40,11 +40,11 @@
 			'items' => array(
 				array('label' => 'Home', 'url' => array('site/index')),
 				array('label' => 'Get started', 'url' => array('site/started')),
-				array('label' => 'Components', 'url' => array('site/components')),
-				array('label' => 'Json grid', 'url' => array('site/jsongrid')),
-				array('label' => 'Extended Grid', 'url' => array('site/extendedgrid')),
-				array('label' => 'JQuery UI', 'url' => array('site/jquery')),
-				array('label' => 'Javascript', 'url' => array('site/javascript')),
+//				array('label' => 'Components', 'url' => array('site/components')),
+//				array('label' => 'Json grid', 'url' => array('site/jsongrid')),
+//				array('label' => 'Extended Grid', 'url' => array('site/extendedgrid')),
+//				array('label' => 'JQuery UI', 'url' => array('site/jquery')),
+//				array('label' => 'Javascript', 'url' => array('site/javascript')),
 				array('label' => 'Widgets', 'url' => array('site/widgets')),
 			),
 		),
@@ -58,7 +58,7 @@
     <div class="container">
         <div class="text-center">
             <p class="credits">
-                Developed by <a href="http://www.ramirezcobos.com/" target="_blank">Antonio Ramirez</a> and <a href="http://www.cniska.net" target="_blank">Christoffer Niska</a>, Graphics by <a href="http://www.kevinvanderven.com" target="_blank">Kevin van der Ven</a>.
+                Developed by <a href="http://www.ramirezcobos.com/" target="_blank">Antonio Ramirez</a> and <a href="http://www.2amigos.us" target="_blank">Matt Tabin</a>.
             </p>
             <p class="license">
                 Code licensed under <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
