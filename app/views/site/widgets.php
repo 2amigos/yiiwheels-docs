@@ -462,10 +462,16 @@ $this-&gt;widget(
                 <small>WhFileUpload.php</small>
             </h1>
         </div>
-        <p>Todo</p>
+        <p>This is the </p>
 
         <div class="bs-docs-example">
-
+<?php
+$this->widget('yiiwheels.widgets.fileupload.WhFileUpload', array(
+        'name' => 'fileuploadui',
+        'url' => $this->createUrl('site/upload'),
+        'multiple' => true,
+    ));
+?>
         </div>
 
         <pre class="prettyprint linenums"></pre>
