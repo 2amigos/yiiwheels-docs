@@ -362,15 +362,18 @@ $this-&gt;widget(
             plugin from blueimp. Due to the amount of doubts and requests on how to use this plugin, I decided to create
             two versions: one basic and the other advanced (or regular).
         </p>
+
         <p>
             The basic one is the easiest one to use. Just wrap the widget with the appropriate HTML, setup the
             <code>pluginOptions</code> as required and voilá... done.
         </p>
+
         <p>
             <span class="label label-important">Sorry</span> but to create the file that will handle the upload is out
             of the scope of this docs. If you wish to know more about this fantastic plugin, visit
             <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">JQuery File Upload</a> website.
         </p>
+
         <div class="bs-docs-example">
             <span class="btn btn-success fileinput-button">
                 <i class="icon-plus icon-white"></i>
@@ -465,13 +468,16 @@ $this-&gt;widget(
         <p>This is the same plugin as above but with its full UI.</p>
 
         <div class="bs-docs-example">
-<?php
-$this->widget('yiiwheels.widgets.fileupload.WhFileUpload', array(
-        'name' => 'fileuploadui',
-        'url' => $this->createUrl('site/upload'),
-        'multiple' => true,
-    ));
-?>
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.fileupload.WhFileUpload',
+                array(
+                    'name'     => 'fileuploadui',
+                    'url'      => $this->createUrl('site/upload', array('type' => 'fine')),
+                    'multiple' => true,
+                )
+            );
+            ?>
         </div>
 
         <pre class="prettyprint linenums"></pre>
@@ -486,13 +492,39 @@ $this->widget('yiiwheels.widgets.fileupload.WhFileUpload', array(
                 <small>WhFineUploader.php</small>
             </h1>
         </div>
-        <p>Todo</p>
+        <p>We also included another uploader: <a href="http://github.com/Valums-File-Uploader/file-uploader">FineUploader</a>.
+            It is not the original version but it does good work too.</p>
 
         <div class="bs-docs-example">
-
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.fineuploader.WhFineUploader',
+                array(
+                    'name'          => 'fineuploadtest',
+                    'uploadAction'  => $this->createUrl('site/upload', array('fine' => 1)),
+                    'pluginOptions' => array(
+                        'validation' => array(
+                            'allowedExtensions' => array('jpeg', 'jpg')
+                        )
+                    )
+                )
+            );
+            ?>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
+        'name'          =&gt; 'fineuploadtest',
+        'uploadAction'  =&gt; $this-&gt;createUrl('site/upload', array('fine' =&gt; 1)),
+        'pluginOptions' =&gt; array(
+            'validation'=&gt;array(
+                'allowedExtensions' =&gt; array('jpeg', 'jpg')
+            )
+        )
+    ));
+?&gt;
+        </pre>
     </section>
 
     <!-- ActiveForm

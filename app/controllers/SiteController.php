@@ -107,6 +107,14 @@ class SiteController extends EController
      */
     public function actionUpload()
     {
+        if (Yii::app()->getRequest()->getParam('fine')) {
+            $this->renderJson(
+                array(
+                    'success' => 'true'
+                )
+            );
+            Yii::app()->end();
+        }
         $this->renderJson(
             array(
                 "files" => array(
