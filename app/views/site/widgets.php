@@ -276,7 +276,7 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
                 <?php $this->widget(
                     'yiiwheels.widgets.daterangepicker.WhDateRangePicker',
                     array(
-                        'name' => 'daterangepickertest',
+                        'name'        => 'daterangepickertest',
                         'htmlOptions' => array(
                             'placeholder' => 'Select date'
                         )
@@ -311,13 +311,41 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
                 <small>WhDetailView.php</small>
             </h1>
         </div>
-        <p>Todo</p>
-
         <div class="bs-docs-example">
-
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.detail.WhDetailView',
+                array(
+                    'data'       => array('id' => 1, 'firstName' => 'Mark', 'lastName' => 'Otto', 'language' => 'CSS'),
+                    'attributes' => array(
+                        array('name' => 'firstName', 'label' => 'First name'),
+                        array('name' => 'lastName', 'label' => 'Last name'),
+                        array('name' => 'language', 'label' => 'Language'),
+                    ),
+                )
+            );
+            ?>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget(
+    'yiiwheels.widgets.detail.WhDetailView',
+    array(
+        'data' =&gt; array(
+            'id' =&gt; 1,
+            'firstName' =&gt; 'Mark',
+            'lastName' =&gt; 'Otto',
+            'language' =&gt; 'CSS'
+        ),
+        'attributes' =&gt; array(
+            array('name' =&gt; 'firstName', 'label' =&gt; 'First name'),
+            array('name' =&gt; 'lastName', 'label' =&gt; 'Last name'),
+            array('name' =&gt; 'language', 'label' =&gt; 'Language'),
+        ),
+    ));
+?&gt;
+        </pre>
     </section>
 
     <!-- FileUpload
@@ -329,13 +357,100 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
                 <small>WhBasicFileUpload.php</small>
             </h1>
         </div>
-        <p>Todo</p>
-
+        <p>
+            The following is the <a href="http://blueimp.github.io/jQuery-File-Upload/basic.html">JQuery File Upload</a>
+            plugin from blueimp. Due to the amount of doubts and requests on how to use this plugin, I decided to create
+            two versions: one basic and the other advanced (or regular).
+        </p>
+        <p>
+            The basic one is the easiest one to use. Just wrap the widget with the appropriate HTML, setup the
+            <code>pluginOptions</code> as required and voilá... done.
+        </p>
+        <p>
+            <span class="label label-important">Sorry</span> but to create the file that will handle the upload is out
+            of the scope of this docs. If you wish to know more about this fantastic plugin, visit
+            <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">JQuery File Upload</a> website.
+        </p>
         <div class="bs-docs-example">
-
+            <span class="btn btn-success fileinput-button">
+                <i class="icon-plus icon-white"></i>
+                <span>Select files...</span>
+                <?php
+                $this->widget(
+                    'yiiwheels.widgets.fileupload.WhBasicFileUpload',
+                    array(
+                        'name'          => 'basicuploadtest',
+                        'uploadAction'  => $this->createUrl('site/upload'),
+                        'pluginOptions' => array(
+                            'dataType'    => 'json',
+                            'done'        => 'js:function(e, data){
+                                        $.each(data.result.files, function(i, file){
+                                            $("<p/>").text(file.name).appendTo("#bfiles");
+                                        });
+                                    }',
+                            'progressall' => "js:function (e, data) {
+                                        var progress = parseInt(data.loaded / data.total * 100, 10);
+                                        $('#bprogress .bar').css(
+                                            'width',
+                                            progress + '%'
+                                        );
+                                    }"
+                        )
+                    )
+                );
+                ?>
+             </span>
+            <br>
+            <br>
+            <!-- The global progress bar -->
+            <div id="bprogress" class="progress progress-success progress-striped">
+                <div class="bar"></div>
+            </div>
+            <!-- The container for the uploaded files -->
+            <div id="bfiles" class="files"></div>
+            <div class="clearfix"></div>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;span class=&quot;btn btn-success fileinput-button&quot;&gt;
+        &lt;i class=&quot;icon-plus icon-white&quot;&gt;&lt;/i&gt;
+        &lt;span&gt;Select files...&lt;/span&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.fileupload.WhBasicFileUpload',
+            array(
+                'name'          =&gt; 'basicuploadtest',
+                'uploadAction'  =&gt; $this-&gt;createUrl('site/upload'),
+                'pluginOptions' =&gt; array(
+                    'dataType'    =&gt; 'json',
+                    'done'        =&gt; 'js:function(e, data){
+                        $.each(data.result.files, function(i, file){
+                            $(&quot;&lt;p/&gt;&quot;).text(file.name).appendTo(&quot;#bfiles&quot;);
+                        });
+                    }',
+                    'progressall' =&gt; &quot;js:function (e, data) {
+                        var progress = parseInt(data.loaded / data.total * 100, 10);
+                        $('#bprogress .bar').css(
+                            'width',
+                            progress + '%'
+                        );
+                    }&quot;
+                )
+            )
+        );
+        ?&gt;
+     &lt;/span&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;!-- The global progress bar --&gt;
+    &lt;div id=&quot;bprogress&quot; class=&quot;progress progress-success progress-striped&quot;&gt;
+        &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- The container for the uploaded files --&gt;
+    &lt;div id=&quot;bfiles&quot; class=&quot;files&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
     </section>
 
     <!-- FileUpload
