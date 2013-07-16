@@ -462,7 +462,7 @@ $this-&gt;widget(
                 <small>WhFileUpload.php</small>
             </h1>
         </div>
-        <p>This is the </p>
+        <p>This is the same plugin as above but with its full UI.</p>
 
         <div class="bs-docs-example">
 <?php
