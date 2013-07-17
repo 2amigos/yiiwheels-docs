@@ -205,15 +205,10 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
             );
             ?>
         </div>
-
-        <hr class="bs-docs-separator">
-
     </section>
-
     <!-- Datepicker
     ================================================== -->
     <section id="datepicker">
-
         <div class="page-header">
             <h1>DatePicker
                 <small>WhDatePicker.php</small>
