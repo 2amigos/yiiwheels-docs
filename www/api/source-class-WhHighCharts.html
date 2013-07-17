@@ -8,7 +8,7 @@
 	<title>File widgets/highcharts/WhHighCharts.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?927607910"></script>
+	<script type="text/javascript" src="elementlist.js?1977741431"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -78,6 +78,8 @@
 				<li><a href="package-YiiWheels.widgets.google.html">google</a>
 						</li>
 				<li class="active"><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.maskInput.html">maskInput</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.maskmoney.html">maskmoney</a>
 						</li>
@@ -189,7 +191,7 @@
 </span><span id="62" class="l"><a class="l" href="#62"> 62 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
 </span><span id="63" class="l"><a class="l" href="#63"> 63 </a>    {
 </span><span id="64" class="l"><a class="l" href="#64"> 64 </a>        <span class="php-comment">// if there is no renderTo id, build the layer with current id and initialize renderTo option</span>
-</span><span id="65" class="l"><a class="l" href="#65"> 65 </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;options[<span class="php-quote">'chart'</span>]) || !<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;options[<span class="php-quote">'chart'</span>][<span class="php-quote">'renderTo'</span>])) {
+</span><span id="65" class="l"><a class="l" href="#65"> 65 </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'chart'</span>]) || !<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'chart'</span>][<span class="php-quote">'renderTo'</span>])) {
 </span><span id="66" class="l"><a class="l" href="#66"> 66 </a>            <span class="php-keyword1">echo</span> WhHtml::tag(<span class="php-quote">'div'</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="67" class="l"><a class="l" href="#67"> 67 </a>
 </span><span id="68" class="l"><a class="l" href="#68"> 68 </a>            <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'chart'</span>]) &amp;&amp; <span class="php-keyword2">is_array</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'chart'</span>])) {
@@ -221,7 +223,7 @@
 </span><span id="94" class="l"><a class="l" href="#94"> 94 </a>
 </span><span id="95" class="l"><a class="l" href="#95"> 95 </a>        <span class="php-var">$this</span>-&gt;pluginOptions = CMap::mergeArray(<span class="php-var">$defaultOptions</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
 </span><span id="96" class="l"><a class="l" href="#96"> 96 </a>
-</span><span id="97" class="l"><a class="l" href="#97"> 97 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;options[<span class="php-quote">'exporting'</span>]) &amp;&amp; @<span class="php-var">$this</span>-&gt;options[<span class="php-quote">'exporting'</span>][<span class="php-quote">'enabled'</span>]) {
+</span><span id="97" class="l"><a class="l" href="#97"> 97 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'exporting'</span>]) &amp;&amp; @<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'exporting'</span>][<span class="php-quote">'enabled'</span>]) {
 </span><span id="98" class="l"><a class="l" href="#98"> 98 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/modules/exporting.js'</span>);
 </span><span id="99" class="l"><a class="l" href="#99"> 99 </a>        }
 </span><span id="100" class="l"><a class="l" href="#100">100 </a>

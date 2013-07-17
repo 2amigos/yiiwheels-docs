@@ -8,7 +8,7 @@
 	<title>File widgets/maskmoney/WhMaskMoney.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?927607910"></script>
+	<script type="text/javascript" src="elementlist.js?1977741431"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -79,6 +79,8 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.maskInput.html">maskInput</a>
+						</li>
 				<li class="active"><a href="package-YiiWheels.widgets.maskmoney.html">maskmoney</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.modal.html">modal</a>
@@ -142,65 +144,63 @@
 </span><span id="16" class="l"><a class="l" href="#16">16 </a>
 </span><span id="17" class="l"><a class="l" href="#17">17 </a>    <span class="php-comment">/**
 </span></span><span id="18" class="l"><a class="l" href="#18">18 </a><span class="php-comment">     * @var array the plugin options
-</span></span><span id="19" class="l"><a class="l" href="#19">19 </a><span class="php-comment">     * @see http://davidstutz.github.com/bootstrap-multiselect/
-</span></span><span id="20" class="l"><a class="l" href="#20">20 </a><span class="php-comment">     */</span>
-</span><span id="21" class="l"><a class="l" href="#21">21 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$pluginOptions" href="#$pluginOptions">$pluginOptions</a></span>;
-</span><span id="22" class="l"><a class="l" href="#22">22 </a>
-</span><span id="23" class="l"><a class="l" href="#23">23 </a>    <span class="php-comment">/**
-</span></span><span id="24" class="l"><a class="l" href="#24">24 </a><span class="php-comment">     * Initializes the widget.
-</span></span><span id="25" class="l"><a class="l" href="#25">25 </a><span class="php-comment">     */</span>
-</span><span id="26" class="l"><a class="l" href="#26">26 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
-</span><span id="27" class="l"><a class="l" href="#27">27 </a>    {
-</span><span id="28" class="l"><a class="l" href="#28">28 </a>        <span class="php-var">$this</span>-&gt;attachBehavior(<span class="php-quote">'ywplugin'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'yiiwheels.behaviors.WhPlugin'</span>));
-</span><span id="29" class="l"><a class="l" href="#29">29 </a>    }
-</span><span id="30" class="l"><a class="l" href="#30">30 </a>
-</span><span id="31" class="l"><a class="l" href="#31">31 </a>    <span class="php-comment">/**
-</span></span><span id="32" class="l"><a class="l" href="#32">32 </a><span class="php-comment">     * Runs the widget.
-</span></span><span id="33" class="l"><a class="l" href="#33">33 </a><span class="php-comment">     */</span>
-</span><span id="34" class="l"><a class="l" href="#34">34 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
-</span><span id="35" class="l"><a class="l" href="#35">35 </a>    {
-</span><span id="36" class="l"><a class="l" href="#36">36 </a>        <span class="php-var">$this</span>-&gt;renderField();
-</span><span id="37" class="l"><a class="l" href="#37">37 </a>        <span class="php-var">$this</span>-&gt;registerClientScript();
-</span><span id="38" class="l"><a class="l" href="#38">38 </a>    }
-</span><span id="39" class="l"><a class="l" href="#39">39 </a>
-</span><span id="40" class="l"><a class="l" href="#40">40 </a>    <span class="php-comment">/**
-</span></span><span id="41" class="l"><a class="l" href="#41">41 </a><span class="php-comment">     * Renders the multiselect field
-</span></span><span id="42" class="l"><a class="l" href="#42">42 </a><span class="php-comment">     */</span>
-</span><span id="43" class="l"><a class="l" href="#43">43 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderField" href="#_renderField">renderField</a>()
-</span><span id="44" class="l"><a class="l" href="#44">44 </a>    {
-</span><span id="45" class="l"><a class="l" href="#45">45 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
-</span><span id="46" class="l"><a class="l" href="#46">46 </a>
-</span><span id="47" class="l"><a class="l" href="#47">47 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = WhHtml::defaultOption(<span class="php-quote">'id'</span>, <span class="php-var">$id</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="48" class="l"><a class="l" href="#48">48 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = WhHtml::defaultOption(<span class="php-quote">'name'</span>, <span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="49" class="l"><a class="l" href="#49">49 </a>
-</span><span id="50" class="l"><a class="l" href="#50">50 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
-</span><span id="51" class="l"><a class="l" href="#51">51 </a>            <span class="php-keyword1">echo</span> WhHtml::activeTextField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="52" class="l"><a class="l" href="#52">52 </a>        } <span class="php-keyword1">else</span> {
-</span><span id="53" class="l"><a class="l" href="#53">53 </a>            <span class="php-keyword1">echo</span> WhHtml::textField(<span class="php-var">$this</span>-&gt;name, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="54" class="l"><a class="l" href="#54">54 </a>        }
-</span><span id="55" class="l"><a class="l" href="#55">55 </a>    }
-</span><span id="56" class="l"><a class="l" href="#56">56 </a>
-</span><span id="57" class="l"><a class="l" href="#57">57 </a>    <span class="php-comment">/**
-</span></span><span id="58" class="l"><a class="l" href="#58">58 </a><span class="php-comment">     * Registers required client script for bootstrap multiselect. It is not used through bootstrap-&gt;registerPlugin
-</span></span><span id="59" class="l"><a class="l" href="#59">59 </a><span class="php-comment">     * in order to attach events if any
-</span></span><span id="60" class="l"><a class="l" href="#60">60 </a><span class="php-comment">     */</span>
-</span><span id="61" class="l"><a class="l" href="#61">61 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
-</span><span id="62" class="l"><a class="l" href="#62">62 </a>    {
-</span><span id="63" class="l"><a class="l" href="#63">63 </a>        <span class="php-comment">/* publish assets dir */</span>
-</span><span id="64" class="l"><a class="l" href="#64">64 </a>        <span class="php-var">$path</span>      = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
-</span><span id="65" class="l"><a class="l" href="#65">65 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
-</span><span id="66" class="l"><a class="l" href="#66">66 </a>
-</span><span id="67" class="l"><a class="l" href="#67">67 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
-</span><span id="68" class="l"><a class="l" href="#68">68 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span></span><span id="19" class="l"><a class="l" href="#19">19 </a><span class="php-comment">     */</span>
+</span><span id="20" class="l"><a class="l" href="#20">20 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$pluginOptions" href="#$pluginOptions">$pluginOptions</a></span>;
+</span><span id="21" class="l"><a class="l" href="#21">21 </a>
+</span><span id="22" class="l"><a class="l" href="#22">22 </a>    <span class="php-comment">/**
+</span></span><span id="23" class="l"><a class="l" href="#23">23 </a><span class="php-comment">     * Initializes the widget.
+</span></span><span id="24" class="l"><a class="l" href="#24">24 </a><span class="php-comment">     */</span>
+</span><span id="25" class="l"><a class="l" href="#25">25 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
+</span><span id="26" class="l"><a class="l" href="#26">26 </a>    {
+</span><span id="27" class="l"><a class="l" href="#27">27 </a>        <span class="php-var">$this</span>-&gt;attachBehavior(<span class="php-quote">'ywplugin'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'yiiwheels.behaviors.WhPlugin'</span>));
+</span><span id="28" class="l"><a class="l" href="#28">28 </a>    }
+</span><span id="29" class="l"><a class="l" href="#29">29 </a>
+</span><span id="30" class="l"><a class="l" href="#30">30 </a>    <span class="php-comment">/**
+</span></span><span id="31" class="l"><a class="l" href="#31">31 </a><span class="php-comment">     * Runs the widget.
+</span></span><span id="32" class="l"><a class="l" href="#32">32 </a><span class="php-comment">     */</span>
+</span><span id="33" class="l"><a class="l" href="#33">33 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
+</span><span id="34" class="l"><a class="l" href="#34">34 </a>    {
+</span><span id="35" class="l"><a class="l" href="#35">35 </a>        <span class="php-var">$this</span>-&gt;renderField();
+</span><span id="36" class="l"><a class="l" href="#36">36 </a>        <span class="php-var">$this</span>-&gt;registerClientScript();
+</span><span id="37" class="l"><a class="l" href="#37">37 </a>    }
+</span><span id="38" class="l"><a class="l" href="#38">38 </a>
+</span><span id="39" class="l"><a class="l" href="#39">39 </a>    <span class="php-comment">/**
+</span></span><span id="40" class="l"><a class="l" href="#40">40 </a><span class="php-comment">     * Renders the the input field
+</span></span><span id="41" class="l"><a class="l" href="#41">41 </a><span class="php-comment">     */</span>
+</span><span id="42" class="l"><a class="l" href="#42">42 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderField" href="#_renderField">renderField</a>()
+</span><span id="43" class="l"><a class="l" href="#43">43 </a>    {
+</span><span id="44" class="l"><a class="l" href="#44">44 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
+</span><span id="45" class="l"><a class="l" href="#45">45 </a>
+</span><span id="46" class="l"><a class="l" href="#46">46 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = WhHtml::defaultOption(<span class="php-quote">'id'</span>, <span class="php-var">$id</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="47" class="l"><a class="l" href="#47">47 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = WhHtml::defaultOption(<span class="php-quote">'name'</span>, <span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="48" class="l"><a class="l" href="#48">48 </a>
+</span><span id="49" class="l"><a class="l" href="#49">49 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
+</span><span id="50" class="l"><a class="l" href="#50">50 </a>            <span class="php-keyword1">echo</span> WhHtml::activeTextField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="51" class="l"><a class="l" href="#51">51 </a>        } <span class="php-keyword1">else</span> {
+</span><span id="52" class="l"><a class="l" href="#52">52 </a>            <span class="php-keyword1">echo</span> WhHtml::textField(<span class="php-var">$this</span>-&gt;name, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="53" class="l"><a class="l" href="#53">53 </a>        }
+</span><span id="54" class="l"><a class="l" href="#54">54 </a>    }
+</span><span id="55" class="l"><a class="l" href="#55">55 </a>
+</span><span id="56" class="l"><a class="l" href="#56">56 </a>    <span class="php-comment">/**
+</span></span><span id="57" class="l"><a class="l" href="#57">57 </a><span class="php-comment">     * Registers required client script for maskmoney plugin.
+</span></span><span id="58" class="l"><a class="l" href="#58">58 </a><span class="php-comment">     */</span>
+</span><span id="59" class="l"><a class="l" href="#59">59 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
+</span><span id="60" class="l"><a class="l" href="#60">60 </a>    {
+</span><span id="61" class="l"><a class="l" href="#61">61 </a>        <span class="php-comment">/* publish assets dir */</span>
+</span><span id="62" class="l"><a class="l" href="#62">62 </a>        <span class="php-var">$path</span>      = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
+</span><span id="63" class="l"><a class="l" href="#63">63 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
+</span><span id="64" class="l"><a class="l" href="#64">64 </a>
+</span><span id="65" class="l"><a class="l" href="#65">65 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
+</span><span id="66" class="l"><a class="l" href="#66">66 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span><span id="67" class="l"><a class="l" href="#67">67 </a>
+</span><span id="68" class="l"><a class="l" href="#68">68 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.maskmoney.js'</span>);
 </span><span id="69" class="l"><a class="l" href="#69">69 </a>
-</span><span id="70" class="l"><a class="l" href="#70">70 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.maskmoney.js'</span>);
-</span><span id="71" class="l"><a class="l" href="#71">71 </a>
-</span><span id="72" class="l"><a class="l" href="#72">72 </a>        <span class="php-comment">/* initialize plugin */</span>
-</span><span id="73" class="l"><a class="l" href="#73">73 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . WhHtml::getOption(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
-</span><span id="74" class="l"><a class="l" href="#74">74 </a>
-</span><span id="75" class="l"><a class="l" href="#75">75 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'maskMoney'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
-</span><span id="76" class="l"><a class="l" href="#76">76 </a>    }
-</span><span id="77" class="l"><a class="l" href="#77">77 </a></span>}</code></pre>
+</span><span id="70" class="l"><a class="l" href="#70">70 </a>        <span class="php-comment">/* initialize plugin */</span>
+</span><span id="71" class="l"><a class="l" href="#71">71 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . WhHtml::getOption(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
+</span><span id="72" class="l"><a class="l" href="#72">72 </a>
+</span><span id="73" class="l"><a class="l" href="#73">73 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'maskMoney'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
+</span><span id="74" class="l"><a class="l" href="#74">74 </a>    }
+</span><span id="75" class="l"><a class="l" href="#75">75 </a></span>}</code></pre>
 	</div>
 
 	<div id="footer">

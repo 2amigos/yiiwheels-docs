@@ -8,7 +8,7 @@
 	<title>File widgets/fileupload/WhFileUpload.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?927607910"></script>
+	<script type="text/javascript" src="elementlist.js?1977741431"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -78,6 +78,8 @@
 				<li><a href="package-YiiWheels.widgets.google.html">google</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.maskInput.html">maskInput</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.maskmoney.html">maskmoney</a>
 						</li>
@@ -151,7 +153,7 @@
 </span></span><span id="23" class="l"><a class="l" href="#23"> 23 </a><span class="php-comment">     * set to true to use multiple file upload
 </span></span><span id="24" class="l"><a class="l" href="#24"> 24 </a><span class="php-comment">     * @var boolean
 </span></span><span id="25" class="l"><a class="l" href="#25"> 25 </a><span class="php-comment">     */</span>
-</span><span id="26" class="l"><a class="l" href="#26"> 26 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$multiple" href="#$multiple">$multiple</a></span> = <span class="php-keyword1">false</span>;
+</span><span id="26" class="l"><a class="l" href="#26"> 26 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$multiple" href="#$multiple">$multiple</a></span> = <span class="php-keyword1">true</span>;
 </span><span id="27" class="l"><a class="l" href="#27"> 27 </a>
 </span><span id="28" class="l"><a class="l" href="#28"> 28 </a>    <span class="php-comment">/**
 </span></span><span id="29" class="l"><a class="l" href="#29"> 29 </a><span class="php-comment">     * The upload template id to display files available for upload
@@ -171,29 +173,29 @@
 </span><span id="43" class="l"><a class="l" href="#43"> 43 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$previewImages" href="#$previewImages">$previewImages</a></span> = <span class="php-keyword1">true</span>;
 </span><span id="44" class="l"><a class="l" href="#44"> 44 </a>
 </span><span id="45" class="l"><a class="l" href="#45"> 45 </a>    <span class="php-comment">/**
-</span></span><span id="46" class="l"><a class="l" href="#46"> 46 </a><span class="php-comment">     * Wheter or not to add the image processing pluing
+</span></span><span id="46" class="l"><a class="l" href="#46"> 46 </a><span class="php-comment">     * Wheter or not to add the image processing pluging
 </span></span><span id="47" class="l"><a class="l" href="#47"> 47 </a><span class="php-comment">     */</span>
 </span><span id="48" class="l"><a class="l" href="#48"> 48 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$imageProcessing" href="#$imageProcessing">$imageProcessing</a></span> = <span class="php-keyword1">true</span>;
 </span><span id="49" class="l"><a class="l" href="#49"> 49 </a>
 </span><span id="50" class="l"><a class="l" href="#50"> 50 </a>    <span class="php-comment">/**
 </span></span><span id="51" class="l"><a class="l" href="#51"> 51 </a><span class="php-comment">     * @var string name of the form view to be rendered
 </span></span><span id="52" class="l"><a class="l" href="#52"> 52 </a><span class="php-comment">     */</span>
-</span><span id="53" class="l"><a class="l" href="#53"> 53 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$formView" href="#$formView">$formView</a></span> = <span class="php-quote">'yiiwheels.fileupload.views.fileupload.form'</span>;
+</span><span id="53" class="l"><a class="l" href="#53"> 53 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$formView" href="#$formView">$formView</a></span> = <span class="php-quote">'yiiwheels.widgets.fileupload.views.form'</span>;
 </span><span id="54" class="l"><a class="l" href="#54"> 54 </a>
 </span><span id="55" class="l"><a class="l" href="#55"> 55 </a>    <span class="php-comment">/**
 </span></span><span id="56" class="l"><a class="l" href="#56"> 56 </a><span class="php-comment">     * @var string name of the upload view to be rendered
 </span></span><span id="57" class="l"><a class="l" href="#57"> 57 </a><span class="php-comment">     */</span>
-</span><span id="58" class="l"><a class="l" href="#58"> 58 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$uploadView" href="#$uploadView">$uploadView</a></span> = <span class="php-quote">'yiiwheels.fileupload.views.fileupload.upload'</span>;
+</span><span id="58" class="l"><a class="l" href="#58"> 58 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$uploadView" href="#$uploadView">$uploadView</a></span> = <span class="php-quote">'yiiwheels.widgets.fileupload.views.upload'</span>;
 </span><span id="59" class="l"><a class="l" href="#59"> 59 </a>
 </span><span id="60" class="l"><a class="l" href="#60"> 60 </a>    <span class="php-comment">/**
 </span></span><span id="61" class="l"><a class="l" href="#61"> 61 </a><span class="php-comment">     * @var string name of the download view to be rendered
 </span></span><span id="62" class="l"><a class="l" href="#62"> 62 </a><span class="php-comment">     */</span>
-</span><span id="63" class="l"><a class="l" href="#63"> 63 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$downloadView" href="#$downloadView">$downloadView</a></span> = <span class="php-quote">'yiiwheels.fileupload.views.fileupload.download'</span>;
+</span><span id="63" class="l"><a class="l" href="#63"> 63 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$downloadView" href="#$downloadView">$downloadView</a></span> = <span class="php-quote">'yiiwheels.widgets.fileupload.views.download'</span>;
 </span><span id="64" class="l"><a class="l" href="#64"> 64 </a>
 </span><span id="65" class="l"><a class="l" href="#65"> 65 </a>    <span class="php-comment">/**
 </span></span><span id="66" class="l"><a class="l" href="#66"> 66 </a><span class="php-comment">     * @var string name of the view to display images at bootstrap-slideshow
 </span></span><span id="67" class="l"><a class="l" href="#67"> 67 </a><span class="php-comment">     */</span>
-</span><span id="68" class="l"><a class="l" href="#68"> 68 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$previewImagesView" href="#$previewImagesView">$previewImagesView</a></span> = <span class="php-quote">'yiiwheels.fileupload.views.gallery.preview'</span>;
+</span><span id="68" class="l"><a class="l" href="#68"> 68 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$previewImagesView" href="#$previewImagesView">$previewImagesView</a></span> = <span class="php-quote">'yiiwheels.widgets.fileupload.views.gallery'</span>;
 </span><span id="69" class="l"><a class="l" href="#69"> 69 </a>
 </span><span id="70" class="l"><a class="l" href="#70"> 70 </a>    <span class="php-comment">/**
 </span></span><span id="71" class="l"><a class="l" href="#71"> 71 </a><span class="php-comment">     * Widget initialization
@@ -236,7 +238,7 @@
 </span><span id="108" class="l"><a class="l" href="#108">108 </a>
 </span><span id="109" class="l"><a class="l" href="#109">109 </a>        <span class="php-var">$this</span>-&gt;render(<span class="php-var">$this</span>-&gt;uploadView);
 </span><span id="110" class="l"><a class="l" href="#110">110 </a>        <span class="php-var">$this</span>-&gt;render(<span class="php-var">$this</span>-&gt;downloadView);
-</span><span id="111" class="l"><a class="l" href="#111">111 </a>        <span class="php-var">$this</span>-&gt;render(<span class="php-var">$this</span>-&gt;formView, <span class="php-keyword2">compact</span>(<span class="php-quote">'htmlOptions'</span>));
+</span><span id="111" class="l"><a class="l" href="#111">111 </a>        <span class="php-var">$this</span>-&gt;render(<span class="php-var">$this</span>-&gt;formView, <span class="php-keyword1">array</span>(<span class="php-quote">'model'</span>, <span class="php-var">$this</span>-&gt;model, <span class="php-quote">'name'</span> =&gt; <span class="php-var">$name</span>, <span class="php-quote">'htmlOptions'</span> =&gt; <span class="php-var">$htmlOptions</span>));
 </span><span id="112" class="l"><a class="l" href="#112">112 </a>
 </span><span id="113" class="l"><a class="l" href="#113">113 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;previewImages || <span class="php-var">$this</span>-&gt;imageProcessing) {
 </span><span id="114" class="l"><a class="l" href="#114">114 </a>            <span class="php-var">$this</span>-&gt;render(<span class="php-var">$this</span>-&gt;previewImagesView);
@@ -262,7 +264,7 @@
 </span><span id="134" class="l"><a class="l" href="#134">134 </a>
 </span><span id="135" class="l"><a class="l" href="#135">135 </a>        <span class="php-comment">// Upgrade widget factory</span>
 </span><span id="136" class="l"><a class="l" href="#136">136 </a>        <span class="php-comment">// @todo remove when jquery.ui 1.9+ is fully integrated into stable Yii versions</span>
-</span><span id="137" class="l"><a class="l" href="#137">137 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/vendor/jquery.ui.widget.js'</span>);
+</span><span id="137" class="l"><a class="l" href="#137">137 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/vendor/jquery.ui.widget.js'</span>, CClientScript::POS_END);
 </span><span id="138" class="l"><a class="l" href="#138">138 </a>
 </span><span id="139" class="l"><a class="l" href="#139">139 </a>        <span class="php-comment">//The Templates plugin is included to render the upload/download listings</span>
 </span><span id="140" class="l"><a class="l" href="#140">140 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/tmpl.min.js'</span>, CClientScript::POS_END);
@@ -271,26 +273,26 @@
 </span><span id="143" class="l"><a class="l" href="#143">143 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/load-image.min.js'</span>, CClientScript::POS_END);
 </span><span id="144" class="l"><a class="l" href="#144">144 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/canvas-to-blob.min.js'</span>, CClientScript::POS_END);
 </span><span id="145" class="l"><a class="l" href="#145">145 </a>            <span class="php-comment">// gallery :)</span>
-</span><span id="146" class="l"><a class="l" href="#146">146 </a>            <span class="php-var">$this</span>-&gt;getApi()-&gt;registerAssetCss(<span class="php-quote">&quot;bootstrap-image-gallery.min.css&quot;</span>);
-</span><span id="147" class="l"><a class="l" href="#147">147 </a>            <span class="php-var">$this</span>-&gt;getApi()-&gt;registerAssetJs(<span class="php-quote">&quot;bootstrap-image-gallery.min.js&quot;</span>, CClientScript::POS_END);
+</span><span id="146" class="l"><a class="l" href="#146">146 </a>            <span class="php-var">$this</span>-&gt;getYiiWheels()-&gt;registerAssetCss(<span class="php-quote">&quot;bootstrap-image-gallery.min.css&quot;</span>);
+</span><span id="147" class="l"><a class="l" href="#147">147 </a>            <span class="php-var">$this</span>-&gt;getYiiWheels()-&gt;registerAssetJs(<span class="php-quote">&quot;bootstrap-image-gallery.min.js&quot;</span>, CClientScript::POS_END);
 </span><span id="148" class="l"><a class="l" href="#148">148 </a>        }
 </span><span id="149" class="l"><a class="l" href="#149">149 </a>        <span class="php-comment">//The Iframe Transport is required for browsers without support for XHR file uploads</span>
-</span><span id="150" class="l"><a class="l" href="#150">150 </a>        Yii::app()-&gt;bootstrap-&gt;registerAssetJs(<span class="php-quote">'fileupload/jquery.iframe-transport.js'</span>);
-</span><span id="151" class="l"><a class="l" href="#151">151 </a>        Yii::app()-&gt;bootstrap-&gt;registerAssetJs(<span class="php-quote">'fileupload/jquery.fileupload.js'</span>);
+</span><span id="150" class="l"><a class="l" href="#150">150 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.iframe-transport.js'</span>);
+</span><span id="151" class="l"><a class="l" href="#151">151 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload.js'</span>);
 </span><span id="152" class="l"><a class="l" href="#152">152 </a>
 </span><span id="153" class="l"><a class="l" href="#153">153 </a>        <span class="php-comment">// The File Upload image processing plugin</span>
 </span><span id="154" class="l"><a class="l" href="#154">154 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;imageProcessing) {
-</span><span id="155" class="l"><a class="l" href="#155">155 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-ip.js'</span>);
+</span><span id="155" class="l"><a class="l" href="#155">155 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-ip.js'</span>, CClientScript::POS_END);
 </span><span id="156" class="l"><a class="l" href="#156">156 </a>        }
 </span><span id="157" class="l"><a class="l" href="#157">157 </a>        <span class="php-comment">// The File Upload file processing plugin</span>
 </span><span id="158" class="l"><a class="l" href="#158">158 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;previewImages) {
-</span><span id="159" class="l"><a class="l" href="#159">159 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-fp.js'</span>);
+</span><span id="159" class="l"><a class="l" href="#159">159 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-fp.js'</span>, CClientScript::POS_END);
 </span><span id="160" class="l"><a class="l" href="#160">160 </a>        }
 </span><span id="161" class="l"><a class="l" href="#161">161 </a>        <span class="php-comment">// locale</span>
-</span><span id="162" class="l"><a class="l" href="#162">162 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-locale.js'</span>);
+</span><span id="162" class="l"><a class="l" href="#162">162 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-locale.js'</span>, CClientScript::POS_END);
 </span><span id="163" class="l"><a class="l" href="#163">163 </a>
 </span><span id="164" class="l"><a class="l" href="#164">164 </a>        <span class="php-comment">//The File Upload user interface plugin</span>
-</span><span id="165" class="l"><a class="l" href="#165">165 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-ui.js'</span>);
+</span><span id="165" class="l"><a class="l" href="#165">165 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload-ui.js'</span>, CClientScript::POS_END);
 </span><span id="166" class="l"><a class="l" href="#166">166 </a>
 </span><span id="167" class="l"><a class="l" href="#167">167 </a>        <span class="php-comment">/* initialize plugin */</span>
 </span><span id="168" class="l"><a class="l" href="#168">168 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . WhHtml::getOption(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
