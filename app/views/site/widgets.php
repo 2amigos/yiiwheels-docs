@@ -494,19 +494,30 @@ $this-&gt;widget(
         <p>This is the same plugin as above but with its full UI.</p>
 
         <div class="bs-docs-example">
-            <?php
-            $this->widget(
-                'yiiwheels.widgets.fileupload.WhFileUpload',
-                array(
-                    'name'     => 'fileuploadui',
-                    'url'      => $this->createUrl('site/upload', array('type' => 'fine')),
-                    'multiple' => true,
-                )
-            );
-            ?>
+<?php
+$this->widget(
+    'yiiwheels.widgets.fileupload.WhFileUpload',
+    array(
+        'name'     => 'fileuploadui',
+        'url'      => $this->createUrl('site/upload', array('type' => 'fine')),
+        'multiple' => true,
+    )
+);
+?>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget(
+    'yiiwheels.widgets.fileupload.WhFileUpload',
+    array(
+        'name'     =&gt; 'fileuploadui',
+        'url'      =&gt; $this-&gt;createUrl('site/upload', array('type' =&gt; 'fine')),
+        'multiple' =&gt; true,
+    )
+);
+?&gt;
+        </pre>
     </section>
 
     <!-- FineUploader
