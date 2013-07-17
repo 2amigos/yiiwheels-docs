@@ -552,27 +552,30 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
 
         <p>
             <a href="https://google-developers.appspot.com/chart/interactive/docs/index" target="_blank">
-              Google Charts
+                Google Charts
             </a> provides a perfect way to visualize data. Simple, and very effective widget.
         </p>
 
         <div class="bs-docs-example">
-<?php
-$this->widget('yiiwheels.widgets.google.WhVisualizationChart', array(
-   'visualization' => 'PieChart',
-    'data' => array(
-        array('Task', 'Hours per Day'),
-        array('Work', 11),
-        array('Eat', 2),
-        array('Commute', 2),
-        array('Watch TV', 2),
-        array('Sleep', 7)
-    ),
-    'options' => array(
-        'title' => 'My Daily Activity'
-    )
-));
-?>
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.google.WhVisualizationChart',
+                array(
+                    'visualization' => 'PieChart',
+                    'data'          => array(
+                        array('Task', 'Hours per Day'),
+                        array('Work', 11),
+                        array('Eat', 2),
+                        array('Commute', 2),
+                        array('Watch TV', 2),
+                        array('Sleep', 7)
+                    ),
+                    'options'       => array(
+                        'title' => 'My Daily Activity'
+                    )
+                )
+            );
+            ?>
         </div>
 
         <pre class="prettyprint linenums">
@@ -605,13 +608,13 @@ $this-&gt;widget('yiiwheels.widgets.google.WhVisualizationChart', array(
             </h1>
         </div>
 
-        <p>Todo</p>
+        <p>TODO: This widget will surely be moved to the Grid section of the site :)</p>
 
-        <div class="bs-docs-example">
-
-        </div>
-
-        <pre class="prettyprint linenums"></pre>
+        <!--        <div class="bs-docs-example">-->
+        <!---->
+        <!--        </div>-->
+        <!---->
+        <!--        <pre class="prettyprint linenums"></pre>-->
     </section>
 
     <!-- HighCharts
@@ -624,13 +627,63 @@ $this-&gt;widget('yiiwheels.widgets.google.WhVisualizationChart', array(
             </h1>
         </div>
 
-        <p>Todo</p>
+        <p>
+            <span class="label label-important">Important</span> Highcharts is one of the best HTML5/Javascritp charting
+            libraries on the web. Highcharts JS is free for a
+            non-commercial project but not if you are developing a product that you are going to make money with.
+        </p>
+
+        <p>
+            Visit <a href="http://www.highcharts.com/" target="_blank">HighCharts</a> site in order to get more
+            information
+            about the different options of this plugin and its <a href="http://shop.highsoft.com/highcharts.html"
+                                                                  target="_blank">license pricing</a>.</p>
 
         <div class="bs-docs-example">
-
+<?php
+$this->widget(
+    'yiiwheels.widgets.highcharts.WhHighCharts',
+    array(
+        'pluginOptions' => array(
+            'title'  => array('text' => 'Fruit Consumption'),
+            'xAxis'  => array(
+                'categories' => array('Apples', 'Bananas', 'Oranges')
+            ),
+            'yAxis'  => array(
+                'title' => array('text' => 'Fruit eaten')
+            ),
+            'series' => array(
+                array('name' => 'Jane', 'data' => array(1, 0, 4)),
+                array('name' => 'John', 'data' => array(5, 7, 3))
+            )
+        )
+    )
+);
+?>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget(
+    'yiiwheels.widgets.highcharts.WhHighCharts',
+    array(
+        'pluginOptions' =&gt; array(
+            'title'  =&gt; array('text' =&gt; 'Fruit Consumption'),
+            'xAxis'  =&gt; array(
+                'categories' =&gt; array('Apples', 'Bananas', 'Oranges')
+            ),
+            'yAxis'  =&gt; array(
+                'title' =&gt; array('text' =&gt; 'Fruit eaten')
+            ),
+            'series' =&gt; array(
+                array('name' =&gt; 'Jane', 'data' =&gt; array(1, 0, 4)),
+                array('name' =&gt; 'John', 'data' =&gt; array(5, 7, 3))
+            )
+        )
+    )
+);
+?&gt;
+        </pre>
     </section>
 
     <!-- HTML5Editor
