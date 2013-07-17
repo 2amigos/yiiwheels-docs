@@ -537,13 +537,7 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
             </h1>
         </div>
 
-        <p>Todo</p>
-
-        <div class="bs-docs-example">
-
-        </div>
-
-        <pre class="prettyprint linenums"></pre>
+        <p>Even though we have a WhActiveForm. It is going to be removed from the collection.</p>
     </section>
 
     <!-- VisualizationChart
@@ -556,13 +550,49 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
             </h1>
         </div>
 
-        <p>Todo</p>
+        <p>
+            <a href="https://google-developers.appspot.com/chart/interactive/docs/index" target="_blank">
+              Google Charts
+            </a> provides a perfect way to visualize data. Simple, and very effective widget.
+        </p>
 
         <div class="bs-docs-example">
-
+<?php
+$this->widget('yiiwheels.widgets.google.WhVisualizationChart', array(
+   'visualization' => 'PieChart',
+    'data' => array(
+        array('Task', 'Hours per Day'),
+        array('Work', 11),
+        array('Eat', 2),
+        array('Commute', 2),
+        array('Watch TV', 2),
+        array('Sleep', 7)
+    ),
+    'options' => array(
+        'title' => 'My Daily Activity'
+    )
+));
+?>
         </div>
 
-        <pre class="prettyprint linenums"></pre>
+        <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget('yiiwheels.widgets.google.WhVisualizationChart', array(
+   'visualization' =&gt; 'PieChart',
+    'data' =&gt; array(
+        array('Task', 'Hours per Day'),
+        array('Work', 11),
+        array('Eat', 2),
+        array('Commute', 2),
+        array('Watch TV', 2),
+        array('Sleep', 7)
+    ),
+    'options' =&gt; array(
+        'title' =&gt; 'My Daily Activity'
+    )
+));
+?&gt;
+        </pre>
     </section>
 
     <!-- RelationalColumn
