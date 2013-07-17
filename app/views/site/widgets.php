@@ -175,36 +175,66 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
         <p><span class="label label-important">Heads Up!</span> Now you can add <b>any type</b> of buttons to boxes</p>
 
         <div class="bs-docs-example">
-            <?php
-            $this->widget(
-                'yiiwheels.widgets.box.WhBox',
-                array(
-                    'title'         => 'test',
-                    'headerIcon'    => 'icon-home',
-                    'headerButtons' => array(
-                        TbHtml::buttonGroup(
-                            array(
-                                array('label' => 'Left'),
-                                array('label' => 'Middle'),
-                                array('label' => 'Right'),
-                            )
-                        ),
-                        '&nbsp;',
-                        TbHtml::buttonDropdown(
-                            'Action',
-                            array(
-                                array('label' => 'Action', 'url' => '#'),
-                                array('label' => 'Another action', 'url' => '#'),
-                                array('label' => 'Something else here', 'url' => '#'),
-                                TbHtml::menuDivider(),
-                                array('label' => 'Separate link', 'url' => '#'),
-                            )
-                        ),
-                    )
-                )
-            );
-            ?>
+<?php
+$this->widget(
+'yiiwheels.widgets.box.WhBox',
+array(
+    'title'         => 'test',
+    'headerIcon'    => 'icon-home',
+    'headerButtons' => array(
+        TbHtml::buttonGroup(
+            array(
+                array('label' => 'Left'),
+                array('label' => 'Middle'),
+                array('label' => 'Right'),
+            )
+        ),
+        '&nbsp;',
+        TbHtml::buttonDropdown(
+            'Action',
+            array(
+                array('label' => 'Action', 'url' => '#'),
+                array('label' => 'Another action', 'url' => '#'),
+                array('label' => 'Something else here', 'url' => '#'),
+                TbHtml::menuDivider(),
+                array('label' => 'Separate link', 'url' => '#'),
+            )
+        ),
+    )
+)
+);
+?>
         </div>
+        <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget(
+'yiiwheels.widgets.box.WhBox',
+    array(
+        'title'         =&gt; 'test',
+        'headerIcon'    =&gt; 'icon-home',
+        'headerButtons' =&gt; array(
+            TbHtml::buttonGroup(
+                array(
+                    array('label' =&gt; 'Left'),
+                    array('label' =&gt; 'Middle'),
+                    array('label' =&gt; 'Right'),
+                )
+            ),
+            '&amp;nbsp;',
+            TbHtml::buttonDropdown(
+                'Action',
+                array(
+                    array('label' =&gt; 'Action', 'url' =&gt; '#'),
+                    array('label' =&gt; 'Another action', 'url' =&gt; '#'),
+                    array('label' =&gt; 'Something else here', 'url' =&gt; '#'),
+                    TbHtml::menuDivider(),
+                    array('label' =&gt; 'Separate link', 'url' =&gt; '#'),
+                )
+            ),
+        )
+    )
+);
+?&gt;</pre>
     </section>
     <!-- Datepicker
     ================================================== -->

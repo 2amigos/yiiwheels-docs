@@ -4,8 +4,7 @@ $this->pageTitle = param('pageTitle');
 ?>
 <div class="jumbotron masthead">
     <div class="container">
-        <h1>Yii Wheels</h1>
-
+        <h1><img src="<?php echo $this->baseUrl('/images/trasparentCentre.png');?>"></h1>
         <p>Extension Library for Yiistrap</p>
 
         <p><a href="https://github.com/2amigos/yiiwheels/archive/master.zip" class="btn btn-inverse btn-large"
