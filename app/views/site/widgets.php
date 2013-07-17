@@ -175,35 +175,35 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
         <p><span class="label label-important">Heads Up!</span> Now you can add <b>any type</b> of buttons to boxes</p>
 
         <div class="bs-docs-example">
-<?php
-$this->widget(
-'yiiwheels.widgets.box.WhBox',
-array(
-    'title'         => 'test',
-    'headerIcon'    => 'icon-home',
-    'headerButtons' => array(
-        TbHtml::buttonGroup(
-            array(
-                array('label' => 'Left'),
-                array('label' => 'Middle'),
-                array('label' => 'Right'),
-            )
-        ),
-        '&nbsp;',
-        TbHtml::buttonDropdown(
-            'Action',
-            array(
-                array('label' => 'Action', 'url' => '#'),
-                array('label' => 'Another action', 'url' => '#'),
-                array('label' => 'Something else here', 'url' => '#'),
-                TbHtml::menuDivider(),
-                array('label' => 'Separate link', 'url' => '#'),
-            )
-        ),
-    )
-)
-);
-?>
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.box.WhBox',
+                array(
+                    'title'         => 'test',
+                    'headerIcon'    => 'icon-home',
+                    'headerButtons' => array(
+                        TbHtml::buttonGroup(
+                            array(
+                                array('label' => 'Left'),
+                                array('label' => 'Middle'),
+                                array('label' => 'Right'),
+                            )
+                        ),
+                        '&nbsp;',
+                        TbHtml::buttonDropdown(
+                            'Action',
+                            array(
+                                array('label' => 'Action', 'url' => '#'),
+                                array('label' => 'Another action', 'url' => '#'),
+                                array('label' => 'Something else here', 'url' => '#'),
+                                TbHtml::menuDivider(),
+                                array('label' => 'Separate link', 'url' => '#'),
+                            )
+                        ),
+                    )
+                )
+            );
+            ?>
         </div>
         <pre class="prettyprint linenums">
 &lt;?php
@@ -397,7 +397,11 @@ $this-&gt;widget(
         <p>
             <span class="label label-important">Sorry</span> but to create the file that will handle the upload is out
             of the scope of this docs. If you wish to know more about this fantastic plugin, visit
-            <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">JQuery File Upload</a> website.
+            <a href="http://blueimp.github.io/jQuery-File-Upload/index.html">JQuery File Upload</a> website. Also, this
+            first example may not work due to the issue of having multiple file upload widgets on the same page. If you
+            wish to implement this feature then follow the instructions on <a
+                href="https://github.com/blueimp/jQuery-File-Upload/wiki/Multiple-File-Upload-Widgets-on-the-same-page"
+                target="_blank">Multipe file upload widgets wiki</a>.
         </p>
 
         <div class="bs-docs-example">
@@ -494,16 +498,16 @@ $this-&gt;widget(
         <p>This is the same plugin as above but with its full UI.</p>
 
         <div class="bs-docs-example">
-<?php
-$this->widget(
-    'yiiwheels.widgets.fileupload.WhFileUpload',
-    array(
-        'name'     => 'fileuploadui',
-        'url'      => $this->createUrl('site/upload', array('type' => 'fine')),
-        'multiple' => true,
-    )
-);
-?>
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.fileupload.WhFileUpload',
+                array(
+                    'name'     => 'fileuploadui',
+                    'url'      => $this->createUrl('site/upload', array('type' => 'fine')),
+                    'multiple' => true,
+                )
+            );
+            ?>
         </div>
 
         <pre class="prettyprint linenums">
@@ -757,57 +761,57 @@ $this-&gt;widget(
         </p>
 
         <div class="bs-docs-example">
-        <div class="row-fluid">
-            <div class="span6">
-                <label>Date</label>
-                <?php $this->widget(
-                    'yiiwheels.widgets.maskinput.WhMaskInput',
-                    array(
-                        'name'        => 'maskdatetest',
-                        'mask'        => '11/11/1111',
-                        'htmlOptions' => array('placeholder' => '11/11/1111')
-                    )
-                );?>
-            </div>
-            <div class="span6">
-                <label>Time</label>
-                <?php $this->widget(
-                    'yiiwheels.widgets.maskinput.WhMaskInput',
-                    array(
-                        'name'        => 'masktimetest',
-                        'mask'        => '00:00:00',
-                        'htmlOptions' => array('placeholder' => '00:00:00')
-                    )
-                );?>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span6">
-                <label>IP</label>
-                <?php $this->widget(
-                    'yiiwheels.widgets.maskinput.WhMaskInput',
-                    array(
-                        'name'          => 'maskiptest',
-                        'mask'          => '0ZZ.0ZZ.0ZZ.0ZZ',
-                        'htmlOptions'   => array('placeholder' => '0ZZ.0ZZ.0ZZ.0ZZ'),
-                        'pluginOptions' => array(
-                            'translation' => array('Z' => "[0-9]?")
+            <div class="row-fluid">
+                <div class="span6">
+                    <label>Date</label>
+                    <?php $this->widget(
+                        'yiiwheels.widgets.maskinput.WhMaskInput',
+                        array(
+                            'name'        => 'maskdatetest',
+                            'mask'        => '11/11/1111',
+                            'htmlOptions' => array('placeholder' => '11/11/1111')
                         )
-                    )
-                );?>
+                    );?>
+                </div>
+                <div class="span6">
+                    <label>Time</label>
+                    <?php $this->widget(
+                        'yiiwheels.widgets.maskinput.WhMaskInput',
+                        array(
+                            'name'        => 'masktimetest',
+                            'mask'        => '00:00:00',
+                            'htmlOptions' => array('placeholder' => '00:00:00')
+                        )
+                    );?>
+                </div>
             </div>
-            <div class="span6">
-                <label>Time</label>
-                <?php $this->widget(
-                    'yiiwheels.widgets.maskinput.WhMaskInput',
-                    array(
-                        'name'        => 'maskphoneustest',
-                        'mask'        => '(999) 999-9999',
-                        'htmlOptions' => array('placeholder' => '(999) 999-9999')
-                    )
-                );?>
+            <div class="row-fluid">
+                <div class="span6">
+                    <label>IP</label>
+                    <?php $this->widget(
+                        'yiiwheels.widgets.maskinput.WhMaskInput',
+                        array(
+                            'name'          => 'maskiptest',
+                            'mask'          => '0ZZ.0ZZ.0ZZ.0ZZ',
+                            'htmlOptions'   => array('placeholder' => '0ZZ.0ZZ.0ZZ.0ZZ'),
+                            'pluginOptions' => array(
+                                'translation' => array('Z' => "[0-9]?")
+                            )
+                        )
+                    );?>
+                </div>
+                <div class="span6">
+                    <label>Time</label>
+                    <?php $this->widget(
+                        'yiiwheels.widgets.maskinput.WhMaskInput',
+                        array(
+                            'name'        => 'maskphoneustest',
+                            'mask'        => '(999) 999-9999',
+                            'htmlOptions' => array('placeholder' => '(999) 999-9999')
+                        )
+                    );?>
+                </div>
             </div>
-        </div>
         </div>
 
         <pre class="prettyprint linenums">
