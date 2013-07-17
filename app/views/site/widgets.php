@@ -34,6 +34,7 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
             <li><a href="#relationalcolumn"><i class="icon-chevron-right"></i> RelationalColumn</a></li>
             <li><a href="#highcharts"><i class="icon-chevron-right"></i> HighCharts</a></li>
             <li><a href="#html5editor"><i class="icon-chevron-right"></i> HTML5Editor</a></li>
+            <li><a href="#maskinput"><i class="icon-chevron-right"></i> MaskInput</a></li>
             <li><a href="#maskmoney"><i class="icon-chevron-right"></i> MaskMoney</a></li>
             <li><a href="#modal"><i class="icon-chevron-right"></i> Modal</a></li>
             <li><a href="#multiselect"><i class="icon-chevron-right"></i> MultiSelect</a></li>
@@ -640,26 +641,26 @@ $this-&gt;widget('yiiwheels.widgets.google.WhVisualizationChart', array(
                                                                   target="_blank">license pricing</a>.</p>
 
         <div class="bs-docs-example">
-<?php
-$this->widget(
-    'yiiwheels.widgets.highcharts.WhHighCharts',
-    array(
-        'pluginOptions' => array(
-            'title'  => array('text' => 'Fruit Consumption'),
-            'xAxis'  => array(
-                'categories' => array('Apples', 'Bananas', 'Oranges')
-            ),
-            'yAxis'  => array(
-                'title' => array('text' => 'Fruit eaten')
-            ),
-            'series' => array(
-                array('name' => 'Jane', 'data' => array(1, 0, 4)),
-                array('name' => 'John', 'data' => array(5, 7, 3))
-            )
-        )
-    )
-);
-?>
+            <?php
+            $this->widget(
+                'yiiwheels.widgets.highcharts.WhHighCharts',
+                array(
+                    'pluginOptions' => array(
+                        'title'  => array('text' => 'Fruit Consumption'),
+                        'xAxis'  => array(
+                            'categories' => array('Apples', 'Bananas', 'Oranges')
+                        ),
+                        'yAxis'  => array(
+                            'title' => array('text' => 'Fruit eaten')
+                        ),
+                        'series' => array(
+                            array('name' => 'Jane', 'data' => array(1, 0, 4)),
+                            array('name' => 'John', 'data' => array(5, 7, 3))
+                        )
+                    )
+                )
+            );
+            ?>
         </div>
 
         <pre class="prettyprint linenums">
@@ -703,6 +704,129 @@ $this-&gt;widget(
         </div>
 
         <pre class="prettyprint linenums"></pre>
+    </section>
+
+    <!-- MaskInput
+   ================================================== -->
+    <section id="maskinput">
+
+        <div class="page-header">
+            <h1>MaskInput
+                <small>WhMaskInput.php</small>
+            </h1>
+        </div>
+
+        <p>Cool plugin to add masked inputs to your form. More information on <a
+                href="http://igorescobar.github.io/jQuery-Mask-Plugin/" target="_blank">http://igorescobar.github.io/jQuery-Mask-Plugin/</a>
+        </p>
+
+        <div class="bs-docs-example">
+        <div class="row-fluid">
+            <div class="span6">
+                <label>Date</label>
+                <?php $this->widget(
+                    'yiiwheels.widgets.maskinput.WhMaskInput',
+                    array(
+                        'name'        => 'maskdatetest',
+                        'mask'        => '11/11/1111',
+                        'htmlOptions' => array('placeholder' => '11/11/1111')
+                    )
+                );?>
+            </div>
+            <div class="span6">
+                <label>Time</label>
+                <?php $this->widget(
+                    'yiiwheels.widgets.maskinput.WhMaskInput',
+                    array(
+                        'name'        => 'masktimetest',
+                        'mask'        => '00:00:00',
+                        'htmlOptions' => array('placeholder' => '00:00:00')
+                    )
+                );?>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6">
+                <label>IP</label>
+                <?php $this->widget(
+                    'yiiwheels.widgets.maskinput.WhMaskInput',
+                    array(
+                        'name'          => 'maskiptest',
+                        'mask'          => '0ZZ.0ZZ.0ZZ.0ZZ',
+                        'htmlOptions'   => array('placeholder' => '0ZZ.0ZZ.0ZZ.0ZZ'),
+                        'pluginOptions' => array(
+                            'translation' => array('Z' => "[0-9]?")
+                        )
+                    )
+                );?>
+            </div>
+            <div class="span6">
+                <label>Time</label>
+                <?php $this->widget(
+                    'yiiwheels.widgets.maskinput.WhMaskInput',
+                    array(
+                        'name'        => 'maskphoneustest',
+                        'mask'        => '(999) 999-9999',
+                        'htmlOptions' => array('placeholder' => '(999) 999-9999')
+                    )
+                );?>
+            </div>
+        </div>
+        </div>
+
+        <pre class="prettyprint linenums">
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span6&quot;&gt;
+        &lt;label&gt;Date&lt;/label&gt;
+        &lt;?php $this-&gt;widget(
+            'yiiwheels.widgets.maskinput.WhMaskInput',
+            array(
+                'name'        =&gt; 'maskdatetest',
+                'mask'        =&gt; '11/11/1111',
+                'htmlOptions' =&gt; array('placeholder' =&gt; '11/11/1111')
+            )
+        );?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span6&quot;&gt;
+        &lt;label&gt;Time&lt;/label&gt;
+        &lt;?php $this-&gt;widget(
+            'yiiwheels.widgets.maskinput.WhMaskInput',
+            array(
+                'name'        =&gt; 'masktimetest',
+                'mask'        =&gt; '00:00:00',
+                'htmlOptions' =&gt; array('placeholder' =&gt; '00:00:00')
+            )
+        );?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span6&quot;&gt;
+        &lt;label&gt;IP&lt;/label&gt;
+        &lt;?php $this-&gt;widget(
+            'yiiwheels.widgets.maskinput.WhMaskInput',
+            array(
+                'name'          =&gt; 'maskiptest',
+                'mask'          =&gt; '0ZZ.0ZZ.0ZZ.0ZZ',
+                'htmlOptions'   =&gt; array('placeholder' =&gt; '0ZZ.0ZZ.0ZZ.0ZZ'),
+                'pluginOptions' =&gt; array(
+                    'translation' =&gt; array('Z' =&gt; &quot;[0-9]?&quot;)
+                )
+            )
+        );?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span6&quot;&gt;
+        &lt;label&gt;Time&lt;/label&gt;
+        &lt;?php $this-&gt;widget(
+            'yiiwheels.widgets.maskinput.WhMaskInput',
+            array(
+                'name'        =&gt; 'maskphoneustest',
+                'mask'        =&gt; '(999) 999-9999',
+                'htmlOptions' =&gt; array('placeholder' =&gt; '(999) 999-9999')
+            )
+        );?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
     </section>
 
     <!-- MaskMoney
