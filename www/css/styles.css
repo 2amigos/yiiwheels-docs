@@ -1082,14 +1082,14 @@ thead th {
 ------------------------- */
 
 .jumbotron {
-    background: #1285de; /* Old browsers */
-    background: -moz-linear-gradient(45deg, #1336c3 0%, #1285de 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #1336c3), color-stop(100%, #1285de)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(45deg, #1336c3 0%, #1285de 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(45deg, #1336c3 0%, #1285de 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(45deg, #1336c3 0%, #1285de 100%); /* IE10+ */
-    background: linear-gradient(45deg, #1336c3 0%, #1285de 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1336c3', endColorstr='#1285de', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+    background: #1285de;
+    background: -moz-linear-gradient(45deg, #ed772c 0%, #d26017 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #ed772c), color-stop(100%, #d26017));
+    background: -webkit-linear-gradient(45deg, #ed772c 0%, #d26017 100%);
+    background: -o-linear-gradient(45deg, #ed772c 0%, #d26017 100%);
+    background: -ms-linear-gradient(45deg, #ed772c 0%, #d26017 100%);
+    background: linear-gradient(45deg, #ed772c 0%, #d26017 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed772c', endColorstr='#d26017', GradientType=1);
 }
 
 .jumbotron:after {
