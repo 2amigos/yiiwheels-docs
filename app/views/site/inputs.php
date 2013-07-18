@@ -590,27 +590,17 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
     <h2>ToggleButton
         <small>WhToggleButton.php</small>
     </h2>
-    <p>Todo</p>
-
     <div class="bs-docs-example">
-
+<?php $this->widget('yiiwheels.widgets.toggle.WhToggleButton', array(
+    'name' => 'togglebuttontest'
+));?>
     </div>
 
-    <pre class="prettyprint linenums"></pre>
-
-    <hr class="bs-docs-separator">
-
-    <h1>ToggleColumn
-        <small>WhToggleColumn.php</small>
-    </h1>
-
-    <p>Todo</p>
-
-    <div class="bs-docs-example">
-
-    </div>
-
-    <pre class="prettyprint linenums"></pre>
+    <pre class="prettyprint linenums">
+&lt;?php $this-&gt;widget('yiiwheels.widgets.toggle.WhToggleButton', array(
+    'name' =&gt; 'togglebuttontest'
+));?&gt;
+    </pre>
 
 </section>
 
