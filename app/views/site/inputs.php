@@ -34,7 +34,6 @@
         <li><a href="#maskinput"><i class="icon-chevron-right"></i> MaskInput</a></li>
         <li><a href="#maskmoney"><i class="icon-chevron-right"></i> MaskMoney</a></li>
         <li><a href="#multiselect"><i class="icon-chevron-right"></i> MultiSelect</a></li>
-        <li><a href="#rangeslider"><i class="icon-chevron-right"></i> RangeSlider</a></li>
         <li><a href="#select2"><i class="icon-chevron-right"></i> Select2</a></li>
         <li><a href="#timepicker"><i class="icon-chevron-right"></i> TimePicker</a></li>
         <li><a href="#toggle"><i class="icon-chevron-right"></i> Toggle</a></li>
@@ -491,25 +490,6 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
     <pre class="prettyprint linenums"></pre>
 </section>
 
-<!-- RangeSlider
-================================================== -->
-<section id="rangeslider">
-
-    <div class="page-header">
-        <h1>RangeSlider
-            <small>WhRangeSlider.php</small>
-        </h1>
-    </div>
-
-    <p>Todo</p>
-
-    <div class="bs-docs-example">
-
-    </div>
-
-    <pre class="prettyprint linenums"></pre>
-</section>
-
 <!-- Select2
 ================================================== -->
 <section id="select2">
@@ -570,13 +550,26 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
         </h1>
     </div>
 
-    <p>Todo</p>
+    <p>Nice timepicker helper. For more information, please visit <a
+            href="http://jdewit.github.com/bootstrap-timepicker" target="_blank">Bootstrap TimePicker</a></p>
 
     <div class="bs-docs-example">
-
+        <?php $this->widget(
+            'yiiwheels.widgets.timepicker.WhTimePicker',
+            array(
+                'name' => 'timepickertest'
+            )
+        );?>
     </div>
 
-    <pre class="prettyprint linenums"></pre>
+    <pre class="prettyprint linenums">
+&lt;?php $this-&gt;widget(
+    'yiiwheels.widgets.timepicker.WhTimePicker',
+    array(
+        'name' =&gt; 'timepickertest'
+    )
+);?&gt;
+    </pre>
 </section>
 
 <!-- Toggle
@@ -591,9 +584,12 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
         <small>WhToggleButton.php</small>
     </h2>
     <div class="bs-docs-example">
-<?php $this->widget('yiiwheels.widgets.toggle.WhToggleButton', array(
-    'name' => 'togglebuttontest'
-));?>
+        <?php $this->widget(
+            'yiiwheels.widgets.toggle.WhToggleButton',
+            array(
+                'name' => 'togglebuttontest'
+            )
+        );?>
     </div>
 
     <pre class="prettyprint linenums">
