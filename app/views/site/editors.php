@@ -84,13 +84,23 @@ array(
         </h1>
     </div>
 
-    <p>Todo</p>
+    <p>
+        The great edtior <a href="http://imperavi.com/redactor/" target="_blank">RedactorJS from imperavi</a>,
+        now free for Yii Development, thanks to the russian community, specially
+        <a href="http://www.yiiframework.com/user/415/" target="_blank">Alex Makarov</a>. You guys ROCK!
+    </p>
 
     <div class="bs-docs-example">
-
+<?php $this->widget('yiiwheels.widgets.redactor.WhRedactor', array(
+    'name' => 'redactortest'
+));?>
     </div>
 
-    <pre class="prettyprint linenums"></pre>
+    <pre class="prettyprint linenums">
+&lt;?php $this-&gt;widget('yiiwheels.widgets.redactor.WhRedactor', array(
+    'name' =&gt; 'redactortest'
+));?&gt;
+    </pre>
 </section>
 
 </div>
