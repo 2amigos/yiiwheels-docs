@@ -461,14 +461,24 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
             <small>WhMaskMoney.php</small>
         </h1>
     </div>
-
-    <p>Todo</p>
-
+    <p>Useful plugin to enter money amounts.</p>
     <div class="bs-docs-example">
-
+    <div class="input-prepend">
+        <span class="add-on">$</span>
+        <?php $this->widget('yiiwheels.widgets.maskmoney.WhMaskMoney', array(
+        'name' => 'maskmoneytest'
+        ));?>
+    </div>
     </div>
 
-    <pre class="prettyprint linenums"></pre>
+    <pre class="prettyprint linenums">
+&lt;div class=&quot;input-prepend&quot;&gt;
+    &lt;span class=&quot;add-on&quot;&gt;$&lt;/span&gt;
+    &lt;?php $this-&gt;widget('yiiwheels.widgets.maskmoney.WhMaskMoney', array(
+    'name' =&gt; 'maskmoneytest'
+    ));?&gt;
+&lt;/div&gt;
+    </pre>
 </section>
 
 <!-- MultiSelect
