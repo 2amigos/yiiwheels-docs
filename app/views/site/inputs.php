@@ -481,13 +481,37 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
         </h1>
     </div>
 
-    <p>Todo</p>
+    <p>Bootstrap multiselect included. Check its <a href="http://davidstutz.github.io/bootstrap-multiselect/"
+                                                    target="_blank">Site</a> to find out about its configuration
+        options.</p>
 
     <div class="bs-docs-example">
-
+        <?php
+        $this->widget(
+            'yiiwheels.widgets.multiselect.WhMultiSelect',
+            array(
+                'name' => 'multiselecttest',
+                'data' => array(
+                    '2amigos',
+                    'consultation',
+                    'group',
+                    'llc'
+                )
+            )
+        );
+        ?>
     </div>
 
-    <pre class="prettyprint linenums"></pre>
+    <pre class="prettyprint linenums">
+&lt;?php
+$this-&gt;widget('yiiwheels.widgets.multiselect.WhMultiSelect', array(
+        'name' =&gt; 'multiselecttest',
+        'data' =&gt; array(
+            '2amigos', 'consultation', 'group', 'llc'
+        )
+    ));
+?&gt;
+    </pre>
 </section>
 
 <!-- Select2
