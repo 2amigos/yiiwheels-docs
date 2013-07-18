@@ -1094,7 +1094,7 @@ thead th {
 
 .jumbotron:after {
     background: url(../images/bg-jumbotron.png) repeat;
-    opacity: 0.1;
+    opacity: 0.15;
 }
 
 .navbar .brand > img {
