@@ -52,7 +52,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
                     extensions folder and configure it.</p>
 
                 <p><a class="btn btn-large btn-primary"
-                      href="https://github.com/Crisu83/yiistrap/archive/master.zip">Download Yiiwheels</a></p>
+                      href="https://github.com/2amigos/yiiwheels/archive/master.zip">Download Yiiwheels</a></p>
             </div>
             <div class="span6">
                 <h2>Clone</h2>
@@ -66,7 +66,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
         </div>
         <div class="row-fluid">
             <p><span class="label label-important">important</span> This version of yiiwheels, requires the
-                use of <a href="https://getyiistrap.com">Yiistrap</a>. If you wish to
+                use of <a href="http://getyiistrap.com">Yiistrap</a>. If you wish to
                 use the <a href="https://githumb.com/2amigos/yiiwheels-custom">2amigOS! custom one</a>, we
                 removed that requirement and made use of namespaces.</p>
         </div>
