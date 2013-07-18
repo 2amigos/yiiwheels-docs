@@ -48,7 +48,9 @@ return ArrayX::merge(
                 'scriptMap' => array(
                     'bootstrap.min.css' => false,
                     'bootstrap.min.js'  => false,
-                    'bootstrap-yii.css' => false
+                    'bootstrap-yii.css' => false,
+                    'jquery-ui.css' => false,
+                    'jquery-ui.min.js' => false,
                 )
             ),
             'urlManager'   => array(
