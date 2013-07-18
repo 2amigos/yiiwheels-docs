@@ -109,13 +109,101 @@ $this-&gt;widget(
                     </h1>
                 </div>
 
-                <p>Todo</p>
+                <p>
+                    Here some examples of what you can do with this cool and tiny lib. For more information please go to
+                     <a href="http://omnipotent.net/jquery.sparkline/#s-about">JQuery Sparklines</a> site.
+                </p>
 
                 <div class="bs-docs-example">
-
+                <div class="row-fluid">
+                    <div class="span6">
+                        Inline <?php
+                        $this->widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                                'data' => array(
+                                    10,8,5,7,4,4,1, 10,8,5,7,4,4,1
+                                )
+                            ));
+                        ?>
+                        Bar <?php
+                        $this->widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                                'data' => array(
+                                    10,8,5,7,4,4,1, 10,8,5,7,4,4,1
+                                ),
+                                'pluginOptions' => array(
+                                    'type' => 'bar', 'barColor' => 'green'
+                                )
+                            ));
+                        ?>
+                    </div>
+                    <div class="span6">
+                        Pie Chart <?php
+                        $this->widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                                'data' => array(
+                                    1,1,2
+                                ),
+                                'pluginOptions' => array(
+                                    'type' => 'pie',
+                                )
+                            ));
+                        ?>
+                        Bullet <?php
+                        $this->widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                                'data' => array(
+                                    10,12,12,9,7
+                                ),
+                                'pluginOptions' => array(
+                                    'type' => 'bullet'
+                                )
+                            ));
+                        ?>
+                    </div>
                 </div>
-
-                <pre class="prettyprint linenums"></pre>
+                </div>
+                <pre class="prettyprint linenums">
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        Inline &lt;?php
+        $this-&gt;widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                'data' =&gt; array(
+                    10,8,5,7,4,4,1, 10,8,5,7,4,4,1
+                )
+            ));
+        ?&gt;
+        Bar &lt;?php
+        $this-&gt;widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                'data' =&gt; array(
+                    10,8,5,7,4,4,1, 10,8,5,7,4,4,1
+                ),
+                'pluginOptions' =&gt; array(
+                    'type' =&gt; 'bar', 'barColor' =&gt; 'green'
+                )
+            ));
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        Pie Chart &lt;?php
+        $this-&gt;widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                'data' =&gt; array(
+                    1,1,2
+                ),
+                'pluginOptions' =&gt; array(
+                    'type' =&gt; 'pie',
+                )
+            ));
+        ?&gt;
+        Bullet &lt;?php
+        $this-&gt;widget('yiiwheels.widgets.sparklines.WhSparklines', array(
+                'data' =&gt; array(
+                    10,12,12,9,7
+                ),
+                'pluginOptions' =&gt; array(
+                    'type' =&gt; 'bullet'
+                )
+            ));
+        ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </pre>
             </section>
 
             <!-- VisualizationChart
