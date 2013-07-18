@@ -50,6 +50,7 @@
     )
 );
 ?>
+<a href="https://github.com/2amigos/yiiwheels-docs"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:9999" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png?callback=?" alt="Fork me on GitHub"></a>
 <!-- Content -->
 <?php echo $content; ?>
 <!-- Footer -->
