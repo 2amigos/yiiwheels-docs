@@ -25,67 +25,43 @@ class SiteController extends EController
     }
 
     /**
-     * Renders the basic docs
+     * Renders the Editor docs
      */
-    public function actionBasics()
+    public function actionEditors()
     {
-        $this->render('basics');
+        $this->render('editors');
     }
 
     /**
-     * Renders the component docs
+     * Renders the grid docs
      */
-    public function actionComponents()
+    public function actionGrid()
     {
-        $this->render('components');
+        $this->render('grid');
     }
 
     /**
-     * Renders the jsongrid docs
+     * Renders the Charts docs
      */
-    public function actionJsongrid()
+    public function actionCharts()
     {
-        $this->render('todo');
+        $this->render('charts');
     }
 
     /**
-     * Renders the extendedgrid docs
+     * Renders the Miscellanous docs
      */
-    public function actionExtendedgrid()
+    public function actionMiscellaneous()
     {
-        $this->render('todo');
+        $this->render('miscellaneous');
     }
 
     /**
-     * Renders the jquery ui docs
+     * Renders the Form docs
      */
-    public function actionJquery()
+    public function actionInputs()
     {
-        $this->render('todo');
-    }
-
-    /**
-     * Renders the javascript docs
-     */
-    public function actionJavascript()
-    {
-        $this->render('todo');
-    }
-
-    /**
-     * Renders the widget docs
-     */
-    public function actionWidgets()
-    {
-        Yii::import('application.models.TestForm');
-        $model = new TestForm();
-
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'test-form') {
-            echo CActiveForm::validate($model);
-            app()->end();
-        }
-
-        $this->render('widgets', array('model' => $model));
+        $this->render('inputs');
     }
 
     /**

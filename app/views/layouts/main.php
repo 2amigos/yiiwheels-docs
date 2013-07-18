@@ -42,7 +42,13 @@
                 'items' => array(
                     array('label' => 'Home', 'url' => array('site/index')),
                     array('label' => 'Get started', 'url' => array('site/started')),
-                    array('label' => 'Widgets', 'url' => array('site/widgets')),
+                    array('label' => 'Widgets', 'url'=>'#', 'items'=> array(
+                        array('label' => 'Charts', 'url' => array('site/charts')),
+                        array('label' => 'Inputs', 'url' => array('site/inputs')),
+                        array('label' => 'Grid', 'url' => array('site/grid')),
+                        array('label' => 'Editors', 'url' => array('site/editors')),
+                        array('label' => 'Miscellanous', 'url' => array('site/miscellaneous')),
+                    )),
                     array('label' => 'API', 'url' => array('/api')),
                 ),
             ),
