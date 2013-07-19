@@ -247,10 +247,53 @@ array(
             </h1>
         </div>
 
-        <p>Todo</p>
+        <p>
+            Timeago is a jQuery plugin that makes it easy to support automatically updating fuzzy timestamps (e.g. "4
+            minutes ago" or "about 1 day ago"). For more information about its jquery plugin functionality and options, please
+            visit <a href="http://timeago.yarp.com/" target="_blank">http://timeago.yarp.com/</a>.
+        </p>
 
         <div class="bs-docs-example">
+<?php $this->widget(
+    'yiiwheels.widgets.timeago.WhTimeAgo',
+    array(
+        'date' => '2008-07-17T09:24:17Z'
+    )
+); ?>
+        </div>
 
+        <pre class="prettyprint linenums">
+&lt;?php $this-&gt;widget(
+    'yiiwheels.widgets.timeago.WhTimeAgo',
+    array(
+        'date' =&gt; '2008-07-17T09:24:17Z'
+    )
+); ?&gt;
+        </pre>
+
+        <hr class="bs-docs-separator">
+
+        <h3>TimeAgo Format Component
+            <small>
+                WhTimeAgoFormatter.php
+            </small>
+        </h3>
+        <p>
+            TimeAgo comes in two flavours: a widget and a format component. The format component differs from the widget
+            in that it takes a UNIX_TIMESTAMP value, making it perfect to work with database values that are goign to be
+            displayed on a grid.
+        </p>
+        <p>
+            TimeAgo format component requires that you configure it on your main.php config file. Check how it is configured
+            on this site at its <a href="https://github.com/2amigos/yiiwheels-docs/blob/master/app/config/main.php#L47" target="_blank">github source code</a>.
+        </p>
+        <div class="bs-docs-example">
+            <?php $time = strtotime('-1 day'); ?>
+            <?php echo $time; ?>=
+            <?php echo Yii::app()->format->timeago($time); ?><br>
+            <?php $time = strtotime('-1 minute'); ?>
+            <?php echo $time; ?>=
+            <?php echo Yii::app()->format->timeago($time); ?>
         </div>
 
         <pre class="prettyprint linenums"></pre>
@@ -276,15 +319,15 @@ array(
         </p>
 
         <div class="bs-docs-example">
-<?php $this->widget(
-    'yiiwheels.widgets.rangeslider.WhRangeSlider',
-    array(
-        'id'       => 'rangeslidertest',
-        'name'     => 'rangeslidertest',
-        'delayOut' => 4000,
-        'type'     => 'editRange'
-    )
-);?>
+            <?php $this->widget(
+                'yiiwheels.widgets.rangeslider.WhRangeSlider',
+                array(
+                    'id'       => 'rangeslidertest',
+                    'name'     => 'rangeslidertest',
+                    'delayOut' => 4000,
+                    'type'     => 'editRange'
+                )
+            );?>
             <br>
 
             <div style="clear:both;height:20px"></div>

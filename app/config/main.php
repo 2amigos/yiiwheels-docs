@@ -44,6 +44,9 @@ return ArrayX::merge(
             'yiiwheels' => array(
                 'class' => 'yiiwheels.YiiWheels'
             ),
+            'format'       => array(
+                'class' => 'yiiwheels.widgets.timeago.WhTimeAgoFormatter'
+            ),
             'clientScript' => array(
                 'scriptMap' => array(
                     'bootstrap.min.css' => false,
