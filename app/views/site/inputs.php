@@ -462,13 +462,17 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
         </h1>
     </div>
     <p>Useful plugin to enter money amounts.</p>
+
     <div class="bs-docs-example">
-    <div class="input-prepend">
-        <span class="add-on">$</span>
-        <?php $this->widget('yiiwheels.widgets.maskmoney.WhMaskMoney', array(
-        'name' => 'maskmoneytest'
-        ));?>
-    </div>
+        <div class="input-prepend">
+            <span class="add-on">$</span>
+            <?php $this->widget(
+                'yiiwheels.widgets.maskmoney.WhMaskMoney',
+                array(
+                    'name' => 'maskmoneytest'
+                )
+            );?>
+        </div>
     </div>
 
     <pre class="prettyprint linenums">
@@ -644,12 +648,47 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
         </h1>
     </div>
 
-    <p>Todo</p>
+    <p>
+        Do not get confused, this is not the regular bootstrap typeahead. This is <a
+            href="http://twitter.github.io/typeahead.js/examples/" target="_blank">bootstrap typehead.js on roids</a>
+        :)
+    </p>
+    <p>
+        The following example, does not show its full potential. Check the <a
+            href="http://twitter.github.io/typeahead.js/examples/" target="_blank">examples</a> on their site for more
+        information.
+    </p>
 
     <div class="bs-docs-example">
-
+        <?php $this->widget(
+            'yiiwheels.widgets.typeahead.WhTypeAhead',
+            array(
+                'name'          => 'typeaheadtest',
+                'pluginOptions' => array(
+                    'name'  => 'test',
+                    'local' => array(
+                        '2amigos',
+                        'matt',
+                        'tabin',
+                        'antonio',
+                        'ramirez'
+                    )
+                )
+            )
+        );?>
     </div>
 
+    <pre class="prettyprint linenums">
+&lt;?php $this-&gt;widget('yiiwheels.widgets.typeahead.WhTypeAhead', array(
+    'name' =&gt; 'typeaheadtest',
+    'pluginOptions' =&gt; array(
+        'name' =&gt; 'test',
+        'local' =&gt; array(
+            '2amigos', 'matt', 'tabin', 'antonio', 'ramirez'
+        )
+    )
+));?&gt;
+    </pre>
 </section>
 
 </div>

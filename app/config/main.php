@@ -49,6 +49,7 @@ return ArrayX::merge(
                     'bootstrap.min.css' => false,
                     'bootstrap.min.js'  => false,
                     'bootstrap-yii.css' => false,
+                    'jquery.js' => '/js/libs/jquery-1.9.1.min.js',
                     'jquery-ui.css' => false,
                     'jquery-ui.min.js' => false,
                 )

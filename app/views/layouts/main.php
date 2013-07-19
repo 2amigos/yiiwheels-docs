@@ -1,5 +1,6 @@
 <?php /* @var $this Controller */ ?>
-<?php Yii::app()->bootstrap->register(); ?>
+<?php Yii::app()->bootstrap->registerAllCss(); ?>
+<?php Yii::app()->bootstrap->registerCoreScripts(null, CClientScript::POS_HEAD); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
