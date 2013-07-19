@@ -84,7 +84,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
         <p class="lead">Within the download you'll find the following file structure and contents, logically
             grouping assets, behaviors, components, helpers and widgets in respective directories.</p>
 
-        <p>Unzip the contents of the package under <strong>protected/extensions</strong>. The folder
+        <p>Unzip the contents of the package under <strong>protected/extensions/yiiwheels</strong>. The folder
             structure should now be the following:</p>
 
 <pre class="prettyprint">

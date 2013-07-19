@@ -273,37 +273,37 @@ array(
 
         <hr class="bs-docs-separator">
 
-<!--        <h3>TimeAgo Format Component-->
-<!--            <small>-->
-<!--                WhTimeAgoFormatter.php-->
-<!--            </small>-->
-<!--        </h3>-->
-<!--        <p>-->
-<!--            TimeAgo comes in two flavours: a widget and a format component. The format component differs from the widget-->
-<!--            in that it takes a UNIX_TIMESTAMP value, making it perfect to work with database values that are goign to be-->
-<!--            displayed on a grid.-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            TimeAgo format component requires that you configure it on your main.php config file. Check how it is configured-->
-<!--            on this site at its <a href="https://github.com/2amigos/yiiwheels-docs/blob/master/app/config/main.php#L47" target="_blank">github source code</a>.-->
-<!--        </p>-->
-<!--        <div class="bs-docs-example">-->
-<?php //$time = strtotime('-1 day'); ?>
-<?php //echo $time; ?><!--=-->
-<?php //echo Yii::app()->format->timeago($time); ?><!--<br>-->
-<?php //$time = strtotime('-1 minute'); ?>
-<?php //echo $time; ?><!--=-->
-<?php //echo Yii::app()->format->timeago($time); ?>
-<!--        </div>-->
-<!---->
-<!--        <pre class="prettyprint linenums">-->
-<!--&lt;?php $time = strtotime('-1 day'); ?&gt;-->
-<!--&lt;?php echo $time; ?&gt;=-->
-<!--&lt;?php echo Yii::app()-&gt;format-&gt;timeago($time); ?&gt;&lt;br&gt;-->
-<!--&lt;?php $time = strtotime('-1 minute'); ?&gt;-->
-<!--&lt;?php echo $time; ?&gt;=-->
-<!--&lt;?php echo Yii::app()-&gt;format-&gt;timeago($time); ?&gt;-->
-<!--        </pre>-->
+        <h3>TimeAgo Format Component
+            <small>
+                WhTimeAgoFormatter.php
+            </small>
+        </h3>
+        <p>
+            TimeAgo comes in two flavours: a widget and a format component. The format component differs from the widget
+            in that it takes a UNIX_TIMESTAMP value, making it perfect to work with database values that are goign to be
+            displayed on a grid.
+        </p>
+        <p>
+            TimeAgo format component requires that you configure it on your main.php config file. Check how it is configured
+            on this site at its <a href="https://github.com/2amigos/yiiwheels-docs/blob/master/app/config/main.php#L47" target="_blank">github source code</a>.
+        </p>
+        <div class="bs-docs-example">
+<?php $time = strtotime('-1 day'); ?>
+<?php echo $time; ?>=
+<?php echo Yii::app()->format->timeago($time); ?><br>
+<?php $time = strtotime('-1 minute'); ?>
+<?php echo $time; ?>=
+<?php echo Yii::app()->format->timeago($time); ?>
+        </div>
+
+        <pre class="prettyprint linenums">
+&lt;?php $time = strtotime('-1 day'); ?&gt;
+&lt;?php echo $time; ?&gt;=
+&lt;?php echo Yii::app()-&gt;format-&gt;timeago($time); ?&gt;&lt;br&gt;
+&lt;?php $time = strtotime('-1 minute'); ?&gt;
+&lt;?php echo $time; ?&gt;=
+&lt;?php echo Yii::app()-&gt;format-&gt;timeago($time); ?&gt;
+        </pre>
     </section>
 
 
