@@ -67,7 +67,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
         <div class="row-fluid">
             <p><span class="label label-important">important</span> This version of yiiwheels, requires the
                 use of <a href="http://getyiistrap.com">Yiistrap</a>. If you wish to
-                use the <a href="https://github.com/2amigos/yiiwheels-custom">2amigOS! custom one</a>, we
+                use the <a href="https://github.com/2amigos/yiiwheels-custom/tree">2amigOS! custom one</a>, we
                 removed that requirement and made use of namespaces.</p>
         </div>
 
