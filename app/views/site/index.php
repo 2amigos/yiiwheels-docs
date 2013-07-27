@@ -73,8 +73,8 @@ $this->pageTitle = param('pageTitle');
         <div class="row-fluid">
             <div class="span12">
                 <p style="text-align:justify">
-                    Yii Wheels has been totally rebuilded from ground up. It differs from YiiBooster (its ancestor) in a way that widgets are isolated in folders (better maintenance) and also their assets.
-                    YiiBooster used to register all required assets at once, and developers realized that it was very slow compared to Yii-Bootstrap. With YiiWheels, you register what you need, nothing else, nothing more.
+      Yii Wheels has been completely rebuilt from ground up. It differs from its predecessor, YiiBooster, in that widgets and their assets are isolated in their own folders; which promotes better and easier maintenance.
+                    YiiBooster had to register all its required assets at the once, and developers soon realized that this slowed things down, as compared to Yii-Bootstrap's performance. Now, with YiiWheels, you register only what you need, when you need it, nothing else, nothing more. Simple, but elegant.
                 </p>
             </div>
         </div>
