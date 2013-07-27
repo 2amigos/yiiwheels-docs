@@ -125,7 +125,11 @@ return array(
         ...
         // yiistrap configuration
         'bootstrap' => array(
-            'class' => 'bootstrap.components.TbApi',   
+            'class' => 'bootstrap.components.TbApi',
+        ),
+        // yiiwheels configuration
+        'yiiwheels' => array(
+            'class' => 'yiiwheels.YiiWheels',   
         ),
     ),
 );</pre>
