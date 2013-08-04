@@ -204,7 +204,7 @@ return array(
         <p class="lead">Head to the docs for examples or take a look at the API.</p>
 
         <p class="lead">
-            <a class="btn btn-large btn-primary" href="<?php echo $this->createUrl('widgets'); ?>"
+            <a class="btn btn-large btn-primary" href="<?php echo $this->createUrl('inputs'); ?>"
                onclick="_gaq.push(['_trackEvent', 'Getting started', 'Next steps', 'Visit docs']);">Visit the
                 Yiiwheels docs</a>
             <a class="btn btn-large" href="<?php echo $this->createUrl('/api'); ?>"
