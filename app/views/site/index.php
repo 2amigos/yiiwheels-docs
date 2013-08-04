@@ -14,7 +14,7 @@ $this->pageTitle = param('pageTitle');
             <li><a href="https://github.com/2amigos/yiiwheels"
                    onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub
                     project</a></li>
-            <li>Version 1.0.0</li>
+            <li>Version 1.0.1</li>
         </ul>
     </div>
 </div>
