@@ -35,8 +35,8 @@
     ],
     "require": {
         "yiisoft/yii": "1.1.13",
-        "2amigos/yiiwheels": "1.0.1",
-        "2amigos/yiistrap": "dev-master"
+        "2amigos/yiiwheels": "1.0.2",
+        "2amigos/yiistrap": "1.0.1"
     },
     "autoload": {
         "psr-0": {
