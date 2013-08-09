@@ -52,7 +52,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
                     extensions folder and configure it.</p>
 
                 <p><a class="btn btn-large btn-primary"
-                      href="https://github.com/2amigos/yiiwheels/archive/master.zip">Download Yiiwheels</a></p>
+                      href="https://github.com/2amigos/yiiwheels/archive/1.0.2.zip">Download Yiiwheels 1.0.2</a></p>
             </div>
             <div class="span6">
                 <h2>Clone</h2>

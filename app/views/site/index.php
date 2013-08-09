@@ -7,14 +7,14 @@ $this->pageTitle = param('pageTitle');
         <h1><img src="<?php echo $this->baseUrl('/images/trasparentCentre.png');?>"></h1>
         <p>Extension Library for Yiistrap</p>
 
-        <p><a href="https://github.com/2amigos/yiiwheels/archive/master.zip" class="btn btn-inverse btn-large"
-              onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 1.0.0']);">Download
+        <p><a href="https://github.com/2amigos/yiiwheels/archive/1.0.2.zip" class="btn btn-inverse btn-large"
+              onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 1.0.2']);">Download
                 Yiiwheels</a></p>
         <ul class="masthead-links">
             <li><a href="https://github.com/2amigos/yiiwheels"
                    onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub
                     project</a></li>
-            <li>Version 1.0.1</li>
+            <li>Version 1.0.2</li>
         </ul>
     </div>
 </div>
