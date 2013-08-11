@@ -115,4 +115,31 @@ class SiteController extends EController
     {
         echo true;
     }
+
+	/**
+	 * Fake editable
+	 */
+	public function actionEditable()
+	{
+		sleep(1);
+	}
+
+	/**
+	 * Renders the a dummy content for relational column
+	 */
+	public function actionRelational()
+	{
+		echo '<div class="row-fluid"><div class="span12" style="text-align:center">' .
+			CHtml::image($this->baseUrl('images/2-amigos.jpg')) .
+			'</div></div>';
+	}
+
+	/**
+	 * Fake toggle
+	 */
+	public function actionToggle()
+	{
+
+	}
+
 }

@@ -53,4 +53,4 @@
         }
     })
 
-}(window.jQuery)
+}(window.jQuery);

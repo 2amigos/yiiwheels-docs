@@ -1,9 +1,11 @@
 <?php /* @var $this Controller */ ?>
-<?php Yii::app()->bootstrap->registerAllCss(); ?>
+<?php //Yii::app()->bootstrap->registerAllCss(); ?>
 <?php Yii::app()->bootstrap->registerCoreScripts(null, CClientScript::POS_HEAD); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/bootstrap-responsive.min.css'); ?>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="en"/>
     <meta name="keywords"
