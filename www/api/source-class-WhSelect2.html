@@ -8,7 +8,7 @@
 	<title>File widgets/select2/WhSelect2.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1977741431"></script>
+	<script type="text/javascript" src="elementlist.js?1491821685"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -57,7 +57,7 @@
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
 						</li>
-				<li><a href="package-yiiwheels.helpers.html">helpers</a>
+				<li><a href="package-yiiwheels.widgets.html">widgets</a>
 						</li>
 				<li class="active"><a href="package-YiiWheels.widgets.html">widgets<span></span></a>
 						<ul>
@@ -69,14 +69,29 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.daterangepicker.html">daterangepicker</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.datetimepicker.html">datetimepicker</a>
+						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
+						</li>
 				<li><a href="package-YiiWheels.widgets.google.html">google</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.grid.html">grid<span></span></a>
+						<ul>
+				<li><a href="package-yiiwheels.widgets.grid.behaviors.html">behaviors</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.grid.operations.html">operations</a>
+						</li>
+							</ul></li>
 				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.maskInput.html">maskInput</a>
@@ -94,6 +109,8 @@
 				<li class="active"><a href="package-YiiWheels.widgets.select2.html">select2</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.sparklines.html">sparklines</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.switch.html">switch</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.timeago.html">timeago</a>
 						</li>
@@ -134,9 +151,9 @@
 </span></span><span id="6" class="l"><a class="l" href="#6">  6 </a><span class="php-comment"> * @copyright Copyright &amp;copy; 2amigos.us 2013-
 </span></span><span id="7" class="l"><a class="l" href="#7">  7 </a><span class="php-comment"> * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
 </span></span><span id="8" class="l"><a class="l" href="#8">  8 </a><span class="php-comment"> * @package YiiWheels.widgets.select2
-</span></span><span id="9" class="l"><a class="l" href="#9">  9 </a><span class="php-comment"> * @uses YiiWheels.WhHtml
+</span></span><span id="9" class="l"><a class="l" href="#9">  9 </a><span class="php-comment"> * @uses YiiStrap.helpers.TbArray
 </span></span><span id="10" class="l"><a class="l" href="#10"> 10 </a><span class="php-comment"> */</span>
-</span><span id="11" class="l"><a class="l" href="#11"> 11 </a>Yii::import(<span class="php-quote">'yiiwheels.helpers.WhHtml'</span>);
+</span><span id="11" class="l"><a class="l" href="#11"> 11 </a>Yii::import(<span class="php-quote">'bootstrap.helpers.TbArray'</span>);
 </span><span id="12" class="l"><a class="l" href="#12"> 12 </a>
 </span><span id="13" class="l"><a class="l" href="#13"> 13 </a><span class="php-keyword1">class</span> <a id="WhSelect2" href="#WhSelect2">WhSelect2</a> <span class="php-keyword1">extends</span> CInputWidget
 </span><span id="14" class="l"><a class="l" href="#14"> 14 </a>{
@@ -194,8 +211,8 @@
 </span><span id="66" class="l"><a class="l" href="#66"> 66 </a>    {
 </span><span id="67" class="l"><a class="l" href="#67"> 67 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
 </span><span id="68" class="l"><a class="l" href="#68"> 68 </a>
-</span><span id="69" class="l"><a class="l" href="#69"> 69 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = WhHtml::defaultOption(<span class="php-quote">'id'</span>, <span class="php-var">$id</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="70" class="l"><a class="l" href="#70"> 70 </a>        <span class="php-var">$this</span>-&gt;htmlOptions = WhHtml::defaultOption(<span class="php-quote">'name'</span>, <span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="69" class="l"><a class="l" href="#69"> 69 </a>        TbArray::defaultValue(<span class="php-quote">'id'</span>, <span class="php-var">$id</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="70" class="l"><a class="l" href="#70"> 70 </a>        TbArray::defaultValue(<span class="php-quote">'name'</span>, <span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="71" class="l"><a class="l" href="#71"> 71 </a>
 </span><span id="72" class="l"><a class="l" href="#72"> 72 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
 </span><span id="73" class="l"><a class="l" href="#73"> 73 </a>            <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;asDropDownList ?
@@ -234,7 +251,7 @@
 </span><span id="106" class="l"><a class="l" href="#106">106 </a>        }
 </span><span id="107" class="l"><a class="l" href="#107">107 </a>
 </span><span id="108" class="l"><a class="l" href="#108">108 </a>        <span class="php-comment">/* initialize plugin */</span>
-</span><span id="109" class="l"><a class="l" href="#109">109 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . WhHtml::getOption(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
+</span><span id="109" class="l"><a class="l" href="#109">109 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
 </span><span id="110" class="l"><a class="l" href="#110">110 </a>
 </span><span id="111" class="l"><a class="l" href="#111">111 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'select2'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
 </span><span id="112" class="l"><a class="l" href="#112">112 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerEvents(<span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;events);

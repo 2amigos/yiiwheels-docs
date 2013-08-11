@@ -5,10 +5,10 @@
 	<meta name="generator" content="ApiGen 2.8.0" />
 	<meta name="robots" content="noindex" />
 
-	<title>File widgets/toggle/WhToggleColumn.php | YiiWheels</title>
+	<title>File widgets/grid/WhToggleColumn.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1977741431"></script>
+	<script type="text/javascript" src="elementlist.js?1491821685"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -57,7 +57,7 @@
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
 						</li>
-				<li><a href="package-yiiwheels.helpers.html">helpers</a>
+				<li><a href="package-yiiwheels.widgets.html">widgets</a>
 						</li>
 				<li class="active"><a href="package-YiiWheels.widgets.html">widgets<span></span></a>
 						<ul>
@@ -69,14 +69,29 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.daterangepicker.html">daterangepicker</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.datetimepicker.html">datetimepicker</a>
+						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
+						</li>
 				<li><a href="package-YiiWheels.widgets.google.html">google</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.grid.html">grid<span></span></a>
+						<ul>
+				<li><a href="package-yiiwheels.widgets.grid.behaviors.html">behaviors</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.grid.operations.html">operations</a>
+						</li>
+							</ul></li>
 				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.maskInput.html">maskInput</a>
@@ -94,6 +109,8 @@
 				<li><a href="package-YiiWheels.widgets.select2.html">select2</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.sparklines.html">sparklines</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.switch.html">switch</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.timeago.html">timeago</a>
 						</li>
@@ -136,10 +153,10 @@
 </span></span><span id="6" class="l"><a class="l" href="#6">  6 </a><span class="php-comment"> * @copyright Copyright &amp;copy; 2amigos.us 2013-
 </span></span><span id="7" class="l"><a class="l" href="#7">  7 </a><span class="php-comment"> * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
 </span></span><span id="8" class="l"><a class="l" href="#8">  8 </a><span class="php-comment"> * @package YiiWheels.widgets.toggle
-</span></span><span id="9" class="l"><a class="l" href="#9">  9 </a><span class="php-comment"> * @uses YiiWheels.helpers.WhHtml
+</span></span><span id="9" class="l"><a class="l" href="#9">  9 </a><span class="php-comment"> * @uses YiiStrap.helpers.TbHtml
 </span></span><span id="10" class="l"><a class="l" href="#10"> 10 </a><span class="php-comment"> * @uses YiiStrap.widgets.TbDataColumn
 </span></span><span id="11" class="l"><a class="l" href="#11"> 11 </a><span class="php-comment"> */</span>
-</span><span id="12" class="l"><a class="l" href="#12"> 12 </a>Yii::import(<span class="php-quote">'yiiwheels.helpers.WhHtml'</span>);
+</span><span id="12" class="l"><a class="l" href="#12"> 12 </a>Yii::import(<span class="php-quote">'bootstrap.helpers.TbHtml'</span>);
 </span><span id="13" class="l"><a class="l" href="#13"> 13 </a>Yii::import(<span class="php-quote">'bootstrap.widgets.TbDataColumn'</span>);
 </span><span id="14" class="l"><a class="l" href="#14"> 14 </a>
 </span><span id="15" class="l"><a class="l" href="#15"> 15 </a><span class="php-keyword1">class</span> <a id="WhToggleColumn" href="#WhToggleColumn">WhToggleColumn</a> <span class="php-keyword1">extends</span> TbDataColumn
@@ -353,12 +370,12 @@
 </span><span id="223" class="l"><a class="l" href="#223">223 </a>            : <span class="php-quote">'#'</span>;
 </span><span id="224" class="l"><a class="l" href="#224">224 </a>
 </span><span id="225" class="l"><a class="l" href="#225">225 </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$this</span>-&gt;displayText) {
-</span><span id="226" class="l"><a class="l" href="#226">226 </a>            <span class="php-var">$htmlOptions</span>          = WhHtml::popOption(<span class="php-quote">'htmlOptions'</span>, <span class="php-var">$this</span>-&gt;toggleOptions, <span class="php-keyword1">array</span>());
+</span><span id="226" class="l"><a class="l" href="#226">226 </a>            <span class="php-var">$htmlOptions</span>          = TbArray::getValue(<span class="php-quote">'htmlOptions'</span>, <span class="php-var">$this</span>-&gt;toggleOptions, <span class="php-keyword1">array</span>());
 </span><span id="227" class="l"><a class="l" href="#227">227 </a>            <span class="php-var">$htmlOptions</span>[<span class="php-quote">'title'</span>] = <span class="php-var">$this</span>-&gt;getButtonLabel(<span class="php-var">$checked</span>);
 </span><span id="228" class="l"><a class="l" href="#228">228 </a>            <span class="php-var">$htmlOptions</span>[<span class="php-quote">'rel'</span>]   = <span class="php-quote">'tooltip'</span>;
-</span><span id="229" class="l"><a class="l" href="#229">229 </a>            <span class="php-keyword1">echo</span> CHtml::<span class="php-keyword2">link</span>(WhHtml::icon(<span class="php-var">$toggleOptions</span>[<span class="php-quote">'icon'</span>]), <span class="php-var">$toggleOptions</span>[<span class="php-quote">'url'</span>], <span class="php-var">$htmlOptions</span>);
+</span><span id="229" class="l"><a class="l" href="#229">229 </a>            <span class="php-keyword1">echo</span> CHtml::<span class="php-keyword2">link</span>(TbHtml::icon(<span class="php-var">$toggleOptions</span>[<span class="php-quote">'icon'</span>]), <span class="php-var">$toggleOptions</span>[<span class="php-quote">'url'</span>], <span class="php-var">$htmlOptions</span>);
 </span><span id="230" class="l"><a class="l" href="#230">230 </a>        } <span class="php-keyword1">else</span> {
-</span><span id="231" class="l"><a class="l" href="#231">231 </a>            <span class="php-keyword1">echo</span> WhHtml::button(<span class="php-var">$this</span>-&gt;getButtonLabel(<span class="php-var">$checked</span>), <span class="php-var">$toggleOptions</span>);
+</span><span id="231" class="l"><a class="l" href="#231">231 </a>            <span class="php-keyword1">echo</span> TbHtml::button(<span class="php-var">$this</span>-&gt;getButtonLabel(<span class="php-var">$checked</span>), <span class="php-var">$toggleOptions</span>);
 </span><span id="232" class="l"><a class="l" href="#232">232 </a>        }
 </span><span id="233" class="l"><a class="l" href="#233">233 </a>    }
 </span><span id="234" class="l"><a class="l" href="#234">234 </a>
@@ -369,7 +386,7 @@
 </span><span id="239" class="l"><a class="l" href="#239">239 </a>    {
 </span><span id="240" class="l"><a class="l" href="#240">240 </a>        <span class="php-var">$js</span> = <span class="php-keyword1">array</span>();
 </span><span id="241" class="l"><a class="l" href="#241">241 </a>
-</span><span id="242" class="l"><a class="l" href="#242">242 </a>        <span class="php-var">$function</span> = CJavaScript::encode(WhHtml::popOption(<span class="php-quote">'click'</span>, <span class="php-var">$this</span>-&gt;toggleOptions, <span class="php-quote">''</span>));
+</span><span id="242" class="l"><a class="l" href="#242">242 </a>        <span class="php-var">$function</span> = CJavaScript::encode(TbArray::popValue(<span class="php-quote">'click'</span>, <span class="php-var">$this</span>-&gt;toggleOptions, <span class="php-quote">''</span>));
 </span><span id="243" class="l"><a class="l" href="#243">243 </a>
 </span><span id="244" class="l"><a class="l" href="#244">244 </a>        <span class="php-var">$class</span> = <span class="php-keyword2">preg_replace</span>(<span class="php-quote">'/\s+/'</span>, <span class="php-quote">'.'</span>, <span class="php-var">$this</span>-&gt;toggleOptions[<span class="php-quote">'htmlOptions'</span>][<span class="php-quote">'class'</span>]);
 </span><span id="245" class="l"><a class="l" href="#245">245 </a>        <span class="php-var">$js</span>[]  = <span class="php-quote">&quot;</span><span class="php-var">$</span><span class="php-quote">(document).on('click','#</span><span class="php-var">{$this-&gt;grid-&gt;id}</span><span class="php-quote"> a.</span><span class="php-var">{$class}</span><span class="php-quote">',</span><span class="php-var">$function</span><span class="php-quote">);&quot;</span>;

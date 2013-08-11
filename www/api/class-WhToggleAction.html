@@ -7,7 +7,7 @@
 	<title>Class WhToggleAction | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1977741431"></script>
+	<script type="text/javascript" src="elementlist.js?1491821685"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -55,7 +55,7 @@
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
 						</li>
-				<li><a href="package-yiiwheels.helpers.html">helpers</a>
+				<li><a href="package-yiiwheels.widgets.html">widgets</a>
 						</li>
 				<li class="active"><a href="package-YiiWheels.widgets.html">widgets<span></span></a>
 						<ul>
@@ -67,14 +67,29 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.daterangepicker.html">daterangepicker</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.datetimepicker.html">datetimepicker</a>
+						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
+						</li>
 				<li><a href="package-YiiWheels.widgets.google.html">google</a>
 						</li>
+				<li><a href="package-YiiWheels.widgets.grid.html">grid<span></span></a>
+						<ul>
+				<li><a href="package-yiiwheels.widgets.grid.behaviors.html">behaviors</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.grid.operations.html">operations</a>
+						</li>
+							</ul></li>
 				<li><a href="package-YiiWheels.widgets.highcharts.html">highcharts</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.maskInput.html">maskInput</a>
@@ -92,6 +107,8 @@
 				<li><a href="package-YiiWheels.widgets.select2.html">select2</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.sparklines.html">sparklines</a>
+						</li>
+				<li><a href="package-YiiWheels.widgets.switch.html">switch</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.timeago.html">timeago</a>
 						</li>
@@ -130,6 +147,15 @@
 	<h1>Class WhToggleAction</h1>
 
 
+	<div class="description">
+	
+<p>WhToggleAction action class</p>
+
+<p>Works in conjunction with WhToggleColumn widget in order to ease the task of
+the developer to update the the attribute displayed on the grid. Just attach to
+the controller you wish to make the calls to.</p>
+
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -165,7 +191,7 @@ CAction
 				<b>Author:</b>
 				Antonio Ramirez &lt;<a
 href="mailto:amigo.cobos&#64;gmail.com">amigo.cobos&#64;<!---->gmail.com</a>&gt;<br />
-		<b>Located at</b> <a href="source-class-WhToggleAction.html#16-112" title="Go to source code">widgets/toggle/WhToggleAction.php</a><br />
+		<b>Located at</b> <a href="source-class-WhToggleAction.html#3-110" title="Go to source code">widgets/grid/actions/WhToggleAction.php</a><br />
 	</div>
 
 
@@ -183,7 +209,7 @@ href="mailto:amigo.cobos&#64;gmail.com">amigo.cobos&#64;<!---->gmail.com</a>&gt;
 
 			<td class="name"><div>
 			<a class="anchor" href="#_run">#</a>
-			<code><a href="source-class-WhToggleAction.html#59-82" title="Go to source code">run</a>( <span>integer <var>$id</var></span>, <span>string <var>$attribute</var></span> )</code>
+			<code><a href="source-class-WhToggleAction.html#57-80" title="Go to source code">run</a>( <span>integer <var>$id</var></span>, <span>string <var>$attribute</var></span> )</code>
 
 			<div class="description short">
 				
@@ -227,7 +253,7 @@ href="mailto:amigo.cobos&#64;gmail.com">amigo.cobos&#64;<!---->gmail.com</a>&gt;
 
 			<td class="name"><div>
 			<a class="anchor" href="#_loadModel">#</a>
-			<code><a href="source-class-WhToggleAction.html#84-111" title="Go to source code">loadModel</a>( <span>integer <var>$id</var></span> )</code>
+			<code><a href="source-class-WhToggleAction.html#82-109" title="Go to source code">loadModel</a>( <span>integer <var>$id</var></span> )</code>
 
 			<div class="description short">
 				
@@ -284,7 +310,7 @@ href="mailto:amigo.cobos&#64;gmail.com">amigo.cobos&#64;<!---->gmail.com</a>&gt;
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#18-21" title="Go to source code"><var>$modelName</var></a>
+					<a href="source-class-WhToggleAction.html#16-19" title="Go to source code"><var>$modelName</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$modelName" class="anchor">#</a>
@@ -310,7 +336,7 @@ href="mailto:amigo.cobos&#64;gmail.com">amigo.cobos&#64;<!---->gmail.com</a>&gt;
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#23-26" title="Go to source code"><var>$exceptionOnNullModel</var></a>
+					<a href="source-class-WhToggleAction.html#21-24" title="Go to source code"><var>$exceptionOnNullModel</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$exceptionOnNullModel" class="anchor">#</a>
@@ -338,7 +364,7 @@ id</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#28-31" title="Go to source code"><var>$additionalCriteriaOnLoadModel</var></a>
+					<a href="source-class-WhToggleAction.html#26-29" title="Go to source code"><var>$additionalCriteriaOnLoadModel</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$additionalCriteriaOnLoadModel" class="anchor">#</a>
@@ -364,7 +390,7 @@ id</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#33-36" title="Go to source code"><var>$redirectRoute</var></a>
+					<a href="source-class-WhToggleAction.html#31-34" title="Go to source code"><var>$redirectRoute</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$redirectRoute" class="anchor">#</a>
@@ -390,7 +416,7 @@ id</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#38-41" title="Go to source code"><var>$yesValue</var></a>
+					<a href="source-class-WhToggleAction.html#36-39" title="Go to source code"><var>$yesValue</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$yesValue" class="anchor">#</a>
@@ -418,7 +444,7 @@ can toggle any value.</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#43-46" title="Go to source code"><var>$noValue</var></a>
+					<a href="source-class-WhToggleAction.html#41-44" title="Go to source code"><var>$noValue</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$noValue" class="anchor">#</a>
@@ -444,7 +470,7 @@ can toggle any value.</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#48-51" title="Go to source code"><var>$ajaxResponseOnSuccess</var></a>
+					<a href="source-class-WhToggleAction.html#46-49" title="Go to source code"><var>$ajaxResponseOnSuccess</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$ajaxResponseOnSuccess" class="anchor">#</a>
@@ -472,7 +498,7 @@ saved.</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-WhToggleAction.html#53-56" title="Go to source code"><var>$ajaxResponseOnFailed</var></a>
+					<a href="source-class-WhToggleAction.html#51-54" title="Go to source code"><var>$ajaxResponseOnFailed</var></a>
 			</td>
 			<td class="description"><div>
 				<a href="#$ajaxResponseOnFailed" class="anchor">#</a>
