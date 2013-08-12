@@ -877,7 +877,7 @@ $this->widget('yiiwheels.widgets.grid.WhGridView', array(
 
 		<div class="bs-docs-example">
 			<?php
-			Yii::app()->getComponent('yiiwheels')->registerAssetJs('bootbox.min.js');
+			Yii::app()->getComponent('yiiwheels')->registerAssetJs('bootstrap-bootbox.min.js');
 			$this->widget('yiiwheels.widgets.grid.WhGridView', array(
 				'type' => 'striped bordered',
 				'dataProvider' => Person::getGridDataProvider(),
