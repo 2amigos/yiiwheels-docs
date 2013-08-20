@@ -620,17 +620,239 @@ $this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
 	</div>
 
 <pre class="prettyprint linenums">
-&lt;?php
-$this-&gt;widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
-        'name'          =&gt; 'fineuploadtest',
-        'uploadAction'  =&gt; $this-&gt;createUrl('site/upload', array('fine' =&gt; 1)),
-        'pluginOptions' =&gt; array(
-            'validation'=&gt;array(
-                'allowedExtensions' =&gt; array('jpeg', 'jpg')
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;SelectBox&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhSelectBox',
+            array(
+                'name' =&gt; 'selectboxtest',
+                'value' =&gt; 3,
+                'data' =&gt; array(
+                    '2amigos',
+                    'just',
+                    'rocks',
+                    'yiiwheels'
+                )
             )
-        )
-    ));
-?&gt;
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Countries&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhCountries',
+            array(
+                'name' =&gt; 'countrytest',
+                'value' =&gt; 'US',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'country' =&gt; 'US',
+                    'flags' =&gt; true
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Country Read Only&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhCountries',
+            array(
+                'name' =&gt; 'countrytestreadyonly',
+                'value' =&gt; 'US',
+                'readOnly' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'country' =&gt; 'US',
+                    'flags' =&gt; true
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;States (US, CA)&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhStates',
+            array(
+                'name' =&gt; 'statetest',
+                'value' =&gt; 'CA',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'country' =&gt; 'US'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;State Ready Only (US, CA)&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhStates',
+            array(
+                'name' =&gt; 'statetestreadyonly',
+                'value' =&gt; 'CA',
+                'readOnly' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'country' =&gt; 'US'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Phone&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhPhone',
+            array(
+                'name' =&gt; 'phonetest',
+                'value' =&gt; '15555555555',
+                'format' =&gt; '+1 (ddd) ddd-dddd',
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Languages&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhLanguages',
+            array(
+                'name' =&gt; 'languagesdropdown',
+                'value' =&gt; 'en_US',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'language' =&gt; 'en_US',
+                    'flags' =&gt; true,
+                    'available' =&gt; 'es_ES,en_US,de_DE'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Languages Read Only&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhLanguages',
+            array(
+                'name' =&gt; 'languages',
+                'value' =&gt; 'es_ES',
+                'readOnly' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'language' =&gt; 'es_ES',
+                    'flags' =&gt; true,
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Timezones&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhTimezones',
+            array(
+                'name' =&gt; 'timezones',
+                'value' =&gt; 'US',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'country' =&gt; 'US',
+                    'timezone' =&gt; 'America/Denver'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Google Fonts&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhGoogleFonts',
+            array(
+                'name' =&gt; 'googlefonts',
+                'value' =&gt; 'Lato',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'family' =&gt; 'Lato'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;DatePicker&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhDatePickerHelper',
+            array(
+                'inputOptions' =&gt; array('class' =&gt; 'input-medium'),
+                'name' =&gt; 'datepicker',
+                'value' =&gt; '2000-01-01'
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;TimePicker&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhTimePickerHelper',
+            array(
+                'inputOptions' =&gt; array('class' =&gt; 'input-medium'),
+                'name' =&gt; 'timepicker',
+                'value' =&gt; '08:00'
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row-fluid&quot;&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Fonts&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhFonts',
+            array(
+                'name' =&gt; 'fonts',
+                'value' =&gt; 'Helvetica',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'family' =&gt; 'Helvetica'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;span3&quot;&gt;
+        &lt;p&gt;Font Sizes&lt;/p&gt;
+        &lt;?php
+        $this-&gt;widget(
+            'yiiwheels.widgets.formhelpers.WhFontSizes',
+            array(
+                'name' =&gt; 'fontsizes',
+                'value' =&gt; '14',
+                'useHelperSelectBox' =&gt; true,
+                'pluginOptions' =&gt; array(
+                    'family' =&gt; '14'
+                )
+            )
+        );
+        ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </pre>
 </section>
 
