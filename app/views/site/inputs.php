@@ -38,7 +38,7 @@
 		<li><a href="#multiselect"><i class="icon-chevron-right"></i> MultiSelect</a></li>
 		<li><a href="#select2"><i class="icon-chevron-right"></i> Select2</a></li>
 		<li><a href="#switch"><i class="icon-chevron-right"></i> Switch</a></li>
-		<li><a href="#timepicker"><i class="icon-chevron-right"></i> TimePicker</a></li>
+		<li><a href="#t1mepicker"><i class="icon-chevron-right"></i> TimePicker</a></li>
 		<li><a href="#toggle"><i class="icon-chevron-right"></i> Toggle</a></li>
 		<li><a href="#typeahead"><i class="icon-chevron-right"></i> TypeAhead</a></li>
 	</ul>
@@ -138,7 +138,7 @@
 </section>
 <!-- DateTimePicker
 ================================================== -->
-<section id="daterangepicker">
+<section id="datetimepicker">
 
 	<div class="page-header">
 		<h1>DateTimePicker
@@ -1135,7 +1135,7 @@ $this-&gt;widget('yiiwheels.widgets.select2.WhSelect2', array(
 
 <!-- TimePicker
 ================================================== -->
-<section id="timepicker">
+<section id="t1mepicker">
 
 	<div class="page-header">
 		<h1>TimePicker
