@@ -85,14 +85,13 @@ class EController extends CController
 		}
 		else
 		{
-            header('Vary: Accept');
-            if (isset($_SERVER['HTTP_ACCEPT']) &&
-                (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)) {
-                header('Content-type: application/json; charset=UTF-8');
-            } else {
-                header('Content-type: text/plain; charset=UTF-8');
-            }
-            echo json_encode($data, $opts);
+			header('Vary: Accept');
+			if (isset($_SERVER['HTTP_ACCEPT']) && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)) {
+				header('Content-type: application/json; charset=UTF-8');
+			} else {
+				header('Content-type: text/plain; charset=UTF-8');
+			}
+			echo json_encode($data, $opts);
 		}
 	}
 
