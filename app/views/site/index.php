@@ -7,7 +7,7 @@ $this->pageTitle = param('pageTitle');
         <h1><img src="<?php echo $this->baseUrl('/images/trasparentCentre.png'); ?>"></h1>
 
         <p>Extension Library for Yiistrap</p>
-        <p><small>Now Bootstrap 3+ Ready</small></p>
+        <p style="font-size:20px">Now Bootstrap 3+ Ready</p>
         <p><a href="https://github.com/2amigos/yiiwheels/archive/2.0.3.zip" class="btn btn-info btn-large"
               onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0']);">Download
                 Yiiwheels</a></p>
