@@ -8,7 +8,7 @@
 	<title>File widgets/rangeslider/WhRangeSlider.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1491821685"></script>
+	<script type="text/javascript" src="elementlist.js?53054354"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -53,6 +53,8 @@
 		<div id="groups">
 			<h3>Packages</h3>
 			<ul>
+				<li><a href="package-None.html">None</a>
+						</li>
 				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
@@ -73,13 +75,9 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
 						</li>
-				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
-						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
-						</li>
-				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
 						</li>
@@ -227,7 +225,7 @@
 </span></span><span id="82" class="l"><a class="l" href="#82"> 82 </a><span class="php-comment">     * Example:
 </span></span><span id="83" class="l"><a class="l" href="#83"> 83 </a><span class="php-comment">     * ```
 </span></span><span id="84" class="l"><a class="l" href="#84"> 84 </a><span class="php-comment">     *   'formater'=&gt;'js:function(val){
-</span></span><span id="85" class="l"><a class="l" href="#85"> 85 </a><span class="php-comment">    var value = Math.round(val * 5) / 5,
+</span></span><span id="85" class="l"><a class="l" href="#85"> 85 </a><span class="php-comment">     * var value = Math.round(val * 5) / 5,
 </span></span><span id="86" class="l"><a class="l" href="#86"> 86 </a><span class="php-comment">     *      decimal = value - Math.round(val);
 </span></span><span id="87" class="l"><a class="l" href="#87"> 87 </a><span class="php-comment">     *      return decimal == 0 ? value.toString() + &quot;.0&quot; : value.toString();
 </span></span><span id="88" class="l"><a class="l" href="#88"> 88 </a><span class="php-comment">     *   }'
@@ -268,10 +266,10 @@
 </span><span id="123" class="l"><a class="l" href="#123">123 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$inputType" href="#$inputType">$inputType</a></span> = <span class="php-quote">'text'</span>;
 </span><span id="124" class="l"><a class="l" href="#124">124 </a>
 </span><span id="125" class="l"><a class="l" href="#125">125 </a>    <span class="php-comment">/**
-</span></span><span id="126" class="l"><a class="l" href="#126">126 </a><span class="php-comment">     * @var string lets you specify a display mode for value labels: `hidden`, `shown`, or only shown when moving.
+</span></span><span id="126" class="l"><a class="l" href="#126">126 </a><span class="php-comment">     * @var string lets you specify a display mode for value labels: `hidden`, `show`, or only shown when moving.
 </span></span><span id="127" class="l"><a class="l" href="#127">127 </a><span class="php-comment">     * Possible values are: show, hide and change.
 </span></span><span id="128" class="l"><a class="l" href="#128">128 </a><span class="php-comment">     */</span>
-</span><span id="129" class="l"><a class="l" href="#129">129 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$valueLabels" href="#$valueLabels">$valueLabels</a></span> = <span class="php-quote">'shown'</span>;
+</span><span id="129" class="l"><a class="l" href="#129">129 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$valueLabels" href="#$valueLabels">$valueLabels</a></span> = <span class="php-quote">'show'</span>;
 </span><span id="130" class="l"><a class="l" href="#130">130 </a>
 </span><span id="131" class="l"><a class="l" href="#131">131 </a>    <span class="php-comment">/**
 </span></span><span id="132" class="l"><a class="l" href="#132">132 </a><span class="php-comment">     * @var string allows to use the mouse wheel to `scroll` (translate) or `zoom` (enlarge/shrink) the selected area in
@@ -366,171 +364,180 @@
 </span><span id="221" class="l"><a class="l" href="#221">221 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$theme" href="#$theme">$theme</a></span> = <span class="php-quote">'iThing'</span>;
 </span><span id="222" class="l"><a class="l" href="#222">222 </a>
 </span><span id="223" class="l"><a class="l" href="#223">223 </a>    <span class="php-comment">/**
-</span></span><span id="224" class="l"><a class="l" href="#224">224 </a><span class="php-comment">     * @var array the options to pass to the jQSlider
+</span></span><span id="224" class="l"><a class="l" href="#224">224 </a><span class="php-comment">     * @var array
 </span></span><span id="225" class="l"><a class="l" href="#225">225 </a><span class="php-comment">     */</span>
-</span><span id="226" class="l"><a class="l" href="#226">226 </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$options" href="#$options">$options</a></span>;
-</span><span id="227" class="l"><a class="l" href="#227">227 </a>
-</span><span id="228" class="l"><a class="l" href="#228">228 </a>    <span class="php-comment">/**
-</span></span><span id="229" class="l"><a class="l" href="#229">229 </a><span class="php-comment">     * Widget's initialization
-</span></span><span id="230" class="l"><a class="l" href="#230">230 </a><span class="php-comment">     */</span>
-</span><span id="231" class="l"><a class="l" href="#231">231 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
-</span><span id="232" class="l"><a class="l" href="#232">232 </a>    {
-</span><span id="233" class="l"><a class="l" href="#233">233 </a>
-</span><span id="234" class="l"><a class="l" href="#234">234 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;type, <span class="php-keyword1">array</span>(<span class="php-quote">'range'</span>, <span class="php-quote">'editRange'</span>, <span class="php-quote">'dateRange'</span>), <span class="php-quote">'type'</span>);
-</span><span id="235" class="l"><a class="l" href="#235">235 </a>
-</span><span id="236" class="l"><a class="l" href="#236">236 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;inputType, <span class="php-keyword1">array</span>(<span class="php-quote">'text'</span>, <span class="php-quote">'number'</span>), <span class="php-quote">'inputType'</span>);
+</span><span id="226" class="l"><a class="l" href="#226">226 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$pluginOptions" href="#$pluginOptions">$pluginOptions</a></span> = <span class="php-keyword1">array</span>();
+</span><span id="227" class="l"><a class="l" href="#227">227 </a>    <span class="php-comment">/**
+</span></span><span id="228" class="l"><a class="l" href="#228">228 </a><span class="php-comment">     * @var array the options to pass to the jQSlider
+</span></span><span id="229" class="l"><a class="l" href="#229">229 </a><span class="php-comment">     */</span>
+</span><span id="230" class="l"><a class="l" href="#230">230 </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$options" href="#$options">$options</a></span>;
+</span><span id="231" class="l"><a class="l" href="#231">231 </a>
+</span><span id="232" class="l"><a class="l" href="#232">232 </a>    <span class="php-comment">/**
+</span></span><span id="233" class="l"><a class="l" href="#233">233 </a><span class="php-comment">     * Widget's initialization
+</span></span><span id="234" class="l"><a class="l" href="#234">234 </a><span class="php-comment">     */</span>
+</span><span id="235" class="l"><a class="l" href="#235">235 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
+</span><span id="236" class="l"><a class="l" href="#236">236 </a>    {
 </span><span id="237" class="l"><a class="l" href="#237">237 </a>
-</span><span id="238" class="l"><a class="l" href="#238">238 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;valueLabels, <span class="php-keyword1">array</span>(<span class="php-quote">'shown'</span>, <span class="php-quote">'hidden'</span>), <span class="php-quote">'valueLabels'</span>);
+</span><span id="238" class="l"><a class="l" href="#238">238 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;type, <span class="php-keyword1">array</span>(<span class="php-quote">'range'</span>, <span class="php-quote">'editRange'</span>, <span class="php-quote">'dateRange'</span>), <span class="php-quote">'type'</span>);
 </span><span id="239" class="l"><a class="l" href="#239">239 </a>
-</span><span id="240" class="l"><a class="l" href="#240">240 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;theme, <span class="php-keyword1">array</span>(<span class="php-quote">'iThing'</span>, <span class="php-quote">'classic'</span>), <span class="php-quote">'theme'</span>);
+</span><span id="240" class="l"><a class="l" href="#240">240 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;inputType, <span class="php-keyword1">array</span>(<span class="php-quote">'text'</span>, <span class="php-quote">'number'</span>), <span class="php-quote">'inputType'</span>);
 </span><span id="241" class="l"><a class="l" href="#241">241 </a>
-</span><span id="242" class="l"><a class="l" href="#242">242 </a>        <span class="php-keyword1">if</span>(<span class="php-var">$this</span>-&gt;wheelMode)
-</span><span id="243" class="l"><a class="l" href="#243">243 </a>        {
-</span><span id="244" class="l"><a class="l" href="#244">244 </a>            <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;wheelMode, <span class="php-keyword1">array</span>(<span class="php-quote">'zoom'</span>, <span class="php-quote">'scroll'</span>), <span class="php-quote">'wheelMode'</span>);
-</span><span id="245" class="l"><a class="l" href="#245">245 </a>        }
-</span><span id="246" class="l"><a class="l" href="#246">246 </a>        <span class="php-var">$this</span>-&gt;attachBehavior(<span class="php-quote">'ywplugin'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'yiiwheels.behaviors.WhPlugin'</span>));
-</span><span id="247" class="l"><a class="l" href="#247">247 </a>        <span class="php-var">$this</span>-&gt;buildOptions();
-</span><span id="248" class="l"><a class="l" href="#248">248 </a>    }
-</span><span id="249" class="l"><a class="l" href="#249">249 </a>
-</span><span id="250" class="l"><a class="l" href="#250">250 </a>    <span class="php-comment">/**
-</span></span><span id="251" class="l"><a class="l" href="#251">251 </a><span class="php-comment">     * Widget's run method
-</span></span><span id="252" class="l"><a class="l" href="#252">252 </a><span class="php-comment">     */</span>
-</span><span id="253" class="l"><a class="l" href="#253">253 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
-</span><span id="254" class="l"><a class="l" href="#254">254 </a>    {
-</span><span id="255" class="l"><a class="l" href="#255">255 </a>        <span class="php-var">$this</span>-&gt;renderField();
-</span><span id="256" class="l"><a class="l" href="#256">256 </a>        <span class="php-var">$this</span>-&gt;registerClientScript();
-</span><span id="257" class="l"><a class="l" href="#257">257 </a>    }
-</span><span id="258" class="l"><a class="l" href="#258">258 </a>
-</span><span id="259" class="l"><a class="l" href="#259">259 </a>    <span class="php-comment">/**
-</span></span><span id="260" class="l"><a class="l" href="#260">260 </a><span class="php-comment">     * Renders field and tag
-</span></span><span id="261" class="l"><a class="l" href="#261">261 </a><span class="php-comment">     */</span>
-</span><span id="262" class="l"><a class="l" href="#262">262 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderField" href="#_renderField">renderField</a>()
-</span><span id="263" class="l"><a class="l" href="#263">263 </a>    {
-</span><span id="264" class="l"><a class="l" href="#264">264 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
-</span><span id="265" class="l"><a class="l" href="#265">265 </a>
-</span><span id="266" class="l"><a class="l" href="#266">266 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
-</span><span id="267" class="l"><a class="l" href="#267">267 </a>            <span class="php-keyword1">echo</span> CHtml::activeHiddenField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="268" class="l"><a class="l" href="#268">268 </a>        } <span class="php-keyword1">else</span> {
-</span><span id="269" class="l"><a class="l" href="#269">269 </a>            <span class="php-keyword1">echo</span> CHtml::hiddenField(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="270" class="l"><a class="l" href="#270">270 </a>        }
-</span><span id="271" class="l"><a class="l" href="#271">271 </a>
-</span><span id="272" class="l"><a class="l" href="#272">272 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;div id=&quot;slider_'</span> . <span class="php-var">$id</span> . <span class="php-quote">'&quot;&gt;&lt;/div&gt;'</span>;
-</span><span id="273" class="l"><a class="l" href="#273">273 </a>    }
+</span><span id="242" class="l"><a class="l" href="#242">242 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;valueLabels, <span class="php-keyword1">array</span>(<span class="php-quote">'show'</span>, <span class="php-quote">'hide'</span>, <span class="php-quote">'change'</span>), <span class="php-quote">'valueLabels'</span>);
+</span><span id="243" class="l"><a class="l" href="#243">243 </a>
+</span><span id="244" class="l"><a class="l" href="#244">244 </a>        <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;theme, <span class="php-keyword1">array</span>(<span class="php-quote">'iThing'</span>, <span class="php-quote">'classic'</span>), <span class="php-quote">'theme'</span>);
+</span><span id="245" class="l"><a class="l" href="#245">245 </a>
+</span><span id="246" class="l"><a class="l" href="#246">246 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;wheelMode) {
+</span><span id="247" class="l"><a class="l" href="#247">247 </a>            <span class="php-var">$this</span>-&gt;checkOptionAttribute(<span class="php-var">$this</span>-&gt;wheelMode, <span class="php-keyword1">array</span>(<span class="php-quote">'zoom'</span>, <span class="php-quote">'scroll'</span>), <span class="php-quote">'wheelMode'</span>);
+</span><span id="248" class="l"><a class="l" href="#248">248 </a>        }
+</span><span id="249" class="l"><a class="l" href="#249">249 </a>        <span class="php-var">$this</span>-&gt;attachBehavior(<span class="php-quote">'ywplugin'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'yiiwheels.behaviors.WhPlugin'</span>));
+</span><span id="250" class="l"><a class="l" href="#250">250 </a>        <span class="php-var">$this</span>-&gt;buildOptions();
+</span><span id="251" class="l"><a class="l" href="#251">251 </a>    }
+</span><span id="252" class="l"><a class="l" href="#252">252 </a>
+</span><span id="253" class="l"><a class="l" href="#253">253 </a>    <span class="php-comment">/**
+</span></span><span id="254" class="l"><a class="l" href="#254">254 </a><span class="php-comment">     * Widget's run method
+</span></span><span id="255" class="l"><a class="l" href="#255">255 </a><span class="php-comment">     */</span>
+</span><span id="256" class="l"><a class="l" href="#256">256 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
+</span><span id="257" class="l"><a class="l" href="#257">257 </a>    {
+</span><span id="258" class="l"><a class="l" href="#258">258 </a>        <span class="php-var">$this</span>-&gt;renderField();
+</span><span id="259" class="l"><a class="l" href="#259">259 </a>        <span class="php-var">$this</span>-&gt;registerClientScript();
+</span><span id="260" class="l"><a class="l" href="#260">260 </a>    }
+</span><span id="261" class="l"><a class="l" href="#261">261 </a>
+</span><span id="262" class="l"><a class="l" href="#262">262 </a>    <span class="php-comment">/**
+</span></span><span id="263" class="l"><a class="l" href="#263">263 </a><span class="php-comment">     * Renders field and tag
+</span></span><span id="264" class="l"><a class="l" href="#264">264 </a><span class="php-comment">     */</span>
+</span><span id="265" class="l"><a class="l" href="#265">265 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_renderField" href="#_renderField">renderField</a>()
+</span><span id="266" class="l"><a class="l" href="#266">266 </a>    {
+</span><span id="267" class="l"><a class="l" href="#267">267 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
+</span><span id="268" class="l"><a class="l" href="#268">268 </a>
+</span><span id="269" class="l"><a class="l" href="#269">269 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
+</span><span id="270" class="l"><a class="l" href="#270">270 </a>            <span class="php-keyword1">echo</span> CHtml::activeHiddenField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="271" class="l"><a class="l" href="#271">271 </a>        } <span class="php-keyword1">else</span> {
+</span><span id="272" class="l"><a class="l" href="#272">272 </a>            <span class="php-keyword1">echo</span> CHtml::hiddenField(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="273" class="l"><a class="l" href="#273">273 </a>        }
 </span><span id="274" class="l"><a class="l" href="#274">274 </a>
-</span><span id="275" class="l"><a class="l" href="#275">275 </a>    <span class="php-comment">/**
-</span></span><span id="276" class="l"><a class="l" href="#276">276 </a><span class="php-comment">     * Registers required files and initialization script
-</span></span><span id="277" class="l"><a class="l" href="#277">277 </a><span class="php-comment">     */</span>
-</span><span id="278" class="l"><a class="l" href="#278">278 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
-</span><span id="279" class="l"><a class="l" href="#279">279 </a>    {
-</span><span id="280" class="l"><a class="l" href="#280">280 </a>        <span class="php-comment">/* publish assets dir */</span>
-</span><span id="281" class="l"><a class="l" href="#281">281 </a>        <span class="php-var">$path</span> = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
-</span><span id="282" class="l"><a class="l" href="#282">282 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
-</span><span id="283" class="l"><a class="l" href="#283">283 </a>        <span class="php-var">$id</span> = TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
-</span><span id="284" class="l"><a class="l" href="#284">284 </a>
-</span><span id="285" class="l"><a class="l" href="#285">285 </a>        <span class="php-var">$jsFile</span> = !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;scales)
-</span><span id="286" class="l"><a class="l" href="#286">286 </a>            ? <span class="php-quote">'jQAllRangeSliders-withRuler-min.js'</span>
-</span><span id="287" class="l"><a class="l" href="#287">287 </a>            : <span class="php-quote">'jQAllRangeSliders-min.js'</span>;
-</span><span id="288" class="l"><a class="l" href="#288">288 </a>
-</span><span id="289" class="l"><a class="l" href="#289">289 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
-</span><span id="290" class="l"><a class="l" href="#290">290 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span><span id="275" class="l"><a class="l" href="#275">275 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;div id=&quot;slider_'</span> . <span class="php-var">$id</span> . <span class="php-quote">'&quot;&gt;&lt;/div&gt;'</span>;
+</span><span id="276" class="l"><a class="l" href="#276">276 </a>    }
+</span><span id="277" class="l"><a class="l" href="#277">277 </a>
+</span><span id="278" class="l"><a class="l" href="#278">278 </a>    <span class="php-comment">/**
+</span></span><span id="279" class="l"><a class="l" href="#279">279 </a><span class="php-comment">     * Registers required files and initialization script
+</span></span><span id="280" class="l"><a class="l" href="#280">280 </a><span class="php-comment">     */</span>
+</span><span id="281" class="l"><a class="l" href="#281">281 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
+</span><span id="282" class="l"><a class="l" href="#282">282 </a>    {
+</span><span id="283" class="l"><a class="l" href="#283">283 </a>        <span class="php-comment">/* publish assets dir */</span>
+</span><span id="284" class="l"><a class="l" href="#284">284 </a>        <span class="php-var">$path</span> = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
+</span><span id="285" class="l"><a class="l" href="#285">285 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
+</span><span id="286" class="l"><a class="l" href="#286">286 </a>        <span class="php-var">$id</span> = TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
+</span><span id="287" class="l"><a class="l" href="#287">287 </a>
+</span><span id="288" class="l"><a class="l" href="#288">288 </a>        <span class="php-var">$jsFile</span> = !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;scales)
+</span><span id="289" class="l"><a class="l" href="#289">289 </a>            ? <span class="php-quote">'jQAllRangeSliders-withRuler-min.js'</span>
+</span><span id="290" class="l"><a class="l" href="#290">290 </a>            : <span class="php-quote">'jQAllRangeSliders-min.js'</span>;
 </span><span id="291" class="l"><a class="l" href="#291">291 </a>
-</span><span id="292" class="l"><a class="l" href="#292">292 </a>        <span class="php-var">$cs</span>-&gt;registerCoreScript(<span class="php-quote">'jquery'</span>);
-</span><span id="293" class="l"><a class="l" href="#293">293 </a>        <span class="php-var">$cs</span>-&gt;registerCoreScript(<span class="php-quote">'jquery.ui'</span>);
-</span><span id="294" class="l"><a class="l" href="#294">294 </a>        <span class="php-var">$this</span>-&gt;getYiiWheels()-&gt;registerAssetJs(<span class="php-quote">'jquery.mousewheel.min.js'</span>, CClientScript::POS_HEAD);
-</span><span id="295" class="l"><a class="l" href="#295">295 </a>
-</span><span id="296" class="l"><a class="l" href="#296">296 </a>        <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/'</span> . <span class="php-var">$this</span>-&gt;theme . <span class="php-quote">'.css'</span>);
-</span><span id="297" class="l"><a class="l" href="#297">297 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/'</span> . <span class="php-var">$jsFile</span>);
+</span><span id="292" class="l"><a class="l" href="#292">292 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
+</span><span id="293" class="l"><a class="l" href="#293">293 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span><span id="294" class="l"><a class="l" href="#294">294 </a>
+</span><span id="295" class="l"><a class="l" href="#295">295 </a>        <span class="php-var">$cs</span>-&gt;registerCoreScript(<span class="php-quote">'jquery'</span>);
+</span><span id="296" class="l"><a class="l" href="#296">296 </a>        <span class="php-var">$cs</span>-&gt;registerCoreScript(<span class="php-quote">'jquery.ui'</span>);
+</span><span id="297" class="l"><a class="l" href="#297">297 </a>        <span class="php-var">$this</span>-&gt;getYiiWheels()-&gt;registerAssetJs(<span class="php-quote">'jquery.mousewheel.min.js'</span>, CClientScript::POS_HEAD);
 </span><span id="298" class="l"><a class="l" href="#298">298 </a>
-</span><span id="299" class="l"><a class="l" href="#299">299 </a>        <span class="php-var">$options</span> = !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;options) ? CJavaScript::encode(<span class="php-var">$this</span>-&gt;options) : <span class="php-quote">''</span>;
-</span><span id="300" class="l"><a class="l" href="#300">300 </a>
-</span><span id="301" class="l"><a class="l" href="#301">301 </a>        <span class="php-var">$inputValSet</span> = <span class="php-quote">&quot;</span><span class="php-var">$</span><span class="php-quote">('#</span><span class="php-var">{$id}</span><span class="php-quote">').val(data.values.min+','+data.values.max);&quot;</span>;
-</span><span id="302" class="l"><a class="l" href="#302">302 </a>
-</span><span id="303" class="l"><a class="l" href="#303">303 </a>        <span class="php-comment">//inserting trigger</span>
-</span><span id="304" class="l"><a class="l" href="#304">304 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;events[<span class="php-quote">'valuesChanged'</span>])) {
-</span><span id="305" class="l"><a class="l" href="#305">305 </a>            <span class="php-var">$orig</span> = <span class="php-var">$this</span>-&gt;events[<span class="php-quote">'valuesChanged'</span>];
-</span><span id="306" class="l"><a class="l" href="#306">306 </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">strpos</span>(<span class="php-var">$orig</span>, <span class="php-quote">'js:'</span>) === <span class="php-num">0</span>) {
-</span><span id="307" class="l"><a class="l" href="#307">307 </a>                <span class="php-var">$orig</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$orig</span>, <span class="php-num">3</span>);
-</span><span id="308" class="l"><a class="l" href="#308">308 </a>            }
-</span><span id="309" class="l"><a class="l" href="#309">309 </a>            <span class="php-var">$orig</span> = <span class="php-quote">&quot;\n(</span><span class="php-var">$orig</span><span class="php-quote">).apply(this, arguments);&quot;</span>;
-</span><span id="310" class="l"><a class="l" href="#310">310 </a>        } <span class="php-keyword1">else</span> {
-</span><span id="311" class="l"><a class="l" href="#311">311 </a>            <span class="php-var">$orig</span> = <span class="php-quote">''</span>;
-</span><span id="312" class="l"><a class="l" href="#312">312 </a>        }
-</span><span id="313" class="l"><a class="l" href="#313">313 </a>        <span class="php-var">$this</span>-&gt;events[<span class="php-quote">'valuesChanged'</span>] = <span class="php-quote">&quot;js: function(id, data) {
-</span></span><span id="314" class="l"><a class="l" href="#314">314 </a><span class="php-quote">            </span><span class="php-var">$inputValSet</span><span class="php-quote"> </span><span class="php-var">$orig</span><span class="php-quote">
-</span></span><span id="315" class="l"><a class="l" href="#315">315 </a><span class="php-quote">        }&quot;</span>;
-</span><span id="316" class="l"><a class="l" href="#316">316 </a>
-</span><span id="317" class="l"><a class="l" href="#317">317 </a>        <span class="php-keyword2">ob_start</span>();
-</span><span id="318" class="l"><a class="l" href="#318">318 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">&quot;jQuery('#slider_</span><span class="php-var">{$id}</span><span class="php-quote">').</span><span class="php-var">{$this-&gt;type}</span><span class="php-quote">Slider(</span><span class="php-var">{$options}</span><span class="php-quote">)&quot;</span>;
-</span><span id="319" class="l"><a class="l" href="#319">319 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;events <span class="php-keyword1">as</span> <span class="php-var">$event</span> =&gt; <span class="php-var">$handler</span>) {
-</span><span id="320" class="l"><a class="l" href="#320">320 </a>            <span class="php-keyword1">echo</span> <span class="php-quote">&quot;.on('</span><span class="php-var">{$event}</span><span class="php-quote">', &quot;</span> . CJavaScript::encode(<span class="php-var">$handler</span>) . <span class="php-quote">&quot;)&quot;</span>;
-</span><span id="321" class="l"><a class="l" href="#321">321 </a>        }
-</span><span id="322" class="l"><a class="l" href="#322">322 </a>
-</span><span id="323" class="l"><a class="l" href="#323">323 </a>        <span class="php-var">$cs</span>-&gt;registerScript(__CLASS__ . <span class="php-quote">'#'</span> . <span class="php-var">$this</span>-&gt;getId(), <span class="php-keyword2">ob_get_clean</span>() . <span class="php-quote">';'</span>);
-</span><span id="324" class="l"><a class="l" href="#324">324 </a>    }
+</span><span id="299" class="l"><a class="l" href="#299">299 </a>        <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/'</span> . <span class="php-var">$this</span>-&gt;theme . <span class="php-quote">'.css'</span>);
+</span><span id="300" class="l"><a class="l" href="#300">300 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/'</span> . <span class="php-var">$jsFile</span>);
+</span><span id="301" class="l"><a class="l" href="#301">301 </a>
+</span><span id="302" class="l"><a class="l" href="#302">302 </a>        <span class="php-var">$options</span> = !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;options) ? CJavaScript::encode(<span class="php-var">$this</span>-&gt;options) : <span class="php-quote">''</span>;
+</span><span id="303" class="l"><a class="l" href="#303">303 </a>
+</span><span id="304" class="l"><a class="l" href="#304">304 </a>        <span class="php-var">$inputValSet</span> = <span class="php-quote">&quot;</span><span class="php-var">$</span><span class="php-quote">('#</span><span class="php-var">{$id}</span><span class="php-quote">').val(data.values.min+','+data.values.max);&quot;</span>;
+</span><span id="305" class="l"><a class="l" href="#305">305 </a>
+</span><span id="306" class="l"><a class="l" href="#306">306 </a>        <span class="php-comment">//inserting trigger</span>
+</span><span id="307" class="l"><a class="l" href="#307">307 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;events[<span class="php-quote">'valuesChanged'</span>])) {
+</span><span id="308" class="l"><a class="l" href="#308">308 </a>            <span class="php-var">$orig</span> = <span class="php-var">$this</span>-&gt;events[<span class="php-quote">'valuesChanged'</span>];
+</span><span id="309" class="l"><a class="l" href="#309">309 </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">strpos</span>(<span class="php-var">$orig</span>, <span class="php-quote">'js:'</span>) === <span class="php-num">0</span>) {
+</span><span id="310" class="l"><a class="l" href="#310">310 </a>                <span class="php-var">$orig</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$orig</span>, <span class="php-num">3</span>);
+</span><span id="311" class="l"><a class="l" href="#311">311 </a>            }
+</span><span id="312" class="l"><a class="l" href="#312">312 </a>            <span class="php-var">$orig</span> = <span class="php-quote">&quot;\n(</span><span class="php-var">$orig</span><span class="php-quote">).apply(this, arguments);&quot;</span>;
+</span><span id="313" class="l"><a class="l" href="#313">313 </a>        } <span class="php-keyword1">else</span> {
+</span><span id="314" class="l"><a class="l" href="#314">314 </a>            <span class="php-var">$orig</span> = <span class="php-quote">''</span>;
+</span><span id="315" class="l"><a class="l" href="#315">315 </a>        }
+</span><span id="316" class="l"><a class="l" href="#316">316 </a>        <span class="php-var">$this</span>-&gt;events[<span class="php-quote">'valuesChanged'</span>] = <span class="php-quote">&quot;js: function(id, data) {
+</span></span><span id="317" class="l"><a class="l" href="#317">317 </a><span class="php-quote">        </span><span class="php-var">$inputValSet</span><span class="php-quote"> </span><span class="php-var">$orig</span><span class="php-quote">
+</span></span><span id="318" class="l"><a class="l" href="#318">318 </a><span class="php-quote">        }&quot;</span>;
+</span><span id="319" class="l"><a class="l" href="#319">319 </a>
+</span><span id="320" class="l"><a class="l" href="#320">320 </a>        <span class="php-keyword2">ob_start</span>();
+</span><span id="321" class="l"><a class="l" href="#321">321 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">&quot;jQuery('#slider_</span><span class="php-var">{$id}</span><span class="php-quote">').</span><span class="php-var">{$this-&gt;type}</span><span class="php-quote">Slider(</span><span class="php-var">{$options}</span><span class="php-quote">)&quot;</span>;
+</span><span id="322" class="l"><a class="l" href="#322">322 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;events <span class="php-keyword1">as</span> <span class="php-var">$event</span> =&gt; <span class="php-var">$handler</span>) {
+</span><span id="323" class="l"><a class="l" href="#323">323 </a>            <span class="php-keyword1">echo</span> <span class="php-quote">&quot;.on('</span><span class="php-var">{$event}</span><span class="php-quote">', &quot;</span> . CJavaScript::encode(<span class="php-var">$handler</span>) . <span class="php-quote">&quot;)&quot;</span>;
+</span><span id="324" class="l"><a class="l" href="#324">324 </a>        }
 </span><span id="325" class="l"><a class="l" href="#325">325 </a>
-</span><span id="326" class="l"><a class="l" href="#326">326 </a>    <span class="php-comment">/**
-</span></span><span id="327" class="l"><a class="l" href="#327">327 </a><span class="php-comment">     * Builds the options
-</span></span><span id="328" class="l"><a class="l" href="#328">328 </a><span class="php-comment">     */</span>
-</span><span id="329" class="l"><a class="l" href="#329">329 </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_buildOptions" href="#_buildOptions">buildOptions</a>()
-</span><span id="330" class="l"><a class="l" href="#330">330 </a>    {
-</span><span id="331" class="l"><a class="l" href="#331">331 </a>        <span class="php-var">$options</span>       = <span class="php-keyword1">array</span>(
-</span><span id="332" class="l"><a class="l" href="#332">332 </a>            <span class="php-quote">'arrows'</span>      =&gt; <span class="php-var">$this</span>-&gt;arrows,
-</span><span id="333" class="l"><a class="l" href="#333">333 </a>            <span class="php-quote">'delayOut'</span>    =&gt; <span class="php-var">$this</span>-&gt;delayOut,
-</span><span id="334" class="l"><a class="l" href="#334">334 </a>            <span class="php-quote">'durationIn'</span>  =&gt; <span class="php-var">$this</span>-&gt;durationIn,
-</span><span id="335" class="l"><a class="l" href="#335">335 </a>            <span class="php-quote">'durationOut'</span> =&gt; <span class="php-var">$this</span>-&gt;durationOut,
-</span><span id="336" class="l"><a class="l" href="#336">336 </a>            <span class="php-quote">'valueLabels'</span> =&gt; <span class="php-var">$this</span>-&gt;valueLabels,
-</span><span id="337" class="l"><a class="l" href="#337">337 </a>            <span class="php-quote">'formatter'</span>   =&gt; <span class="php-var">$this</span>-&gt;formatter,
-</span><span id="338" class="l"><a class="l" href="#338">338 </a>            <span class="php-quote">'step'</span>        =&gt; <span class="php-var">$this</span>-&gt;step,
-</span><span id="339" class="l"><a class="l" href="#339">339 </a>            <span class="php-quote">'wheelMode'</span>   =&gt; <span class="php-var">$this</span>-&gt;wheelMode,
-</span><span id="340" class="l"><a class="l" href="#340">340 </a>            <span class="php-quote">'wheelSpeed'</span>  =&gt; <span class="php-var">$this</span>-&gt;wheelSpeed,
-</span><span id="341" class="l"><a class="l" href="#341">341 </a>            <span class="php-quote">'type'</span>        =&gt; (<span class="php-var">$this</span>-&gt;type == <span class="php-quote">'dateRange'</span> ? <span class="php-keyword1">null</span> : <span class="php-var">$this</span>-&gt;inputType)
-</span><span id="342" class="l"><a class="l" href="#342">342 </a>        );
-</span><span id="343" class="l"><a class="l" href="#343">343 </a>        <span class="php-var">$this</span>-&gt;options = <span class="php-keyword2">array_filter</span>(<span class="php-var">$options</span>);
-</span><span id="344" class="l"><a class="l" href="#344">344 </a>
-</span><span id="345" class="l"><a class="l" href="#345">345 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;minRange &amp;&amp; <span class="php-var">$this</span>-&gt;maxRange &amp;&amp; <span class="php-var">$this</span>-&gt;minRange &lt; <span class="php-var">$this</span>-&gt;maxRange) {
-</span><span id="346" class="l"><a class="l" href="#346">346 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(
-</span><span id="347" class="l"><a class="l" href="#347">347 </a>                <span class="php-var">$this</span>-&gt;options,
-</span><span id="348" class="l"><a class="l" href="#348">348 </a>                <span class="php-keyword1">array</span>(<span class="php-quote">'range'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'min'</span> =&gt; <span class="php-var">$this</span>-&gt;minRange, <span class="php-quote">'max'</span> =&gt; <span class="php-var">$this</span>-&gt;maxRange))
-</span><span id="349" class="l"><a class="l" href="#349">349 </a>            );
-</span><span id="350" class="l"><a class="l" href="#350">350 </a>        }
-</span><span id="351" class="l"><a class="l" href="#351">351 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;minValue &amp;&amp; <span class="php-var">$this</span>-&gt;maxValue &amp;&amp; <span class="php-var">$this</span>-&gt;minValue &lt; <span class="php-var">$this</span>-&gt;maxValue) {
-</span><span id="352" class="l"><a class="l" href="#352">352 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(
-</span><span id="353" class="l"><a class="l" href="#353">353 </a>                <span class="php-var">$this</span>-&gt;options,
-</span><span id="354" class="l"><a class="l" href="#354">354 </a>                <span class="php-keyword1">array</span>(<span class="php-quote">'bounds'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'min'</span> =&gt; <span class="php-var">$this</span>-&gt;minValue, <span class="php-quote">'max'</span> =&gt; <span class="php-var">$this</span>-&gt;maxValue))
-</span><span id="355" class="l"><a class="l" href="#355">355 </a>            );
-</span><span id="356" class="l"><a class="l" href="#356">356 </a>        }
-</span><span id="357" class="l"><a class="l" href="#357">357 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;minDefaultValue &amp;&amp; <span class="php-var">$this</span>-&gt;maxDefaultValue &amp;&amp; <span class="php-var">$this</span>-&gt;minDefaultValue &lt; <span class="php-var">$this</span>-&gt;maxDefaultValue) {
-</span><span id="358" class="l"><a class="l" href="#358">358 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(
-</span><span id="359" class="l"><a class="l" href="#359">359 </a>                <span class="php-var">$this</span>-&gt;options,
-</span><span id="360" class="l"><a class="l" href="#360">360 </a>                <span class="php-keyword1">array</span>(
-</span><span id="361" class="l"><a class="l" href="#361">361 </a>                    <span class="php-quote">'defaultValues'</span> =&gt; <span class="php-keyword1">array</span>(
-</span><span id="362" class="l"><a class="l" href="#362">362 </a>                        <span class="php-quote">'min'</span> =&gt; <span class="php-var">$this</span>-&gt;minDefaultValue,
-</span><span id="363" class="l"><a class="l" href="#363">363 </a>                        <span class="php-quote">'max'</span> =&gt; <span class="php-var">$this</span>-&gt;maxDefaultValue
-</span><span id="364" class="l"><a class="l" href="#364">364 </a>                    )
-</span><span id="365" class="l"><a class="l" href="#365">365 </a>                )
-</span><span id="366" class="l"><a class="l" href="#366">366 </a>            );
-</span><span id="367" class="l"><a class="l" href="#367">367 </a>        }
-</span><span id="368" class="l"><a class="l" href="#368">368 </a>    }
-</span><span id="369" class="l"><a class="l" href="#369">369 </a>
-</span><span id="370" class="l"><a class="l" href="#370">370 </a>    <span class="php-comment">/**
-</span></span><span id="371" class="l"><a class="l" href="#371">371 </a><span class="php-comment">     * Checks whether the option set is supported by the plugin
-</span></span><span id="372" class="l"><a class="l" href="#372">372 </a><span class="php-comment">     * @param mixed $attribute attribute
-</span></span><span id="373" class="l"><a class="l" href="#373">373 </a><span class="php-comment">     * @param array $availableOptions the possible values
-</span></span><span id="374" class="l"><a class="l" href="#374">374 </a><span class="php-comment">     * @param string $name the name of the attribute
-</span></span><span id="375" class="l"><a class="l" href="#375">375 </a><span class="php-comment">     * @throws CException
-</span></span><span id="376" class="l"><a class="l" href="#376">376 </a><span class="php-comment">     */</span>
-</span><span id="377" class="l"><a class="l" href="#377">377 </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_checkOptionAttribute" href="#_checkOptionAttribute">checkOptionAttribute</a>(<span class="php-var">$attribute</span>, <span class="php-var">$availableOptions</span>, <span class="php-var">$name</span>)
-</span><span id="378" class="l"><a class="l" href="#378">378 </a>    {
-</span><span id="379" class="l"><a class="l" href="#379">379 </a>        <span class="php-keyword1">if</span>(!<span class="php-keyword2">in_array</span>(<span class="php-var">$attribute</span>, <span class="php-var">$availableOptions</span>))
-</span><span id="380" class="l"><a class="l" href="#380">380 </a>        {
-</span><span id="381" class="l"><a class="l" href="#381">381 </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> CException(Yii::t(
-</span><span id="382" class="l"><a class="l" href="#382">382 </a>                <span class="php-quote">'zii'</span>,
-</span><span id="383" class="l"><a class="l" href="#383">383 </a>                <span class="php-quote">'Unsupported &quot;{attribute}&quot; setting.'</span>,
-</span><span id="384" class="l"><a class="l" href="#384">384 </a>                <span class="php-keyword1">array</span>(<span class="php-quote">'{attribute}'</span> =&gt; <span class="php-var">$name</span>)
-</span><span id="385" class="l"><a class="l" href="#385">385 </a>            ));
-</span><span id="386" class="l"><a class="l" href="#386">386 </a>        }
-</span><span id="387" class="l"><a class="l" href="#387">387 </a>    }
-</span><span id="388" class="l"><a class="l" href="#388">388 </a></span>}</code></pre>
+</span><span id="326" class="l"><a class="l" href="#326">326 </a>        <span class="php-var">$cs</span>-&gt;registerScript(__CLASS__ . <span class="php-quote">'#'</span> . <span class="php-var">$this</span>-&gt;getId(), <span class="php-keyword2">ob_get_clean</span>() . <span class="php-quote">';'</span>);
+</span><span id="327" class="l"><a class="l" href="#327">327 </a>    }
+</span><span id="328" class="l"><a class="l" href="#328">328 </a>
+</span><span id="329" class="l"><a class="l" href="#329">329 </a>    <span class="php-comment">/**
+</span></span><span id="330" class="l"><a class="l" href="#330">330 </a><span class="php-comment">     * Builds the options
+</span></span><span id="331" class="l"><a class="l" href="#331">331 </a><span class="php-comment">     */</span>
+</span><span id="332" class="l"><a class="l" href="#332">332 </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_buildOptions" href="#_buildOptions">buildOptions</a>()
+</span><span id="333" class="l"><a class="l" href="#333">333 </a>    {
+</span><span id="334" class="l"><a class="l" href="#334">334 </a>        <span class="php-var">$options</span> = <span class="php-keyword1">array</span>(
+</span><span id="335" class="l"><a class="l" href="#335">335 </a>            <span class="php-quote">'arrows'</span> =&gt; <span class="php-var">$this</span>-&gt;arrows,
+</span><span id="336" class="l"><a class="l" href="#336">336 </a>            <span class="php-quote">'delayOut'</span> =&gt; <span class="php-var">$this</span>-&gt;delayOut,
+</span><span id="337" class="l"><a class="l" href="#337">337 </a>            <span class="php-quote">'durationIn'</span> =&gt; <span class="php-var">$this</span>-&gt;durationIn,
+</span><span id="338" class="l"><a class="l" href="#338">338 </a>            <span class="php-quote">'durationOut'</span> =&gt; <span class="php-var">$this</span>-&gt;durationOut,
+</span><span id="339" class="l"><a class="l" href="#339">339 </a>            <span class="php-quote">'valueLabels'</span> =&gt; <span class="php-var">$this</span>-&gt;valueLabels,
+</span><span id="340" class="l"><a class="l" href="#340">340 </a>            <span class="php-quote">'formatter'</span> =&gt; <span class="php-var">$this</span>-&gt;formatter,
+</span><span id="341" class="l"><a class="l" href="#341">341 </a>            <span class="php-quote">'step'</span> =&gt; <span class="php-var">$this</span>-&gt;step,
+</span><span id="342" class="l"><a class="l" href="#342">342 </a>            <span class="php-quote">'wheelMode'</span> =&gt; <span class="php-var">$this</span>-&gt;wheelMode,
+</span><span id="343" class="l"><a class="l" href="#343">343 </a>            <span class="php-quote">'wheelSpeed'</span> =&gt; <span class="php-var">$this</span>-&gt;wheelSpeed,
+</span><span id="344" class="l"><a class="l" href="#344">344 </a>            <span class="php-quote">'scales'</span> =&gt; <span class="php-var">$this</span>-&gt;scales,
+</span><span id="345" class="l"><a class="l" href="#345">345 </a>            <span class="php-quote">'type'</span> =&gt; (<span class="php-var">$this</span>-&gt;type == <span class="php-quote">'dateRange'</span> ? <span class="php-keyword1">null</span> : <span class="php-var">$this</span>-&gt;inputType)
+</span><span id="346" class="l"><a class="l" href="#346">346 </a>        );
+</span><span id="347" class="l"><a class="l" href="#347">347 </a>        <span class="php-var">$this</span>-&gt;options = <span class="php-keyword2">array_filter</span>(<span class="php-var">$options</span>);
+</span><span id="348" class="l"><a class="l" href="#348">348 </a>
+</span><span id="349" class="l"><a class="l" href="#349">349 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;minRange &amp;&amp; <span class="php-var">$this</span>-&gt;maxRange &amp;&amp; <span class="php-var">$this</span>-&gt;minRange &lt; <span class="php-var">$this</span>-&gt;maxRange) {
+</span><span id="350" class="l"><a class="l" href="#350">350 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(
+</span><span id="351" class="l"><a class="l" href="#351">351 </a>                <span class="php-var">$this</span>-&gt;options,
+</span><span id="352" class="l"><a class="l" href="#352">352 </a>                <span class="php-keyword1">array</span>(<span class="php-quote">'range'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'min'</span> =&gt; <span class="php-var">$this</span>-&gt;minRange, <span class="php-quote">'max'</span> =&gt; <span class="php-var">$this</span>-&gt;maxRange))
+</span><span id="353" class="l"><a class="l" href="#353">353 </a>            );
+</span><span id="354" class="l"><a class="l" href="#354">354 </a>        }
+</span><span id="355" class="l"><a class="l" href="#355">355 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;minValue &amp;&amp; <span class="php-var">$this</span>-&gt;maxValue &amp;&amp; <span class="php-var">$this</span>-&gt;minValue &lt; <span class="php-var">$this</span>-&gt;maxValue) {
+</span><span id="356" class="l"><a class="l" href="#356">356 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(
+</span><span id="357" class="l"><a class="l" href="#357">357 </a>                <span class="php-var">$this</span>-&gt;options,
+</span><span id="358" class="l"><a class="l" href="#358">358 </a>                <span class="php-keyword1">array</span>(<span class="php-quote">'bounds'</span> =&gt; <span class="php-keyword1">array</span>(<span class="php-quote">'min'</span> =&gt; <span class="php-var">$this</span>-&gt;minValue, <span class="php-quote">'max'</span> =&gt; <span class="php-var">$this</span>-&gt;maxValue))
+</span><span id="359" class="l"><a class="l" href="#359">359 </a>            );
+</span><span id="360" class="l"><a class="l" href="#360">360 </a>        }
+</span><span id="361" class="l"><a class="l" href="#361">361 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;minDefaultValue &amp;&amp; <span class="php-var">$this</span>-&gt;maxDefaultValue &amp;&amp; <span class="php-var">$this</span>-&gt;minDefaultValue &lt; <span class="php-var">$this</span>-&gt;maxDefaultValue) {
+</span><span id="362" class="l"><a class="l" href="#362">362 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(
+</span><span id="363" class="l"><a class="l" href="#363">363 </a>                <span class="php-var">$this</span>-&gt;options,
+</span><span id="364" class="l"><a class="l" href="#364">364 </a>                <span class="php-keyword1">array</span>(
+</span><span id="365" class="l"><a class="l" href="#365">365 </a>                    <span class="php-quote">'defaultValues'</span> =&gt; <span class="php-keyword1">array</span>(
+</span><span id="366" class="l"><a class="l" href="#366">366 </a>                        <span class="php-quote">'min'</span> =&gt; <span class="php-var">$this</span>-&gt;minDefaultValue,
+</span><span id="367" class="l"><a class="l" href="#367">367 </a>                        <span class="php-quote">'max'</span> =&gt; <span class="php-var">$this</span>-&gt;maxDefaultValue
+</span><span id="368" class="l"><a class="l" href="#368">368 </a>                    )
+</span><span id="369" class="l"><a class="l" href="#369">369 </a>                )
+</span><span id="370" class="l"><a class="l" href="#370">370 </a>            );
+</span><span id="371" class="l"><a class="l" href="#371">371 </a>        }
+</span><span id="372" class="l"><a class="l" href="#372">372 </a>        <span class="php-keyword1">if</span>(!<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;pluginOptions))
+</span><span id="373" class="l"><a class="l" href="#373">373 </a>        {
+</span><span id="374" class="l"><a class="l" href="#374">374 </a>            <span class="php-var">$this</span>-&gt;options = CMap::mergeArray(<span class="php-var">$this</span>-&gt;pluginOptions, <span class="php-var">$this</span>-&gt;options);
+</span><span id="375" class="l"><a class="l" href="#375">375 </a>        }
+</span><span id="376" class="l"><a class="l" href="#376">376 </a>    }
+</span><span id="377" class="l"><a class="l" href="#377">377 </a>
+</span><span id="378" class="l"><a class="l" href="#378">378 </a>    <span class="php-comment">/**
+</span></span><span id="379" class="l"><a class="l" href="#379">379 </a><span class="php-comment">     * Checks whether the option set is supported by the plugin
+</span></span><span id="380" class="l"><a class="l" href="#380">380 </a><span class="php-comment">     *
+</span></span><span id="381" class="l"><a class="l" href="#381">381 </a><span class="php-comment">     * @param mixed $attribute attribute
+</span></span><span id="382" class="l"><a class="l" href="#382">382 </a><span class="php-comment">     * @param array $availableOptions the possible values
+</span></span><span id="383" class="l"><a class="l" href="#383">383 </a><span class="php-comment">     * @param string $name the name of the attribute
+</span></span><span id="384" class="l"><a class="l" href="#384">384 </a><span class="php-comment">     *
+</span></span><span id="385" class="l"><a class="l" href="#385">385 </a><span class="php-comment">     * @throws CException
+</span></span><span id="386" class="l"><a class="l" href="#386">386 </a><span class="php-comment">     */</span>
+</span><span id="387" class="l"><a class="l" href="#387">387 </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_checkOptionAttribute" href="#_checkOptionAttribute">checkOptionAttribute</a>(<span class="php-var">$attribute</span>, <span class="php-var">$availableOptions</span>, <span class="php-var">$name</span>)
+</span><span id="388" class="l"><a class="l" href="#388">388 </a>    {
+</span><span id="389" class="l"><a class="l" href="#389">389 </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">in_array</span>(<span class="php-var">$attribute</span>, <span class="php-var">$availableOptions</span>)) {
+</span><span id="390" class="l"><a class="l" href="#390">390 </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> CException(Yii::t(
+</span><span id="391" class="l"><a class="l" href="#391">391 </a>                <span class="php-quote">'zii'</span>,
+</span><span id="392" class="l"><a class="l" href="#392">392 </a>                <span class="php-quote">'Unsupported &quot;{attribute}&quot; setting.'</span>,
+</span><span id="393" class="l"><a class="l" href="#393">393 </a>                <span class="php-keyword1">array</span>(<span class="php-quote">'{attribute}'</span> =&gt; <span class="php-var">$name</span>)
+</span><span id="394" class="l"><a class="l" href="#394">394 </a>            ));
+</span><span id="395" class="l"><a class="l" href="#395">395 </a>        }
+</span><span id="396" class="l"><a class="l" href="#396">396 </a>    }
+</span><span id="397" class="l"><a class="l" href="#397">397 </a></span>}</code></pre>
 	</div>
 
 	<div id="footer">

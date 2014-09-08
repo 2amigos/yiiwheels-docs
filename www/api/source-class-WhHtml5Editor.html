@@ -8,7 +8,7 @@
 	<title>File widgets/html5editor/WhHtml5Editor.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1491821685"></script>
+	<script type="text/javascript" src="elementlist.js?53054354"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -53,6 +53,8 @@
 		<div id="groups">
 			<h3>Packages</h3>
 			<ul>
+				<li><a href="package-None.html">None</a>
+						</li>
 				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
@@ -73,13 +75,9 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
 						</li>
-				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
-						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
-						</li>
-				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
 						</li>
@@ -188,82 +186,95 @@
 </span></span><span id="42" class="l"><a class="l" href="#42"> 42 </a><span class="php-comment">     */</span>
 </span><span id="43" class="l"><a class="l" href="#43"> 43 </a>    <span class="php-keyword1">public</span> <span class="php-var"><a id="$height" href="#$height">$height</a></span> = <span class="php-quote">'400px'</span>;
 </span><span id="44" class="l"><a class="l" href="#44"> 44 </a>
-</span><span id="45" class="l"><a class="l" href="#45"> 45 </a>    <span class="php-comment">/**
-</span></span><span id="46" class="l"><a class="l" href="#46"> 46 </a><span class="php-comment">     * Display editor
-</span></span><span id="47" class="l"><a class="l" href="#47"> 47 </a><span class="php-comment">     */</span>
-</span><span id="48" class="l"><a class="l" href="#48"> 48 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
-</span><span id="49" class="l"><a class="l" href="#49"> 49 </a>    {
-</span><span id="50" class="l"><a class="l" href="#50"> 50 </a>
-</span><span id="51" class="l"><a class="l" href="#51"> 51 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
-</span><span id="52" class="l"><a class="l" href="#52"> 52 </a>
-</span><span id="53" class="l"><a class="l" href="#53"> 53 </a>        <span class="php-var">$this</span>-&gt;registerClientScript(<span class="php-var">$id</span>);
-</span><span id="54" class="l"><a class="l" href="#54"> 54 </a>
-</span><span id="55" class="l"><a class="l" href="#55"> 55 </a>        <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'id'</span>] = <span class="php-var">$id</span>;
-</span><span id="56" class="l"><a class="l" href="#56"> 56 </a>
-</span><span id="57" class="l"><a class="l" href="#57"> 57 </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">array_key_exists</span>(<span class="php-quote">'style'</span>, <span class="php-var">$this</span>-&gt;htmlOptions))
-</span><span id="58" class="l"><a class="l" href="#58"> 58 </a>            <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'style'</span>] = <span class="php-quote">&quot;width:</span><span class="php-var">{$this-&gt;width}</span><span class="php-quote">;height:</span><span class="php-var">{$this-&gt;height}</span><span class="php-quote">;&quot;</span>;
-</span><span id="59" class="l"><a class="l" href="#59"> 59 </a>        <span class="php-comment">// Do we have a model?</span>
-</span><span id="60" class="l"><a class="l" href="#60"> 60 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel())
-</span><span id="61" class="l"><a class="l" href="#61"> 61 </a>            <span class="php-keyword1">echo</span> CHtml::activeTextArea(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="62" class="l"><a class="l" href="#62"> 62 </a>        <span class="php-keyword1">else</span>
-</span><span id="63" class="l"><a class="l" href="#63"> 63 </a>            <span class="php-keyword1">echo</span> CHtml::textArea(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="64" class="l"><a class="l" href="#64"> 64 </a>    }
-</span><span id="65" class="l"><a class="l" href="#65"> 65 </a>
-</span><span id="66" class="l"><a class="l" href="#66"> 66 </a>    <span class="php-comment">/**
-</span></span><span id="67" class="l"><a class="l" href="#67"> 67 </a><span class="php-comment">     * Register required script files
-</span></span><span id="68" class="l"><a class="l" href="#68"> 68 </a><span class="php-comment">     * @param string $id
-</span></span><span id="69" class="l"><a class="l" href="#69"> 69 </a><span class="php-comment">     */</span>
-</span><span id="70" class="l"><a class="l" href="#70"> 70 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>(<span class="php-var">$id</span>)
-</span><span id="71" class="l"><a class="l" href="#71"> 71 </a>    {
-</span><span id="72" class="l"><a class="l" href="#72"> 72 </a>        <span class="php-comment">/* publish assets dir */</span>
-</span><span id="73" class="l"><a class="l" href="#73"> 73 </a>        <span class="php-var">$path</span>      = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
-</span><span id="74" class="l"><a class="l" href="#74"> 74 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
-</span><span id="75" class="l"><a class="l" href="#75"> 75 </a>
-</span><span id="76" class="l"><a class="l" href="#76"> 76 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
-</span><span id="77" class="l"><a class="l" href="#77"> 77 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
-</span><span id="78" class="l"><a class="l" href="#78"> 78 </a>
-</span><span id="79" class="l"><a class="l" href="#79"> 79 </a>        <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/bootstrap-wysihtml5.css'</span>);
-</span><span id="80" class="l"><a class="l" href="#80"> 80 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'color'</span>])) {
-</span><span id="81" class="l"><a class="l" href="#81"> 81 </a>            <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/wysiwyg-color.css'</span>);
-</span><span id="82" class="l"><a class="l" href="#82"> 82 </a>        }
-</span><span id="83" class="l"><a class="l" href="#83"> 83 </a>
-</span><span id="84" class="l"><a class="l" href="#84"> 84 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/wysihtml5-0.3.0.js'</span>);
-</span><span id="85" class="l"><a class="l" href="#85"> 85 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/bootstrap-wysihtml5.js'</span>);
-</span><span id="86" class="l"><a class="l" href="#86"> 86 </a>
-</span><span id="87" class="l"><a class="l" href="#87"> 87 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">in_array</span>(@<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'locale'</span>], <span class="php-keyword1">array</span>(<span class="php-quote">'de-DE'</span>, <span class="php-quote">'es-ES'</span>, <span class="php-quote">'fr'</span>, <span class="php-quote">'fr-NL'</span>, <span class="php-quote">'pt-BR'</span>, <span class="php-quote">'sv-SE'</span>))) {
-</span><span id="88" class="l"><a class="l" href="#88"> 88 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(
-</span><span id="89" class="l"><a class="l" href="#89"> 89 </a>                <span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/locale/bootstrap-wysihtml5.'</span> . <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'locale'</span>] . <span class="php-quote">'.js'</span>
-</span><span id="90" class="l"><a class="l" href="#90"> 90 </a>            );
-</span><span id="91" class="l"><a class="l" href="#91"> 91 </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">in_array</span>(<span class="php-var">$this</span>-&gt;lang, <span class="php-keyword1">array</span>(<span class="php-quote">'de-DE'</span>, <span class="php-quote">'es-ES'</span>, <span class="php-quote">'fr'</span>, <span class="php-quote">'fr-NL'</span>, <span class="php-quote">'pt-BR'</span>, <span class="php-quote">'sv-SE'</span>))) {
-</span><span id="92" class="l"><a class="l" href="#92"> 92 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/locale/bootstrap-wysihtml5.'</span> . <span class="php-var">$this</span>-&gt;lang . <span class="php-quote">'.js'</span>);
-</span><span id="93" class="l"><a class="l" href="#93"> 93 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'locale'</span>] = <span class="php-var">$this</span>-&gt;lang;
-</span><span id="94" class="l"><a class="l" href="#94"> 94 </a>        }
-</span><span id="95" class="l"><a class="l" href="#95"> 95 </a>
-</span><span id="96" class="l"><a class="l" href="#96"> 96 </a>        <span class="php-var">$this</span>-&gt;normalizeStylesheetsProperty();
-</span><span id="97" class="l"><a class="l" href="#97"> 97 </a>
-</span><span id="98" class="l"><a class="l" href="#98"> 98 </a>        <span class="php-comment">/* initialize plugin */</span>
-</span><span id="99" class="l"><a class="l" href="#99"> 99 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
-</span><span id="100" class="l"><a class="l" href="#100">100 </a>
-</span><span id="101" class="l"><a class="l" href="#101">101 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'wysihtml5'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
-</span><span id="102" class="l"><a class="l" href="#102">102 </a>
-</span><span id="103" class="l"><a class="l" href="#103">103 </a>    }
-</span><span id="104" class="l"><a class="l" href="#104">104 </a>
-</span><span id="105" class="l"><a class="l" href="#105">105 </a>    <span class="php-comment">/**
-</span></span><span id="106" class="l"><a class="l" href="#106">106 </a><span class="php-comment">     * Normalizes stylesheet property
-</span></span><span id="107" class="l"><a class="l" href="#107">107 </a><span class="php-comment">     */</span>
-</span><span id="108" class="l"><a class="l" href="#108">108 </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_normalizeStylesheetsProperty" href="#_normalizeStylesheetsProperty">normalizeStylesheetsProperty</a>()
-</span><span id="109" class="l"><a class="l" href="#109">109 </a>    {
-</span><span id="110" class="l"><a class="l" href="#110">110 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]))
-</span><span id="111" class="l"><a class="l" href="#111">111 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword1">array</span>();
-</span><span id="112" class="l"><a class="l" href="#112">112 </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]))
-</span><span id="113" class="l"><a class="l" href="#113">113 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword2">array_filter</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>], <span class="php-quote">'is_string'</span>);
-</span><span id="114" class="l"><a class="l" href="#114">114 </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]))
-</span><span id="115" class="l"><a class="l" href="#115">115 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]);
-</span><span id="116" class="l"><a class="l" href="#116">116 </a>        <span class="php-keyword1">else</span>
-</span><span id="117" class="l"><a class="l" href="#117">117 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword1">array</span>();
-</span><span id="118" class="l"><a class="l" href="#118">118 </a>    }
-</span><span id="119" class="l"><a class="l" href="#119">119 </a>}
-</span><span id="120" class="l"><a class="l" href="#120">120 </a></span></code></pre>
+</span><span id="45" class="l"><a class="l" href="#45"> 45 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_init" href="#_init">init</a>()
+</span><span id="46" class="l"><a class="l" href="#46"> 46 </a>    {
+</span><span id="47" class="l"><a class="l" href="#47"> 47 </a>    
+</span><span id="48" class="l"><a class="l" href="#48"> 48 </a>        <span class="php-var">$this</span>-&gt;attachBehavior(<span class="php-quote">'ywplugin'</span>, <span class="php-keyword1">array</span>(<span class="php-quote">'class'</span> =&gt; <span class="php-quote">'yiiwheels.behaviors.WhPlugin'</span>));
+</span><span id="49" class="l"><a class="l" href="#49"> 49 </a>    
+</span><span id="50" class="l"><a class="l" href="#50"> 50 </a>        <span class="php-keyword1">if</span> (!<span class="php-var">$style</span> = TbArray::popValue(<span class="php-quote">'style'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-quote">''</span>)) {
+</span><span id="51" class="l"><a class="l" href="#51"> 51 </a>            <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'style'</span>] = <span class="php-var">$style</span>;
+</span><span id="52" class="l"><a class="l" href="#52"> 52 </a>        }
+</span><span id="53" class="l"><a class="l" href="#53"> 53 </a>    
+</span><span id="54" class="l"><a class="l" href="#54"> 54 </a>        <span class="php-var">$width</span>                      = TbArray::getValue(<span class="php-quote">'width'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-quote">'100%'</span>);
+</span><span id="55" class="l"><a class="l" href="#55"> 55 </a>        <span class="php-var">$height</span>                     = TbArray::popValue(<span class="php-quote">'height'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-quote">'450px'</span>);
+</span><span id="56" class="l"><a class="l" href="#56"> 56 </a>        <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'style'</span>] = <span class="php-quote">&quot;width:</span><span class="php-var">{$width}</span><span class="php-quote">;height:</span><span class="php-var">{$height}</span><span class="php-quote">;&quot;</span> . <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'style'</span>];
+</span><span id="57" class="l"><a class="l" href="#57"> 57 </a>    }
+</span><span id="58" class="l"><a class="l" href="#58"> 58 </a>
+</span><span id="59" class="l"><a class="l" href="#59"> 59 </a>    <span class="php-comment">/**
+</span></span><span id="60" class="l"><a class="l" href="#60"> 60 </a><span class="php-comment">     * Display editor
+</span></span><span id="61" class="l"><a class="l" href="#61"> 61 </a><span class="php-comment">     */</span>
+</span><span id="62" class="l"><a class="l" href="#62"> 62 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>()
+</span><span id="63" class="l"><a class="l" href="#63"> 63 </a>    {
+</span><span id="64" class="l"><a class="l" href="#64"> 64 </a>
+</span><span id="65" class="l"><a class="l" href="#65"> 65 </a>        <span class="php-keyword1">list</span>(<span class="php-var">$name</span>, <span class="php-var">$id</span>) = <span class="php-var">$this</span>-&gt;resolveNameID();
+</span><span id="66" class="l"><a class="l" href="#66"> 66 </a>
+</span><span id="67" class="l"><a class="l" href="#67"> 67 </a>        <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'id'</span>] = <span class="php-var">$id</span>;
+</span><span id="68" class="l"><a class="l" href="#68"> 68 </a>
+</span><span id="69" class="l"><a class="l" href="#69"> 69 </a>        <span class="php-var">$this</span>-&gt;registerClientScript();
+</span><span id="70" class="l"><a class="l" href="#70"> 70 </a>
+</span><span id="71" class="l"><a class="l" href="#71"> 71 </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">array_key_exists</span>(<span class="php-quote">'style'</span>, <span class="php-var">$this</span>-&gt;htmlOptions))
+</span><span id="72" class="l"><a class="l" href="#72"> 72 </a>            <span class="php-var">$this</span>-&gt;htmlOptions[<span class="php-quote">'style'</span>] = <span class="php-quote">&quot;width:</span><span class="php-var">{$this-&gt;width}</span><span class="php-quote">;height:</span><span class="php-var">{$this-&gt;height}</span><span class="php-quote">;&quot;</span>;
+</span><span id="73" class="l"><a class="l" href="#73"> 73 </a>        <span class="php-comment">// Do we have a model?</span>
+</span><span id="74" class="l"><a class="l" href="#74"> 74 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel())
+</span><span id="75" class="l"><a class="l" href="#75"> 75 </a>            <span class="php-keyword1">echo</span> CHtml::activeTextArea(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="76" class="l"><a class="l" href="#76"> 76 </a>        <span class="php-keyword1">else</span>
+</span><span id="77" class="l"><a class="l" href="#77"> 77 </a>            <span class="php-keyword1">echo</span> CHtml::textArea(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="78" class="l"><a class="l" href="#78"> 78 </a>    }
+</span><span id="79" class="l"><a class="l" href="#79"> 79 </a>
+</span><span id="80" class="l"><a class="l" href="#80"> 80 </a>    <span class="php-comment">/**
+</span></span><span id="81" class="l"><a class="l" href="#81"> 81 </a><span class="php-comment">     * Register required script files
+</span></span><span id="82" class="l"><a class="l" href="#82"> 82 </a><span class="php-comment">     */</span>
+</span><span id="83" class="l"><a class="l" href="#83"> 83 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
+</span><span id="84" class="l"><a class="l" href="#84"> 84 </a>    {
+</span><span id="85" class="l"><a class="l" href="#85"> 85 </a>        <span class="php-comment">/* publish assets dir */</span>
+</span><span id="86" class="l"><a class="l" href="#86"> 86 </a>        <span class="php-var">$path</span>      = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
+</span><span id="87" class="l"><a class="l" href="#87"> 87 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
+</span><span id="88" class="l"><a class="l" href="#88"> 88 </a>
+</span><span id="89" class="l"><a class="l" href="#89"> 89 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
+</span><span id="90" class="l"><a class="l" href="#90"> 90 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span><span id="91" class="l"><a class="l" href="#91"> 91 </a>
+</span><span id="92" class="l"><a class="l" href="#92"> 92 </a>        <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/bootstrap-wysihtml5.css'</span>);
+</span><span id="93" class="l"><a class="l" href="#93"> 93 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'color'</span>])) {
+</span><span id="94" class="l"><a class="l" href="#94"> 94 </a>            <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/wysiwyg-color.css'</span>);
+</span><span id="95" class="l"><a class="l" href="#95"> 95 </a>        }
+</span><span id="96" class="l"><a class="l" href="#96"> 96 </a>
+</span><span id="97" class="l"><a class="l" href="#97"> 97 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/wysihtml5-0.3.0.js'</span>);
+</span><span id="98" class="l"><a class="l" href="#98"> 98 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/bootstrap-wysihtml5.js'</span>);
+</span><span id="99" class="l"><a class="l" href="#99"> 99 </a>
+</span><span id="100" class="l"><a class="l" href="#100">100 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">in_array</span>(@<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'locale'</span>], <span class="php-keyword1">array</span>(<span class="php-quote">'de-DE'</span>, <span class="php-quote">'es-ES'</span>, <span class="php-quote">'fr'</span>, <span class="php-quote">'fr-NL'</span>, <span class="php-quote">'pt-BR'</span>, <span class="php-quote">'sv-SE'</span>))) {
+</span><span id="101" class="l"><a class="l" href="#101">101 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(
+</span><span id="102" class="l"><a class="l" href="#102">102 </a>                <span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/locale/bootstrap-wysihtml5.'</span> . <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'locale'</span>] . <span class="php-quote">'.js'</span>
+</span><span id="103" class="l"><a class="l" href="#103">103 </a>            );
+</span><span id="104" class="l"><a class="l" href="#104">104 </a>        } <span class="php-keyword1">elseif</span> (<span class="php-keyword2">in_array</span>(<span class="php-var">$this</span>-&gt;lang, <span class="php-keyword1">array</span>(<span class="php-quote">'de-DE'</span>, <span class="php-quote">'es-ES'</span>, <span class="php-quote">'fr'</span>, <span class="php-quote">'fr-NL'</span>, <span class="php-quote">'pt-BR'</span>, <span class="php-quote">'sv-SE'</span>))) {
+</span><span id="105" class="l"><a class="l" href="#105">105 </a>            <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/locale/bootstrap-wysihtml5.'</span> . <span class="php-var">$this</span>-&gt;lang . <span class="php-quote">'.js'</span>);
+</span><span id="106" class="l"><a class="l" href="#106">106 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'locale'</span>] = <span class="php-var">$this</span>-&gt;lang;
+</span><span id="107" class="l"><a class="l" href="#107">107 </a>        }
+</span><span id="108" class="l"><a class="l" href="#108">108 </a>
+</span><span id="109" class="l"><a class="l" href="#109">109 </a>        <span class="php-var">$this</span>-&gt;normalizeStylesheetsProperty();
+</span><span id="110" class="l"><a class="l" href="#110">110 </a>
+</span><span id="111" class="l"><a class="l" href="#111">111 </a>        <span class="php-comment">/* initialize plugin */</span>
+</span><span id="112" class="l"><a class="l" href="#112">112 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
+</span><span id="113" class="l"><a class="l" href="#113">113 </a>
+</span><span id="114" class="l"><a class="l" href="#114">114 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'wysihtml5'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
+</span><span id="115" class="l"><a class="l" href="#115">115 </a>
+</span><span id="116" class="l"><a class="l" href="#116">116 </a>    }
+</span><span id="117" class="l"><a class="l" href="#117">117 </a>
+</span><span id="118" class="l"><a class="l" href="#118">118 </a>    <span class="php-comment">/**
+</span></span><span id="119" class="l"><a class="l" href="#119">119 </a><span class="php-comment">     * Normalizes stylesheet property
+</span></span><span id="120" class="l"><a class="l" href="#120">120 </a><span class="php-comment">     */</span>
+</span><span id="121" class="l"><a class="l" href="#121">121 </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_normalizeStylesheetsProperty" href="#_normalizeStylesheetsProperty">normalizeStylesheetsProperty</a>()
+</span><span id="122" class="l"><a class="l" href="#122">122 </a>    {
+</span><span id="123" class="l"><a class="l" href="#123">123 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]))
+</span><span id="124" class="l"><a class="l" href="#124">124 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword1">array</span>();
+</span><span id="125" class="l"><a class="l" href="#125">125 </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-keyword2">is_array</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]))
+</span><span id="126" class="l"><a class="l" href="#126">126 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword2">array_filter</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>], <span class="php-quote">'is_string'</span>);
+</span><span id="127" class="l"><a class="l" href="#127">127 </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]))
+</span><span id="128" class="l"><a class="l" href="#128">128 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>]);
+</span><span id="129" class="l"><a class="l" href="#129">129 </a>        <span class="php-keyword1">else</span>
+</span><span id="130" class="l"><a class="l" href="#130">130 </a>            <span class="php-var">$this</span>-&gt;pluginOptions[<span class="php-quote">'stylesheets'</span>] = <span class="php-keyword1">array</span>();
+</span><span id="131" class="l"><a class="l" href="#131">131 </a>    }
+</span><span id="132" class="l"><a class="l" href="#132">132 </a>}
+</span><span id="133" class="l"><a class="l" href="#133">133 </a></span></code></pre>
 	</div>
 
 	<div id="footer">

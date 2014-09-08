@@ -19,17 +19,16 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
 ================================================== -->
 <div class="row">
 
-<div class="span3 bs-docs-sidebar">
+<div class="col-md-3 bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav">
         <li><a href="#download-bootstrap"><i class="icon-chevron-right"></i> Download</a></li>
         <li><a href="#configuration"><i class="icon-chevron-right"></i> Configuration</a></li>
         <li><a href="#contents"><i class="icon-chevron-right"></i> What's included</a></li>
-        <li><a href="#basic-layout"><i class="icon-chevron-right"></i> Basic layout</a></li>
         <li><a href="#what-next"><i class="icon-chevron-right"></i> What next?</a></li>
     </ul>
 </div>
 
-<div class="span9">
+<div class="col-md-9">
 
     <!-- Download
         ================================================== -->
@@ -44,7 +43,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
             dependencies. If you have problems to install it, you can check the preconfigured project
             boilerplates at <a href="http://yiinitializr.2amigos.us" target="_blank">Yiinitializr</a>.</p>
 
-        <div class="row-fluid">
+        <div class="row">
             <div class="span6">
                 <h2>Download</h2>
 
@@ -52,7 +51,10 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
                     extensions folder and configure it.</p>
 
                 <p><a class="btn btn-large btn-primary"
-                      href="https://github.com/2amigos/yiiwheels/archive/1.0.3.zip">Download Yiiwheels 1.0.3</a></p>
+                      href="https://github.com/2amigos/yiiwheels/archive/2.0.1.zip">Download Yiiwheels 2.0.1</a></p>
+                <p>Looking for older version for Bootstrap 2+? </p>
+                <p><a class="btn btn-large btn-default"
+                      href="https://github.com/2amigos/yiiwheels/archive/1.0.5.zip">Download Yiiwheels 1.0.5</a></p>
             </div>
             <div class="span6">
                 <h2>Clone</h2>
@@ -64,10 +66,10 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
                 </p>
             </div>
         </div>
-        <div class="row-fluid">
-            <p><span class="label label-important">important</span> This version of yiiwheels, requires the
+        <div class="row">
+            <p><span class="label label-danger">important</span> This version of yiiwheels, requires the
                 use of <a href="http://getyiistrap.com">Yiistrap</a>. If you wish to
-                use the <a href="https://github.com/2amigos/yiiwheels-custom/tree">2amigOS! custom one</a>, we
+                use the <a href="https://github.com/2amigos/yiiwheels-custom">2amigOS! custom one</a>, we
                 removed that requirement and made use of namespaces.</p>
         </div>
 
@@ -151,8 +153,8 @@ return array(
         </div>
         <p class="lead">Includes most of the widgets from YiiBooster (refactored) and the list will grow even more.</p>
 
-        <div class="row-fluid">
-            <div class="span3">
+        <div class="row">
+            <div class="col-md-3">
                 <ul>
                     <li>Ace Editor</li>
                     <li>Box</li>
@@ -170,7 +172,7 @@ return array(
                     <li>MaskMoney</li>
                 </ul>
             </div>
-            <div class="span3">
+            <div class="col-md-3">
                 <ul>
                     <li>Modal</li>
                     <li>MultiSelect</li>
@@ -183,7 +185,6 @@ return array(
                     <li>ToggleAction</li>
                     <li>ToggleColumn</li>
                     <li>TypeAhead</li>
-                    <li>More on development...</li>
                 </ul>
             </div>
         </div>
@@ -198,7 +199,7 @@ return array(
     <section id="what-next">
 
         <div class="page-header">
-            <h1>What next?</h1>
+            <h1>4. What next?</h1>
         </div>
 
         <p class="lead">Head to the docs for examples or take a look at the API.</p>

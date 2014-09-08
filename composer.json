@@ -34,8 +34,8 @@
         }
     ],
     "require": {
-        "yiisoft/yii": "1.1.13",
-		"2amigos/yiiwheels": "1.*"
+        "yiisoft/yii": ">=1.1.13",
+        "2amigos/yiiwheels": "2.*"
     },
     "autoload": {
         "psr-0": {

@@ -8,7 +8,7 @@
 	<title>File widgets/grid/WhGridView.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1491821685"></script>
+	<script type="text/javascript" src="elementlist.js?53054354"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -53,6 +53,8 @@
 		<div id="groups">
 			<h3>Packages</h3>
 			<ul>
+				<li><a href="package-None.html">None</a>
+						</li>
 				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
@@ -73,13 +75,9 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
 						</li>
-				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
-						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
-						</li>
-				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
 						</li>
@@ -164,7 +162,7 @@
 </span></span><span id="16" class="l"><a class="l" href="#16"> 16 </a><span class="php-comment"> * @uses Yiistrap.widgets.TbHtml
 </span></span><span id="17" class="l"><a class="l" href="#17"> 17 </a><span class="php-comment"> * @uses Yiistrap.widgets.TbGridView
 </span></span><span id="18" class="l"><a class="l" href="#18"> 18 </a><span class="php-comment"> */</span>
-</span><span id="19" class="l"><a class="l" href="#19"> 19 </a>Yii::import(<span class="php-quote">'bootstrap.widgets.TbHtml'</span>);
+</span><span id="19" class="l"><a class="l" href="#19"> 19 </a>Yii::import(<span class="php-quote">'bootstrap.helpers.TbHtml'</span>);
 </span><span id="20" class="l"><a class="l" href="#20"> 20 </a>Yii::import(<span class="php-quote">'bootstrap.widgets.TbGridView'</span>);
 </span><span id="21" class="l"><a class="l" href="#21"> 21 </a>
 </span><span id="22" class="l"><a class="l" href="#22"> 22 </a><span class="php-keyword1">class</span> <a id="WhGridView" href="#WhGridView">WhGridView</a> <span class="php-keyword1">extends</span> TbGridView
@@ -413,14 +411,14 @@
 </span><span id="265" class="l"><a class="l" href="#265">265 </a>            }
 </span><span id="266" class="l"><a class="l" href="#266">266 </a>        }
 </span><span id="267" class="l"><a class="l" href="#267">267 </a>
-</span><span id="268" class="l"><a class="l" href="#268">268 </a>        <span class="php-keyword1">echo</span> CHtml::openTag(<span class="php-quote">'tr'</span>, <span class="php-var">$htmlOptions</span>);
+</span><span id="268" class="l"><a class="l" href="#268">268 </a>        <span class="php-keyword1">echo</span> TbHtml::openTag(<span class="php-quote">'tr'</span>, <span class="php-var">$htmlOptions</span>);
 </span><span id="269" class="l"><a class="l" href="#269">269 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;columns <span class="php-keyword1">as</span> <span class="php-var">$column</span>) {
 </span><span id="270" class="l"><a class="l" href="#270">270 </a>            <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;displayExtendedSummary &amp;&amp; !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;extendedSummary[<span class="php-quote">'columns'</span>]) ? <span class="php-var">$this</span>-&gt;parseColumnValue(
 </span><span id="271" class="l"><a class="l" href="#271">271 </a>                <span class="php-var">$column</span>,
 </span><span id="272" class="l"><a class="l" href="#272">272 </a>                <span class="php-var">$row</span>
 </span><span id="273" class="l"><a class="l" href="#273">273 </a>            ) : <span class="php-var">$column</span>-&gt;renderDataCell(<span class="php-var">$row</span>);
 </span><span id="274" class="l"><a class="l" href="#274">274 </a>        }
-</span><span id="275" class="l"><a class="l" href="#275">275 </a>        <span class="php-keyword1">echo</span> CHtml::closeTag(<span class="php-quote">'tr'</span>);
+</span><span id="275" class="l"><a class="l" href="#275">275 </a>        <span class="php-keyword1">echo</span> TbHtml::closeTag(<span class="php-quote">'tr'</span>);
 </span><span id="276" class="l"><a class="l" href="#276">276 </a>    }
 </span><span id="277" class="l"><a class="l" href="#277">277 </a>
 </span><span id="278" class="l"><a class="l" href="#278">278 </a>    <span class="php-comment">/**
@@ -433,7 +431,7 @@
 </span><span id="285" class="l"><a class="l" href="#285">285 </a>        } <span class="php-keyword1">else</span> {
 </span><span id="286" class="l"><a class="l" href="#286">286 </a>            <span class="php-var">$this</span>-&gt;extendedSummaryOptions[<span class="php-quote">'class'</span>] .= <span class="php-quote">' '</span> . <span class="php-var">$this</span>-&gt;extendedSummaryCssClass;
 </span><span id="287" class="l"><a class="l" href="#287">287 </a>        }
-</span><span id="288" class="l"><a class="l" href="#288">288 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;div '</span> . CHtml::renderAttributes(<span class="php-var">$this</span>-&gt;extendedSummaryOptions) . <span class="php-quote">'&gt;&lt;/div&gt;'</span>;
+</span><span id="288" class="l"><a class="l" href="#288">288 </a>        <span class="php-keyword1">echo</span> <span class="php-quote">'&lt;div '</span> . TbHtml::renderAttributes(<span class="php-var">$this</span>-&gt;extendedSummaryOptions) . <span class="php-quote">'&gt;&lt;/div&gt;'</span>;
 </span><span id="289" class="l"><a class="l" href="#289">289 </a>    }
 </span><span id="290" class="l"><a class="l" href="#290">290 </a>
 </span><span id="291" class="l"><a class="l" href="#291">291 </a>    <span class="php-comment">/**

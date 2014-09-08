@@ -8,7 +8,7 @@
 	<title>File widgets/fileupload/WhFileUpload.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1491821685"></script>
+	<script type="text/javascript" src="elementlist.js?53054354"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -53,6 +53,8 @@
 		<div id="groups">
 			<h3>Packages</h3>
 			<ul>
+				<li><a href="package-None.html">None</a>
+						</li>
 				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
@@ -73,13 +75,9 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
 						</li>
-				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
-						</li>
 				<li class="active"><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
-						</li>
-				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
 						</li>
@@ -293,8 +291,8 @@
 </span><span id="147" class="l"><a class="l" href="#147">147 </a>            <span class="php-var">$this</span>-&gt;getYiiWheels()-&gt;registerAssetJs(<span class="php-quote">&quot;bootstrap-image-gallery.min.js&quot;</span>, CClientScript::POS_END);
 </span><span id="148" class="l"><a class="l" href="#148">148 </a>        }
 </span><span id="149" class="l"><a class="l" href="#149">149 </a>        <span class="php-comment">//The Iframe Transport is required for browsers without support for XHR file uploads</span>
-</span><span id="150" class="l"><a class="l" href="#150">150 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.iframe-transport.js'</span>);
-</span><span id="151" class="l"><a class="l" href="#151">151 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload.js'</span>);
+</span><span id="150" class="l"><a class="l" href="#150">150 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.iframe-transport.js'</span>, CClientScript::POS_END);
+</span><span id="151" class="l"><a class="l" href="#151">151 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/jquery.fileupload.js'</span>, CClientScript::POS_END);
 </span><span id="152" class="l"><a class="l" href="#152">152 </a>
 </span><span id="153" class="l"><a class="l" href="#153">153 </a>        <span class="php-comment">// The File Upload image processing plugin</span>
 </span><span id="154" class="l"><a class="l" href="#154">154 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;imageProcessing) {
@@ -316,7 +314,8 @@
 </span><span id="170" class="l"><a class="l" href="#170">170 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'fileupload'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;options);
 </span><span id="171" class="l"><a class="l" href="#171">171 </a>    }
 </span><span id="172" class="l"><a class="l" href="#172">172 </a>
-</span><span id="173" class="l"><a class="l" href="#173">173 </a></span>}</code></pre>
+</span><span id="173" class="l"><a class="l" href="#173">173 </a>}
+</span><span id="174" class="l"><a class="l" href="#174">174 </a></span></code></pre>
 	</div>
 
 	<div id="footer">

@@ -22,12 +22,13 @@ return ArrayX::merge(
             'vendor'    => realpath(
                 __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'vendor'
             ),
-            'bootstrap' => 'vendor.2amigos.yiistrap',
+            'bootstrap' => 'vendor.crisu83.yiistrap',
             'yiiwheels' => 'vendor.2amigos.yiiwheels',
         ),
         // import
         'import'        => array(
-            'bootstrap.helpers.TbHtml',
+            'bootstrap.helpers.*',
+            'bootstrap.behaviors.*',
         ),
         // application behaviors
         'behaviors'     => array(),
@@ -40,6 +41,7 @@ return ArrayX::merge(
 
             'bootstrap'    => array(
                 'class' => 'bootstrap.components.TbApi',
+                'forceCopyAssets' => true
             ),
             'yiiwheels' => array(
                 'class' => 'yiiwheels.YiiWheels'
@@ -52,9 +54,6 @@ return ArrayX::merge(
                     'bootstrap.min.css' => false,
                     'bootstrap.min.js'  => false,
                     'bootstrap-yii.css' => false,
-                    'jquery.js' => '/js/libs/jquery-1.9.1.min.js',
-                    'jquery-ui.css' => false,
-                    'jquery-ui.min.js' => false,
                 )
             ),
             'urlManager'   => array(

@@ -8,7 +8,7 @@
 	<title>File widgets/typeahead/WhTypeAhead.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1491821685"></script>
+	<script type="text/javascript" src="elementlist.js?53054354"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -53,6 +53,8 @@
 		<div id="groups">
 			<h3>Packages</h3>
 			<ul>
+				<li><a href="package-None.html">None</a>
+						</li>
 				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
@@ -73,13 +75,9 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
 						</li>
-				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
-						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
-						</li>
-				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
 						</li>
@@ -198,39 +196,41 @@
 </span><span id="53" class="l"><a class="l" href="#53">53 </a>        TbArray::defaultValue(<span class="php-quote">'id'</span>, <span class="php-var">$id</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="54" class="l"><a class="l" href="#54">54 </a>        TbArray::defaultValue(<span class="php-quote">'name'</span>, <span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="55" class="l"><a class="l" href="#55">55 </a>
-</span><span id="56" class="l"><a class="l" href="#56">56 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
-</span><span id="57" class="l"><a class="l" href="#57">57 </a>            <span class="php-keyword1">echo</span> CHtml::activeTextField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="58" class="l"><a class="l" href="#58">58 </a>        } <span class="php-keyword1">else</span> {
-</span><span id="59" class="l"><a class="l" href="#59">59 </a>            <span class="php-keyword1">echo</span> CHtml::textField(<span class="php-var">$this</span>-&gt;name, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
-</span><span id="60" class="l"><a class="l" href="#60">60 </a>        }
-</span><span id="61" class="l"><a class="l" href="#61">61 </a>    }
-</span><span id="62" class="l"><a class="l" href="#62">62 </a>
-</span><span id="63" class="l"><a class="l" href="#63">63 </a>    <span class="php-comment">/**
-</span></span><span id="64" class="l"><a class="l" href="#64">64 </a><span class="php-comment">     * Registers required client script for bootstrap typeahead. It is not used through bootstrap-&gt;registerPlugin
-</span></span><span id="65" class="l"><a class="l" href="#65">65 </a><span class="php-comment">     * in order to attach events if any
-</span></span><span id="66" class="l"><a class="l" href="#66">66 </a><span class="php-comment">     */</span>
-</span><span id="67" class="l"><a class="l" href="#67">67 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
-</span><span id="68" class="l"><a class="l" href="#68">68 </a>    {
-</span><span id="69" class="l"><a class="l" href="#69">69 </a>        <span class="php-comment">/* publish assets dir */</span>
-</span><span id="70" class="l"><a class="l" href="#70">70 </a>        <span class="php-var">$path</span>      = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
-</span><span id="71" class="l"><a class="l" href="#71">71 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
-</span><span id="72" class="l"><a class="l" href="#72">72 </a>
-</span><span id="73" class="l"><a class="l" href="#73">73 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
-</span><span id="74" class="l"><a class="l" href="#74">74 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
-</span><span id="75" class="l"><a class="l" href="#75">75 </a>
-</span><span id="76" class="l"><a class="l" href="#76">76 </a>        <span class="php-var">$min</span> = <span class="php-var">$this</span>-&gt;debugMode
-</span><span id="77" class="l"><a class="l" href="#77">77 </a>            ? <span class="php-quote">'.min'</span>
-</span><span id="78" class="l"><a class="l" href="#78">78 </a>            : <span class="php-quote">''</span>;
-</span><span id="79" class="l"><a class="l" href="#79">79 </a>
-</span><span id="80" class="l"><a class="l" href="#80">80 </a>        <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/typeahead'</span> . <span class="php-var">$min</span> . <span class="php-quote">'.css'</span>);
-</span><span id="81" class="l"><a class="l" href="#81">81 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/typeahead'</span> . <span class="php-var">$min</span> . <span class="php-quote">'.js'</span>, CClientScript::POS_END);
-</span><span id="82" class="l"><a class="l" href="#82">82 </a>
-</span><span id="83" class="l"><a class="l" href="#83">83 </a>        <span class="php-comment">/* initialize plugin */</span>
-</span><span id="84" class="l"><a class="l" href="#84">84 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
-</span><span id="85" class="l"><a class="l" href="#85">85 </a>
-</span><span id="86" class="l"><a class="l" href="#86">86 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'typeahead'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
-</span><span id="87" class="l"><a class="l" href="#87">87 </a>    }
-</span><span id="88" class="l"><a class="l" href="#88">88 </a></span>}</code></pre>
+</span><span id="56" class="l"><a class="l" href="#56">56 </a>        TbHtml::addCssClass(<span class="php-quote">'form-control'</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="57" class="l"><a class="l" href="#57">57 </a>
+</span><span id="58" class="l"><a class="l" href="#58">58 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
+</span><span id="59" class="l"><a class="l" href="#59">59 </a>            <span class="php-keyword1">echo</span> CHtml::activeTextField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="60" class="l"><a class="l" href="#60">60 </a>        } <span class="php-keyword1">else</span> {
+</span><span id="61" class="l"><a class="l" href="#61">61 </a>            <span class="php-keyword1">echo</span> CHtml::textField(<span class="php-var">$this</span>-&gt;name, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="62" class="l"><a class="l" href="#62">62 </a>        }
+</span><span id="63" class="l"><a class="l" href="#63">63 </a>    }
+</span><span id="64" class="l"><a class="l" href="#64">64 </a>
+</span><span id="65" class="l"><a class="l" href="#65">65 </a>    <span class="php-comment">/**
+</span></span><span id="66" class="l"><a class="l" href="#66">66 </a><span class="php-comment">     * Registers required client script for bootstrap typeahead. It is not used through bootstrap-&gt;registerPlugin
+</span></span><span id="67" class="l"><a class="l" href="#67">67 </a><span class="php-comment">     * in order to attach events if any
+</span></span><span id="68" class="l"><a class="l" href="#68">68 </a><span class="php-comment">     */</span>
+</span><span id="69" class="l"><a class="l" href="#69">69 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_registerClientScript" href="#_registerClientScript">registerClientScript</a>()
+</span><span id="70" class="l"><a class="l" href="#70">70 </a>    {
+</span><span id="71" class="l"><a class="l" href="#71">71 </a>        <span class="php-comment">/* publish assets dir */</span>
+</span><span id="72" class="l"><a class="l" href="#72">72 </a>        <span class="php-var">$path</span>      = <span class="php-keyword2">dirname</span>(__FILE__) . DIRECTORY_SEPARATOR . <span class="php-quote">'assets'</span>;
+</span><span id="73" class="l"><a class="l" href="#73">73 </a>        <span class="php-var">$assetsUrl</span> = <span class="php-var">$this</span>-&gt;getAssetsUrl(<span class="php-var">$path</span>);
+</span><span id="74" class="l"><a class="l" href="#74">74 </a>
+</span><span id="75" class="l"><a class="l" href="#75">75 </a>        <span class="php-comment">/* @var $cs CClientScript */</span>
+</span><span id="76" class="l"><a class="l" href="#76">76 </a>        <span class="php-var">$cs</span> = Yii::app()-&gt;getClientScript();
+</span><span id="77" class="l"><a class="l" href="#77">77 </a>
+</span><span id="78" class="l"><a class="l" href="#78">78 </a>        <span class="php-var">$min</span> = <span class="php-var">$this</span>-&gt;debugMode
+</span><span id="79" class="l"><a class="l" href="#79">79 </a>            ? <span class="php-quote">'.min'</span>
+</span><span id="80" class="l"><a class="l" href="#80">80 </a>            : <span class="php-quote">''</span>;
+</span><span id="81" class="l"><a class="l" href="#81">81 </a>
+</span><span id="82" class="l"><a class="l" href="#82">82 </a>        <span class="php-var">$cs</span>-&gt;registerCssFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/css/typeahead'</span> . <span class="php-var">$min</span> . <span class="php-quote">'.css'</span>);
+</span><span id="83" class="l"><a class="l" href="#83">83 </a>        <span class="php-var">$cs</span>-&gt;registerScriptFile(<span class="php-var">$assetsUrl</span> . <span class="php-quote">'/js/typeahead'</span> . <span class="php-var">$min</span> . <span class="php-quote">'.js'</span>, CClientScript::POS_END);
+</span><span id="84" class="l"><a class="l" href="#84">84 </a>
+</span><span id="85" class="l"><a class="l" href="#85">85 </a>        <span class="php-comment">/* initialize plugin */</span>
+</span><span id="86" class="l"><a class="l" href="#86">86 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
+</span><span id="87" class="l"><a class="l" href="#87">87 </a>
+</span><span id="88" class="l"><a class="l" href="#88">88 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'typeahead'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
+</span><span id="89" class="l"><a class="l" href="#89">89 </a>    }
+</span><span id="90" class="l"><a class="l" href="#90">90 </a></span>}</code></pre>
 	</div>
 
 	<div id="footer">

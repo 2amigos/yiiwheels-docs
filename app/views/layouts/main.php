@@ -1,11 +1,9 @@
 <?php /* @var $this Controller */ ?>
-<?php //Yii::app()->bootstrap->registerAllCss(); ?>
 <?php Yii::app()->bootstrap->registerCoreScripts(null, CClientScript::POS_HEAD); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/bootstrap.min.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/bootstrap-responsive.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/bootstrap.min.css'); ?>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="en"/>
     <meta name="keywords"
@@ -80,9 +78,9 @@
             <p class="sponsors" style="margin-top: 60px;">
 
             <div style="text-align:center;margin-bottom:5px">
-                <small class="muted">Proudly hosted by</small>
+                <small class="muted">Proudly hosted and developed by</small>
                 <br>
-                <a href="http://2amigos.us"><img src="<?php echo baseUrl('images/2amigos-logo.png'); ?>"/></a>
+                <a href="http://2amigos.us"><img src="<?php echo baseUrl('images/logo.png'); ?>"/></a>
             </div>
             <!--<a href="http://www.jetbrains.com/phpstorm/" style="position:relative;display:inline-block;width:127px;height:37px;border:0;margin:0;padding:0;text-decoration:none;text-indent:0;"><span style="margin: 0;padding: 0;position: absolute;top: 0;left: 36px;font-size: 10px;cursor:pointer;  background-image:none;border:0;color: #fff; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Developed with</span><img src="http://www.jetbrains.com/phpstorm/documentation/phpstorm_banners/phpstorm1/phpstorm125x37_violet.gif" alt="Developed with PhpStorm" border="0"/></a>-->
             </p>

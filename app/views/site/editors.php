@@ -18,14 +18,14 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
 
 <!-- Docs nav
 ================================================== -->
-<div class="row-fluid">
-<div class="span3 bs-docs-sidebar">
+<div class="row">
+<div class="col-md-3 bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav">
         <li><a href="#ace"><i class="icon-chevron-right"></i> Ace Editor</a></li>
         <li><a href="#redactor"><i class="icon-chevron-right"></i> Redactor</a></li>
     </ul>
 </div>
-<div class="span9">
+<div class="col-md-9">
 
 <!-- ACE  Editor
 ================================================== -->

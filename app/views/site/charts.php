@@ -18,15 +18,15 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
 
     <!-- Docs nav
     ================================================== -->
-    <div class="row-fluid">
-        <div class="span3 bs-docs-sidebar">
+    <div class="row">
+        <div class="col-md-3 bs-docs-sidebar">
             <ul class="nav nav-list bs-docs-sidenav">
                 <li><a href="#highcharts"><i class="icon-chevron-right"></i> HighCharts</a></li>
                 <li><a href="#sparklines"><i class="icon-chevron-right"></i> Sparklines</a></li>
                 <li><a href="#visualizationchart"><i class="icon-chevron-right"></i> VisualizationChart</a></li>
             </ul>
         </div>
-        <div class="span9">
+        <div class="col-md-9">
 
             <!-- HighCharts
             ================================================== -->
@@ -115,8 +115,8 @@ $this-&gt;widget(
                 </p>
 
                 <div class="bs-docs-example">
-                <div class="row-fluid">
-                    <div class="span6">
+                <div class="row">
+                    <div class="col-md-6">
                         Inline <?php
                         $this->widget('yiiwheels.widgets.sparklines.WhSparklines', array(
                                 'data' => array(
@@ -135,7 +135,7 @@ $this-&gt;widget(
                             ));
                         ?>
                     </div>
-                    <div class="span6">
+                    <div class="col-md-6">
                         Pie Chart <?php
                         $this->widget('yiiwheels.widgets.sparklines.WhSparklines', array(
                                 'data' => array(
@@ -160,8 +160,8 @@ $this-&gt;widget(
                 </div>
                 </div>
                 <pre class="prettyprint linenums">
-&lt;div class=&quot;row-fluid&quot;&gt;
-    &lt;div class=&quot;span3&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
         Inline &lt;?php
         $this-&gt;widget('yiiwheels.widgets.sparklines.WhSparklines', array(
                 'data' =&gt; array(
@@ -180,7 +180,7 @@ $this-&gt;widget(
             ));
         ?&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;span3&quot;&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
         Pie Chart &lt;?php
         $this-&gt;widget('yiiwheels.widgets.sparklines.WhSparklines', array(
                 'data' =&gt; array(

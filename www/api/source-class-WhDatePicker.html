@@ -8,7 +8,7 @@
 	<title>File widgets/datepicker/WhDatePicker.php | YiiWheels</title>
 
 	<script type="text/javascript" src="resources/combined.js?1965618976"></script>
-	<script type="text/javascript" src="elementlist.js?1491821685"></script>
+	<script type="text/javascript" src="elementlist.js?53054354"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/bootstrap.min.css?260161822" />
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?2015443609" />
 
@@ -53,6 +53,8 @@
 		<div id="groups">
 			<h3>Packages</h3>
 			<ul>
+				<li><a href="package-None.html">None</a>
+						</li>
 				<li><a href="package-yiiwheels.html">yiiwheels<span></span></a>
 						<ul>
 				<li><a href="package-yiiwheels.behaviors.html">behaviors</a>
@@ -73,13 +75,9 @@
 						</li>
 				<li><a href="package-YiiWheels.widgets.detail.html">detail</a>
 						</li>
-				<li><a href="package-YiiWheels.widgets.editable.html">editable</a>
-						</li>
 				<li><a href="package-YiiWheels.widgets.fileupload.html">fileupload</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.fileuploader.html">fileuploader</a>
-						</li>
-				<li><a href="package-YiiWheels.widgets.formhelpers.html">formhelpers</a>
 						</li>
 				<li><a href="package-YiiWheels.widgets.gallery.html">gallery</a>
 						</li>
@@ -210,10 +208,10 @@
 </span><span id="65" class="l"><a class="l" href="#65"> 65 </a>        TbArray::defaultValue(<span class="php-quote">'name'</span>, <span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="66" class="l"><a class="l" href="#66"> 66 </a>
 </span><span id="67" class="l"><a class="l" href="#67"> 67 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;hasModel()) {
-</span><span id="68" class="l"><a class="l" href="#68"> 68 </a>            <span class="php-keyword1">echo</span> CHtml::activeTextField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="68" class="l"><a class="l" href="#68"> 68 </a>            <span class="php-keyword1">echo</span> TbHtml::activeTextField(<span class="php-var">$this</span>-&gt;model, <span class="php-var">$this</span>-&gt;attribute, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="69" class="l"><a class="l" href="#69"> 69 </a>
 </span><span id="70" class="l"><a class="l" href="#70"> 70 </a>        } <span class="php-keyword1">else</span> {
-</span><span id="71" class="l"><a class="l" href="#71"> 71 </a>            <span class="php-keyword1">echo</span> CHtml::textField(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
+</span><span id="71" class="l"><a class="l" href="#71"> 71 </a>            <span class="php-keyword1">echo</span> TbHtml::textField(<span class="php-var">$name</span>, <span class="php-var">$this</span>-&gt;value, <span class="php-var">$this</span>-&gt;htmlOptions);
 </span><span id="72" class="l"><a class="l" href="#72"> 72 </a>        }
 </span><span id="73" class="l"><a class="l" href="#73"> 73 </a>    }
 </span><span id="74" class="l"><a class="l" href="#74"> 74 </a>
@@ -242,7 +240,7 @@
 </span><span id="97" class="l"><a class="l" href="#97"> 97 </a>        <span class="php-comment">/* initialize plugin */</span>
 </span><span id="98" class="l"><a class="l" href="#98"> 98 </a>        <span class="php-var">$selector</span> = <span class="php-quote">'#'</span> . TbArray::getValue(<span class="php-quote">'id'</span>, <span class="php-var">$this</span>-&gt;htmlOptions, <span class="php-var">$this</span>-&gt;getId());
 </span><span id="99" class="l"><a class="l" href="#99"> 99 </a>
-</span><span id="100" class="l"><a class="l" href="#100">100 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'datepicker'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
+</span><span id="100" class="l"><a class="l" href="#100">100 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerPlugin(<span class="php-quote">'bdatepicker'</span>, <span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;pluginOptions);
 </span><span id="101" class="l"><a class="l" href="#101">101 </a>        <span class="php-var">$this</span>-&gt;getApi()-&gt;registerEvents(<span class="php-var">$selector</span>, <span class="php-var">$this</span>-&gt;events);
 </span><span id="102" class="l"><a class="l" href="#102">102 </a>
 </span><span id="103" class="l"><a class="l" href="#103">103 </a>    }
