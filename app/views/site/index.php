@@ -15,7 +15,9 @@ $this->pageTitle = param('pageTitle');
             <li><a href="https://github.com/2amigos/yiiwheels"
                    onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub
                     project</a></li>
-            <li>Version 2.0.3</li>
+            <li><a href="https://packagist.org/packages/2amigos/yiiwheels"><img src="https://poser.pugx.org/2amigos/yiiwheels/v/stable.svg"></a></li>
+            <li><a href="https://packagist.org/packages/2amigos/yiiwheels"><img src="https://poser.pugx.org/2amigos/yiiwheels/downloads.svg"></a></li>
+            <li><a href="https://packagist.org/packages/2amigos/yiiwheels"><img src="https://poser.pugx.org/2amigos/yiiwheels/license.svg"></a></li>
         </ul>
     </div>
 </div>
