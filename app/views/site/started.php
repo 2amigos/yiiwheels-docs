@@ -51,7 +51,7 @@ $this->pageTitle = 'Getting started - ' . param('pageTitle');
                     extensions folder and configure it.</p>
 
                 <p><a class="btn btn-large btn-primary"
-                      href="https://github.com/2amigos/yiiwheels/archive/2.0.1.zip">Download Yiiwheels 2.0.1</a></p>
+                      href="https://github.com/2amigos/yiiwheels/archive/2.0.2.zip">Download Yiiwheels 2.0.2</a></p>
                 <p>Looking for older version for Bootstrap 2+? </p>
                 <p><a class="btn btn-large btn-default"
                       href="https://github.com/2amigos/yiiwheels/archive/1.0.5.zip">Download Yiiwheels 1.0.5</a></p>

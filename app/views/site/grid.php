@@ -26,7 +26,6 @@ $this->pageTitle = 'Widgets - ' . param('pageTitle');
             <li><a href="#gridswitch"><i class="icon-chevron-right"></i> Grid/Chart Switch</a></li>
             <li><a href="#groupgridview"><i class="icon-chevron-right"></i> Group Grid View</a></li>
             <li><a href="#detailview"><i class="icon-chevron-right"></i> DetailView</a></li>
-            <li><a href="#editablecolumn"><i class="icon-chevron-right"></i> Editable Column</a></li>
             <li><a href="#imagecolumn"><i class="icon-chevron-right"></i> Image Column</a></li>
             <li><a href="#relationalcolumn"><i class="icon-chevron-right"></i> RelationalColumn</a></li>
             <li><a href="#toggle"><i class="icon-chevron-right"></i> Toggle Column</a></li>
@@ -814,37 +813,6 @@ $this-&gt;widget(
         <hr class="bs-docs-separator">
     </section>
 
-    <!-- EditableColumn
-            ================================================== -->
-    <section id="editablecolumn">
-        <h2>WhEditableColumn</h2>
-
-        <p>
-            Added the
-            <a targer="_blank" href="http://ybe.demopage.ru/#EditableColumn">EditableColumn</a> widget from
-            <a target="_blank" href="http://www.yiiframework.com/user/56359/">Vitaliy Potapov</a>.
-        </p>
-
-<pre class="prettyprint linenums">
-$this->widget('yiiwheels.widgets.grid.WhGridView', array(
-    'type' => 'striped bordered',
-    'dataProvider' => Person::getGridDataProvider(),
-    'template' => "{items}",
-    'columns' => array(
-        'country_code',
-        array(
-            'class' => 'yiiwheels.widgets.editable.WhEditableColumn',
-            'name' => 'name',
-            'sortable'=>false,
-            'editable' => array(
-                'url' => $this->createUrl('site/editable'),
-                'placement' => 'right',
-                'inputclass' => 'col-md-3'
-            )
-        )),
-));
-</pre>
-    </section>
     <!-- ImageColumn
             ================================================== -->
     <section id="imagecolumn">

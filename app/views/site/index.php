@@ -8,14 +8,14 @@ $this->pageTitle = param('pageTitle');
 
         <p>Extension Library for Yiistrap</p>
         <p><small>Now Bootstrap 3+ Ready</small></p>
-        <p><a href="https://github.com/2amigos/yiiwheels/archive/2.0.1.zip" class="btn btn-info btn-large"
+        <p><a href="https://github.com/2amigos/yiiwheels/archive/2.0.2.zip" class="btn btn-info btn-large"
               onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download 2.0']);">Download
                 Yiiwheels</a></p>
         <ul class="masthead-links">
             <li><a href="https://github.com/2amigos/yiiwheels"
                    onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Jumbotron links', 'GitHub project']);">GitHub
                     project</a></li>
-            <li>Version 2.0.1</li>
+            <li>Version 2.0.2</li>
         </ul>
     </div>
 </div>
